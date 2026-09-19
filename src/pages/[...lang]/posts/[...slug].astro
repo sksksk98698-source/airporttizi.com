@@ -15,8 +15,7 @@ import { Icon } from "astro-icon/components";
 import FeaturedAirportsTable from "../../../components/FeaturedAirportsTable.astro";
 import ImageWrapper from "../../../components/misc/ImageWrapper.astro";
 import PostMetadata from "../../../components/PostMeta.astro";
-import { licenseConfig, profileConfig, siteConfig } from "../../../config";
-import { formatDateToYYYYMMDD } from "../../../utils/date-utils";
+import { licenseConfig } from "../../../config";
 
 // export async function getStaticPaths() {
 // 	const blogEntries = await getSortedPosts();
@@ -52,24 +51,6 @@ const { entry, lang } = Astro.props;
 const { Content, headings } = await render(entry);
 
 const { remarkPluginFrontmatter } = await render(entry);
-
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "BlogPosting",
-	headline: entry.data.title,
-	description: entry.data.description || entry.data.title,
-	keywords: entry.data.tags,
-	author: {
-		"@type": "Person",
-		name: profileConfig.name,
-		url: import.meta.env.SITE,
-	},
-	datePublished: formatDateToYYYYMMDD(entry.data.published),
-	inLanguage: entry.data.lang
-		? entry.data.lang.replace("_", "-")
-		: siteConfig.lang.replace("_", "-"),
-	// TODO include cover image here
-};
 
 const ogImage = entry.data.ogImage ?? entry.data.image;
 ---

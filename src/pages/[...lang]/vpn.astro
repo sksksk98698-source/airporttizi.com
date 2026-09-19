@@ -198,7 +198,7 @@ const schemaData = {
                 VPN 与科学上网常见问题 (FAQ)
             </h2>
             <div class="space-y-4">
-                {schemaData["@graph"][1].mainEntity.map((faq) => (
+                {((schemaData["@graph"][1] as any).mainEntity as any[]).map((faq: any) => (
                     <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
                         <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">
                             {faq.name}
