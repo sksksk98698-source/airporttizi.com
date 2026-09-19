@@ -3,8 +3,21 @@ import type { APIRoute } from "astro";
 
 const robotsTxt = `
 User-agent: *
-Disallow: /_astro/
+Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: yisouspider
+Allow: /
+
+Sitemap: ${siteUrl("sitemap.xml")}
 Sitemap: ${siteUrl("sitemap-index.xml")}
 `.trim();
 

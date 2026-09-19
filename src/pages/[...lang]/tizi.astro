@@ -1,0 +1,203 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import FeaturedAirportsTable from "../../components/FeaturedAirportsTable.astro";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle = "2026 梯子推荐与梯子排行｜稳定高速科学上网梯子天梯榜";
+const pageDescription =
+	"梯子猫 2026 稳定高速科学上网梯子推荐与梯子排行天梯榜。实测三网晚高峰丢包率、抗封锁能力与节点延迟，对比 Shadowsocks/Trojan/V2Ray/Hysteria2 梯子协议，提供高性价比套餐与防跑路选购指南。";
+
+const allPosts = await getSortedPosts(lang);
+const relatedPosts = allPosts
+	.filter((p) => {
+		const title = p.data.title.toLowerCase();
+		return (
+			title.includes("排行") || title.includes("推荐") || title.includes("梯子")
+		);
+	})
+	.slice(0, 6);
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "CollectionPage",
+			"@id": "https://airporttizi.com/tizi/",
+			url: "https://airporttizi.com/tizi/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "梯子推荐与排行",
+						item: "https://airporttizi.com/tizi/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "什么是真正稳定不卡的梯子？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "真正稳定不卡的梯子必须满足三大底层条件：1. 采用物理内网专线（IPLC/IEPL），流量不经由公共国际出口，不受骨干网拥堵与 GFW 干扰；2. 带宽冗余充足，晚高峰（20:00-23:00）跑满百兆且丢包率低于 1%；3. 拥有智能调度中继架构，单点故障秒级自动迁移。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "如何防范梯子服务商跑路风险？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "防范跑路最有效的策略是：1. 始终坚持月付或季付，切勿轻信所谓的“99元三年”或“永久会员”；2. 优先选择运营时间超过 2 年、具备自建线路与全天候工单客服的老牌服务商；3. 常备 1~2 个不同技术架构的按量付费备用节点，避免单点依赖。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang} customSchema={schemaData}>
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 栏目标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">梯子推荐与排行</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:leaderboard-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+                    2026 稳定梯子推荐与科学上网工具综合天梯榜
+                </h1>
+            </div>
+            <p class="text-black/70 dark:text-white/70 leading-relaxed text-sm md:text-base">
+                梯子猫基于三网晚高峰真实跑分与丢包率监测，建立 2026 权威梯子天梯榜。全景评析网络吞吐、流媒体与 AI 解锁表现，为日常办公、学术科研与跨国娱乐提供坚实指引。
+            </p>
+        </div>
+
+        <!-- 核心梯子推荐榜单 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 flex items-center gap-2">
+                    <Icon name="material-symbols:trophy-outline-rounded" class="text-(--primary)" />
+                    2026 综合实力天梯梯队推荐
+                </h2>
+                <span class="text-xs text-black/50 dark:text-white/50">定期复测动态更新</span>
+            </div>
+            <FeaturedAirportsTable />
+        </div>
+
+        <!-- 梯队解析说明 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="card-base p-6 rounded-2xl border-t-4 border-(--primary)">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-black bg-(--primary)/10 text-(--primary)">T0 顶级旗舰</span>
+                    <span class="text-xs text-black/40 dark:text-white/40">极致体验</span>
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 mb-2">企业级专线梯子</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    全链路物理内网专线（IPLC/IEPL），三网晚高峰零丢包，配备原生双 ISP 住宅落地，秒开 4K/8K 与 ChatGPT/Claude。
+                </p>
+            </div>
+            <div class="card-base p-6 rounded-2xl border-t-4 border-emerald-500">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-black bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">T1 均衡主力</span>
+                    <span class="text-xs text-black/40 dark:text-white/40">性价比优选</span>
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 mb-2">BGP 中继品质梯子</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    优质 BGP 多线入口中转，智能路由优化，节点覆盖广，流媒体解锁能力强，适合绝大多数中高频科学上网用户。
+                </p>
+            </div>
+            <div class="card-base p-6 rounded-2xl border-t-4 border-amber-500">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-black bg-amber-500/10 text-amber-600 dark:text-amber-400">T2 备用按量</span>
+                    <span class="text-xs text-black/40 dark:text-white/40">应急无忧</span>
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 mb-2">不限时按量梯子</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    流量不过期或轻量套餐，价格低廉，适合低频轻度查阅资料或作为主力梯子故障时的备用逃生通道。
+                </p>
+            </div>
+        </div>
+
+        <!-- 专题精选文章 -->
+        {relatedPosts.length > 0 && (
+            <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:article-outline-rounded" class="text-(--primary)" />
+                    梯子推荐与排行精选文章
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {relatedPosts.map((post) => (
+                        <a href={getPostUrlBySlug(post.id, lang)} class="p-4 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 transition border border-black/5 dark:border-white/5 flex flex-col justify-between group">
+                            <div>
+                                <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-2">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-xs text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
+                                    {post.data.description || "点击阅读完整评测与配置细节。"}
+                                </p>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between text-xs text-black/40 dark:text-white/40">
+                                <span>{post.data.category || "梯子排行"}</span>
+                                <span class="group-hover:translate-x-1 transition text-(--primary)">阅读全文 →</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        )}
+
+        <!-- 常见问题 FAQ -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                梯子选购与使用常见问题 (FAQ)
+            </h2>
+            <div class="space-y-4">
+                {schemaData["@graph"][1].mainEntity.map((faq) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                        <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">
+                            {faq.name}
+                        </h3>
+                        <p class="text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                            {faq.acceptedAnswer.text}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

@@ -1,0 +1,198 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"2026 Clash 配置教程与订阅转换全指南｜Clash Verge Rev 科学上网";
+const pageDescription =
+	"梯子猫 2026 最新 Clash 与 Clash Verge Rev 全平台配置指南。涵盖 Windows/macOS/Linux/Android 客户端下载、机场订阅链接安全导入、分流规则定制、TUN 虚拟网卡模式与常见报错排查。";
+
+const allPosts = await getSortedPosts(lang);
+const relatedPosts = allPosts
+	.filter((p) => {
+		const title = p.data.title.toLowerCase();
+		const tags = (p.data.tags || []).map((t) => t.toLowerCase());
+		return (
+			title.includes("clash") ||
+			tags.includes("clash") ||
+			tags.includes("客户端")
+		);
+	})
+	.slice(0, 6);
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "CollectionPage",
+			"@id": "https://airporttizi.com/clash/",
+			url: "https://airporttizi.com/clash/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "Clash配置专题",
+						item: "https://airporttizi.com/clash/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "2026年为什么推荐使用 Clash Verge Rev 而不是老版 Clash for Windows？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "老版 Clash for Windows（CFW）已于 2023 年底停止维护，内置内核落后且存在已知安全隐患；Clash Verge Rev 是基于开源现代技术重构的新一代客户端，采用高性能开源 Mihomo（Clash Meta）内核，原生支持 Hysteria2、VLESS Reality 等先进协议，内存占用更低且长期活跃更新，完全替代老旧客户端。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "什么是 Clash 的 TUN 模式？什么时候需要开启？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "TUN 模式是在操作系统底层接管虚拟网卡，实现全系统流量强行代理。当您使用某些不支持常规系统代理（System Proxy）的软件（如命令行终端 Git/curl、部分海外大型网游、UWP 应用或虚拟机）时，开启 TUN 模式即可让所有网络请求无死角走代理分流。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang} customSchema={schemaData}>
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 栏目标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">Clash配置专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:terminal-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+                    2026 Clash / Clash Verge Rev 订阅与配置全景指南
+                </h1>
+            </div>
+            <p class="text-black/70 dark:text-white/70 leading-relaxed text-sm md:text-base">
+                Clash 是全球最受欢迎的规则分流科学上网客户端生态。梯子猫梳理 2026 最新开源客户端选型、机场订阅导入、分流规则优化与 TUN 虚拟网卡深度配置技巧，让网络加速更高效、更省心。
+            </p>
+        </div>
+
+        <!-- 核心配置四步法 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:checklist-rounded" class="text-(--primary)" />
+                Clash 极速上手四步指南
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <div class="text-(--primary) font-black text-xl mb-1">01</div>
+                    <h3 class="font-bold text-sm text-black/90 dark:text-white/90 mb-1">下载客户端</h3>
+                    <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                        访问官方开源仓库下载最新版本的 Clash Verge Rev（支持 Win/Mac/Linux）或 Flclash。
+                    </p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <div class="text-(--primary) font-black text-xl mb-1">02</div>
+                    <h3 class="font-bold text-sm text-black/90 dark:text-white/90 mb-1">导入订阅链接</h3>
+                    <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                        复制机场提供的 Clash 订阅链接，粘贴至客户端订阅管理器并点击“导入/更新”。
+                    </p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <div class="text-(--primary) font-black text-xl mb-1">03</div>
+                    <h3 class="font-bold text-sm text-black/90 dark:text-white/90 mb-1">选择分流模式</h3>
+                    <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                        切换为“规则模式（Rule）”，大陆境内网站走 Direct 直连，海外网站与 AI 走 Proxy 代理。
+                    </p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <div class="text-(--primary) font-black text-xl mb-1">04</div>
+                    <h3 class="font-bold text-sm text-black/90 dark:text-white/90 mb-1">开启系统代理</h3>
+                    <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                        勾选“系统代理（System Proxy）”或按需开启“TUN 模式”，即可开启高速畅游。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 专题精选教程文章 -->
+        {relatedPosts.length > 0 && (
+            <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:auto-stories-outline-rounded" class="text-(--primary)" />
+                    Clash 精选配置与教程文章
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {relatedPosts.map((post) => (
+                        <a href={getPostUrlBySlug(post.id, lang)} class="p-4 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 transition border border-black/5 dark:border-white/5 flex flex-col justify-between group">
+                            <div>
+                                <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-2">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-xs text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
+                                    {post.data.description || "点击阅读完整配置与实测详情。"}
+                                </p>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between text-xs text-black/40 dark:text-white/40">
+                                <span>{post.data.category || "教程中心"}</span>
+                                <span class="group-hover:translate-x-1 transition text-(--primary)">阅读全文 →</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        )}
+
+        <!-- 常见问题 FAQ -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                Clash 使用常见问题 (FAQ)
+            </h2>
+            <div class="space-y-4">
+                {schemaData["@graph"][1].mainEntity.map((faq) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                        <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">
+                            {faq.name}
+                        </h3>
+                        <p class="text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                            {faq.acceptedAnswer.text}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

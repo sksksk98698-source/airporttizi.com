@@ -1,0 +1,200 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle = "科学上网使用教程中心｜从零基础入门到高阶分流配置";
+const pageDescription =
+	"梯子猫 2026 科学上网实用教程中心。提供 Clash Verge Rev、Shadowrocket、Sing-box、Surge、Hiddify 等主流客户端跨平台详细安装与配置指南，涵盖订阅导入、TUN 虚拟网卡、自建规则与软路由翻墙。";
+
+const allPosts = await getSortedPosts(lang);
+const relatedPosts = allPosts
+	.filter((p) => {
+		const title = p.data.title.toLowerCase();
+		const tags = (p.data.tags || []).map((t) => t.toLowerCase());
+		return (
+			title.includes("教程") ||
+			title.includes("配置") ||
+			tags.includes("教程") ||
+			tags.includes("使用指南")
+		);
+	})
+	.slice(0, 6);
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "CollectionPage",
+			"@id": "https://airporttizi.com/tutorial/",
+			url: "https://airporttizi.com/tutorial/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "使用教程中心",
+						item: "https://airporttizi.com/tutorial/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "新手初次接触科学上网，应该先下载什么客户端？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "不同操作系统推荐的最优客户端如下：Windows / macOS 推荐使用开源跨平台的【Clash Verge Rev】或【Mihomo Party】；iOS 用户推荐在美区 App Store 购买下载【Shadowrocket（小火箭）】；Android 用户推荐免费开源的【Clash Meta for Android】或【Sing-box】。这些软件界面友好、支持一键导入订阅，非常适合新手上手。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "开启代理后，国内软件（微信、淘宝、网易云等）会变慢或消耗代理流量吗？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "不会，前提是客户端必须处于【规则模式（Rule）】。规则模式下，软件会自动匹配内置分流列表，所有 `.cn` 域名和国内 IP 直接走本地网络（Direct 直连），既不消耗机场流量也不影响国内网络速度，只有海外受限域名才会走加速节点。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang} customSchema={schemaData}>
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 栏目标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">使用教程中心</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:school-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+                    科学上网零基础入门与高级进阶教程中心
+                </h1>
+            </div>
+            <p class="text-black/70 dark:text-white/70 leading-relaxed text-sm md:text-base">
+                从客户端获取与基础订阅导入，到分流规则定制、TUN 虚拟网卡与 OpenWrt 软路由透明代理。梯子猫打造权威结构化教程库，为您扫清科学上网过程中的一切配置障碍。
+            </p>
+        </div>
+
+        <!-- 教程分类导航卡片 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="/clients/" class="card-base p-5 rounded-2xl hover:border-(--primary) border border-transparent transition group">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:download-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-1">客户端下载</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    全平台官方正版客户端一站式下载与版本选型建议。
+                </p>
+            </a>
+            <a href="/clash/" class="card-base p-5 rounded-2xl hover:border-(--primary) border border-transparent transition group">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:terminal-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-1">Clash 进阶</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    Clash Verge Rev 核心配置、TUN 网卡模式与订阅更新。
+                </p>
+            </a>
+            <a href="/nodes/" class="card-base p-5 rounded-2xl hover:border-(--primary) border border-transparent transition group">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:hub-outline-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-1">线路节点解析</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    IPLC、IEPL、BGP 专线技术剖析与落地地区选型。
+                </p>
+            </a>
+            <a href="/diagnostics/" class="card-base p-5 rounded-2xl hover:border-(--primary) border border-transparent transition group">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:stethoscope-outline-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-1">网络故障诊断</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    节点红了、连不上网、DNS 泄漏与报错代码自检工具。
+                </p>
+            </a>
+        </div>
+
+        <!-- 专题精选教程文章 -->
+        {relatedPosts.length > 0 && (
+            <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:book-outline-rounded" class="text-(--primary)" />
+                    实用配置教程精选
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {relatedPosts.map((post) => (
+                        <a href={getPostUrlBySlug(post.id, lang)} class="p-4 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 transition border border-black/5 dark:border-white/5 flex flex-col justify-between group">
+                            <div>
+                                <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-2">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-xs text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
+                                    {post.data.description || "点击阅读完整教程与配置步骤。"}
+                                </p>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between text-xs text-black/40 dark:text-white/40">
+                                <span>{post.data.category || "教程中心"}</span>
+                                <span class="group-hover:translate-x-1 transition text-(--primary)">阅读全文 →</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        )}
+
+        <!-- 常见问题 FAQ -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                教程与配置常见问题 (FAQ)
+            </h2>
+            <div class="space-y-4">
+                {schemaData["@graph"][1].mainEntity.map((faq) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                        <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">
+                            {faq.name}
+                        </h3>
+                        <p class="text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                            {faq.acceptedAnswer.text}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

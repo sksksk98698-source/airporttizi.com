@@ -16,6 +16,8 @@
 		"audit:links": "node scripts/audit-links.js",
 		"indexnow": "node scripts/indexnow.js",
 		"indexnow:dry": "node scripts/indexnow.js --dry-run",
+		"seo:check": "node scripts/seo-check.js",
+		"deploy:gate": "pnpm run build && pnpm run seo:check",
 		"format": "biome format --write ./src",
 		"lint": "biome check --write ./src",
 		"test": "vitest",

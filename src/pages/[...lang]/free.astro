@@ -1,0 +1,206 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import FeaturedAirportsTable from "../../components/FeaturedAirportsTable.astro";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle = "2026 免费节点与试用梯子获取指南｜安全防坑与替代方案";
+const pageDescription =
+	"梯子猫 2026 免费节点与试用科学上网梯子全景指南。深度揭示公共免费代理的安全隐患（窃取隐私、中间人劫持、木马风险），提供正规大厂免费额度获取技巧、试用机场挑选方法与高性价比付费替代方案。";
+
+const allPosts = await getSortedPosts(lang);
+const relatedPosts = allPosts
+	.filter((p) => {
+		const title = p.data.title.toLowerCase();
+		return (
+			title.includes("免费") ||
+			title.includes("便宜") ||
+			title.includes("性价比") ||
+			title.includes("防跑路")
+		);
+	})
+	.slice(0, 6);
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "CollectionPage",
+			"@id": "https://airporttizi.com/free/",
+			url: "https://airporttizi.com/free/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "免费资源与防坑指南",
+						item: "https://airporttizi.com/free/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "网络上的免费公开节点（如 GitHub/Telegram 发布的白嫖节点）安全吗？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "极不安全！免费公共节点通常由不可信第三方部署，存在严重的中间人攻击（MITM）风险，运营者可监听您的非加密流量、窃取账号 Cookie、注入恶意广告甚至劫持 DNS。此外，公共免费节点 IP 极度脏乱，登录 Google、PayPal 或 ChatGPT 会大概率触发风控甚至永久封号。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "如果预算有限，如何安全且低成本地实现科学上网？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "建议选择正规机场提供的“试用套餐”或“轻量按量付费套餐”。很多正规老牌机场提供 1 元试用或每月仅需 8~15 元的入门专线套餐，既能享受企业级专线的低延迟与原生 IP 解锁，又能从源头上保障网络隐私与账号安全。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang} customSchema={schemaData}>
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 栏目标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">免费资源与防坑指南</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:lock-open-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+                    2026 免费节点与试用机场获取全指南（防坑必看）
+                </h1>
+            </div>
+            <p class="text-black/70 dark:text-white/70 leading-relaxed text-sm md:text-base">
+                天下没有真正免费的午餐。梯子猫深入剖析公共免费梯子背后的黑产陷阱与隐私风险，指导您如何合规、安全地获取高可用免费额度与入门级平价高质替代方案。
+            </p>
+        </div>
+
+        <!-- 免费节点四大安全隐患警示 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large) border-l-4 border-amber-500">
+            <h2 class="text-lg md:text-xl font-bold text-amber-600 dark:text-amber-400 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:warning-outline-rounded" class="text-2xl" />
+                必须警惕：公共免费节点背后的 4 大致命安全隐患
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <h3 class="font-bold text-black/90 dark:text-white/90 mb-1">1. 中间人攻击与凭据窃取</h3>
+                    <p class="text-black/60 dark:text-white/60 leading-relaxed">
+                        不怀好意的节点提供者可以解密未严密保护的流量，嗅探您的登录凭证、社交媒体 Token 与个人通信隐私。
+                    </p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <h3 class="font-bold text-black/90 dark:text-white/90 mb-1">2. 账号连带封禁</h3>
+                    <p class="text-black/60 dark:text-white/60 leading-relaxed">
+                        免费节点 IP 曾被成千上万人用于黑产、爬虫或垃圾邮件，早已被 OpenAI、Google、Netflix 列入黑名单，登录即被风控。
+                    </p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <h3 class="font-bold text-black/90 dark:text-white/90 mb-1">3. 恶意广告与 DNS 劫持</h3>
+                    <p class="text-black/60 dark:text-white/60 leading-relaxed">
+                        部分免费客户端甚至内置挖矿脚本或强行劫持搜索页面，向用户设备注入未经许可的商业广告或仿冒钓鱼站。
+                    </p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                    <h3 class="font-bold text-black/90 dark:text-white/90 mb-1">4. 极度卡顿与频繁失效</h3>
+                    <p class="text-black/60 dark:text-white/60 leading-relaxed">
+                        万人争抢有限带宽，丢包率往往超过 50%，平均存活时间不足数小时，不仅耗费精力还严重耽误正常工作。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 靠谱替代方案推荐 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 flex items-center gap-2">
+                    <Icon name="material-symbols:verified-outline-rounded" class="text-(--primary)" />
+                    安全平价替代：精选高性价比入门专线推荐
+                </h2>
+                <span class="text-xs text-black/50 dark:text-white/50">月均仅需一杯奶茶钱</span>
+            </div>
+            <FeaturedAirportsTable />
+        </div>
+
+        <!-- 专题精选文章 -->
+        {relatedPosts.length > 0 && (
+            <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:article-outline-rounded" class="text-(--primary)" />
+                    平价与安全梯子精选指南
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {relatedPosts.map((post) => (
+                        <a href={getPostUrlBySlug(post.id, lang)} class="p-4 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 transition border border-black/5 dark:border-white/5 flex flex-col justify-between group">
+                            <div>
+                                <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-2">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-xs text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
+                                    {post.data.description || "点击阅读完整防坑指南与配置细节。"}
+                                </p>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between text-xs text-black/40 dark:text-white/40">
+                                <span>{post.data.category || "避坑指南"}</span>
+                                <span class="group-hover:translate-x-1 transition text-(--primary)">阅读全文 →</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        )}
+
+        <!-- 常见问题 FAQ -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                免费梯子与防坑常见问题 (FAQ)
+            </h2>
+            <div class="space-y-4">
+                {schemaData["@graph"][1].mainEntity.map((faq) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                        <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">
+                            {faq.name}
+                        </h3>
+                        <p class="text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                            {faq.acceptedAnswer.text}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

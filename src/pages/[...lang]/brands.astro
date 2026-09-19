@@ -1,0 +1,175 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle = "全球科学上网机场品牌库与综合索引｜85+ 机场深度评测";
+const pageDescription =
+	"梯子猫 2026 全球科学上网机场品牌数据库与全景索引。收录 85+ 主流与高品质机场服务商，提供每个品牌的详细评测、官网指南、套餐价格、线路类型与流媒体/AI 解锁能力索引。";
+
+const allPosts = await getSortedPosts(lang);
+
+// 解析并聚合所有品牌
+interface BrandItem {
+	id: string;
+	name: string;
+	reviewSlug?: string;
+	reviewTitle?: string;
+	guideSlug?: string;
+	guideTitle?: string;
+}
+
+const brandMap = new Map<string, BrandItem>();
+
+for (const post of allPosts) {
+	const slug = post.id;
+	const title = post.data.title;
+
+	if (slug.includes("-review-2026")) {
+		const brandId = slug.replace("-review-2026", "");
+		const brandName = title
+			.split("机场")[0]
+			.replace(/^\d+[.\s]*/, "")
+			.trim();
+		const item = brandMap.get(brandId) || {
+			id: brandId,
+			name: brandName || brandId,
+		};
+		item.reviewSlug = slug;
+		item.reviewTitle = title;
+		if (brandName) item.name = brandName;
+		brandMap.set(brandId, item);
+	} else if (
+		slug.includes("-website-") ||
+		slug.includes("-worth-buying-") ||
+		slug.includes("-experience-review-") ||
+		slug.includes("-speed-streaming-")
+	) {
+		const brandId = slug
+			.replace(/-website-.*$/, "")
+			.replace(/-worth-buying-analysis$/, "")
+			.replace(/-experience-review-2026$/, "")
+			.replace(/-speed-streaming-guide$/, "");
+		const item = brandMap.get(brandId) || { id: brandId, name: brandId };
+		item.guideSlug = slug;
+		item.guideTitle = title;
+		brandMap.set(brandId, item);
+	}
+}
+
+const brandList = Array.from(brandMap.values()).sort((a, b) =>
+	a.id.localeCompare(b.id),
+);
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "CollectionPage",
+			"@id": "https://airporttizi.com/brands/",
+			url: "https://airporttizi.com/brands/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "机场品牌库",
+						item: "https://airporttizi.com/brands/",
+					},
+				],
+			},
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang} customSchema={schemaData}>
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 栏目标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">机场品牌库</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:database-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+                    全球主流科学上网机场品牌库与综合索引
+                </h1>
+            </div>
+            <p class="text-black/70 dark:text-white/70 leading-relaxed text-sm md:text-base">
+                梯子猫收录 85+ 知名与小众机场服务商，提供真实测速跑分、套餐价格、节点线路与流媒体/AI 解锁综合档案。点击对应品牌即可快速查阅深度实测与官网使用指南。
+            </p>
+            <div class="mt-4 flex items-center gap-3 text-xs text-black/60 dark:text-white/60">
+                <span class="px-2.5 py-1 rounded-full bg-(--primary)/10 text-(--primary) font-bold">
+                    共收录 {brandList.length} 家品牌
+                </span>
+                <span>包含 170+ 篇独立评测与官网指南</span>
+            </div>
+        </div>
+
+        <!-- 85+ 品牌全景网格索引 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:grid-view-rounded" class="text-(--primary)" />
+                全部机场品牌目录索引 (A-Z)
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {brandList.map((b) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5 flex flex-col justify-between hover:border-(--primary)/50 transition">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold text-base text-black/90 dark:text-white/90">
+                                    {b.name}
+                                </h3>
+                                <span class="text-[11px] px-2 py-0.5 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 font-mono">
+                                    {b.id}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mt-3 pt-3 border-t border-black/5 dark:border-white/5 flex flex-col gap-1.5 text-xs">
+                            {b.reviewSlug && (
+                                <a href={getPostUrlBySlug(b.reviewSlug, lang)} class="flex items-center justify-between text-(--primary) hover:underline font-medium">
+                                    <span>📊 综合评测报告</span>
+                                    <span>→</span>
+                                </a>
+                            )}
+                            {b.guideSlug && (
+                                <a href={getPostUrlBySlug(b.guideSlug, lang)} class="flex items-center justify-between text-black/70 dark:text-white/70 hover:text-(--primary) transition">
+                                    <span>🌐 官网与套餐指南</span>
+                                    <span>→</span>
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

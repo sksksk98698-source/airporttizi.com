@@ -53,6 +53,13 @@ export type SiteConfig = {
 		useDefault: boolean;
 		defaultSrc?: string;
 	};
+
+	verification?: {
+		google?: string;
+		bing?: string;
+		baidu?: string;
+		shenma?: string;
+	};
 };
 
 export type Favicon = {

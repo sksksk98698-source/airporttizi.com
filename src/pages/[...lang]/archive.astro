@@ -21,6 +21,19 @@ const sortedPostsList = await getSortedPostsList(lang);
 ---
 
 <MainGridLayout title={i18n(I18nKey.archive, lang)} lang={lang}>
+    <div class="card-base p-6 md:p-8 rounded-(--radius-large) mb-4">
+        <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+            <a href="/" class="hover:text-(--primary) transition">首页</a>
+            <span>/</span>
+            <span class="text-black/80 dark:text-white/80 font-bold">{i18n(I18nKey.archive, lang)}</span>
+        </nav>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+            全部文章归档与时间线
+        </h1>
+        <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm mt-2">
+            梯子猫全部科学上网机场评测、使用指南与客户端配置文章的历史时间线与分类索引。
+        </p>
+    </div>
     <!-- @ts-expect-error ts(9013) - (temporary solutions) -->
     <ArchivePanel sortedPosts={sortedPostsList} lang={lang} client:only="svelte"></ArchivePanel>
 </MainGridLayout>

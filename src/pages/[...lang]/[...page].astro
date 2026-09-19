@@ -33,9 +33,33 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page, lang } = Astro.props;
 
 const len = page.data.length;
+
+const pageTitle =
+	page.currentPage === 1
+		? undefined
+		: `全部文章列表 (第 ${page.currentPage} 页)`;
+const pageDescription =
+	page.currentPage === 1
+		? undefined
+		: `梯子猫机场推荐与测评文章列表，当前为第 ${page.currentPage} 页。浏览最新 2026 高端稳定专线机场梯子测评、配置教程与优惠信息。`;
 ---
 
-<MainGridLayout lang={lang}>
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    {page.currentPage > 1 && (
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large) mb-6 onload-animation">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">全部文章 (第 {page.currentPage} 页)</span>
+            </nav>
+            <h1 class="text-2xl md:text-3xl font-black text-black/90 dark:text-white/90 leading-tight mb-2">
+                全部文章列表 · 第 {page.currentPage} 页
+            </h1>
+            <p class="text-xs md:text-sm text-black/70 dark:text-white/70">
+                当前收录的机场梯子深度评测、使用指南与科学上网教程列表。
+            </p>
+        </div>
+    )}
     {page.currentPage === 1 && (
         <div class="card-base p-6 md:p-8 rounded-(--radius-large) mb-6 onload-animation">
             <div class="flex flex-wrap items-center justify-between gap-4 mb-3">

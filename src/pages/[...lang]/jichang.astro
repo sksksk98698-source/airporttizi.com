@@ -1,0 +1,207 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import FeaturedAirportsTable from "../../components/FeaturedAirportsTable.astro";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle = "2026 机场推荐与精选科学上网机场梯子指南";
+const pageDescription =
+	"梯子猫 2026 科学上网机场梯子综合推荐与选购指南。涵盖高端 IPLC/IEPL 专线机场、大流量性价比机场、三网优化中转机场评测，提供晚高峰抗丢包测速、节点分布、套餐价格与防跑路避坑建议。";
+
+const allPosts = await getSortedPosts(lang);
+const relatedPosts = allPosts
+	.filter((p) => {
+		const category = p.data.category || "";
+		return category.includes("机场") || category.includes("评测");
+	})
+	.slice(0, 6);
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "CollectionPage",
+			"@id": "https://airporttizi.com/jichang/",
+			url: "https://airporttizi.com/jichang/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "机场推荐专题",
+						item: "https://airporttizi.com/jichang/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "2026年挑选优质机场的核心标准有哪些？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "挑选优质机场应重点考察四大核心指标：1. 线路类型（首选内网专线 IPLC/IEPL，避免低端直连）；2. 晚高峰稳定性（20:00-23:00 是否频繁跳 ping 丢包）；3. 落地 IP 纯净度（能否原生解锁 ChatGPT、Claude 及 Netflix 全球流媒体）；4. 运营历史与口碑（优先选择运营 2 年以上的老牌服务商，警惕年付极低廉的跑路高危机场）。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "为什么建议尽量选择月付或季付，避免一次性长周期年付？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "网络加速行业具有一定政策与线路波动风险。采用月付或季付订阅，即使遇到不可抗力或服务质量滑坡，也能及时止损并平滑切换到备用机场，资金安全性最高。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang} customSchema={schemaData}>
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 栏目标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">机场推荐专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:flight-takeoff-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+                    2026 优质科学上网机场梯子精选推荐与选购全指南
+                </h1>
+            </div>
+            <p class="text-black/70 dark:text-white/70 leading-relaxed text-sm md:text-base">
+                基于 2026 年度真实真机网络测试数据，严选主流高速稳定机场梯子服务商。拒绝虚标带宽与虚假节点，聚焦 IPLC/IEPL 专线架构与晚高峰抗拥堵表现，助您构建稳健高效的跨境网络访问体验。
+            </p>
+        </div>
+
+        <!-- 核心推荐精选榜单 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 flex items-center gap-2">
+                    <Icon name="material-symbols:stars-outline-rounded" class="text-(--primary)" />
+                    2026 主流优质机场实测推荐榜
+                </h2>
+                <span class="text-xs text-black/50 dark:text-white/50">实测晚高峰带宽保障</span>
+            </div>
+            <FeaturedAirportsTable />
+        </div>
+
+        <!-- 选购技巧卡片 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="card-base p-5 rounded-2xl">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:speed-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 mb-1">物理专线优先</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    首选 IPLC/IEPL 企业级内网专线，物理端点直达境外机房，不经过常规公网审查，稳定性与延迟极佳。
+                </p>
+            </div>
+            <div class="card-base p-5 rounded-2xl">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:smart-toy-outline-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 mb-1">AI 纯净解锁</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    配备原生住宅或高信誉商业双 ISP 落地节点，规避 OpenAI/Claude/Google 严格的风控与人机验证。
+                </p>
+            </div>
+            <div class="card-base p-5 rounded-2xl">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:shield-outline-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 mb-1">冗余备用通道</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    具备多地入口（广港、沪日、京德等）与多协议热备（SS/V2Ray/Trojan/Hysteria2），单点故障自动无缝切换。
+                </p>
+            </div>
+            <div class="card-base p-5 rounded-2xl">
+                <div class="w-10 h-10 rounded-xl bg-(--primary)/10 text-(--primary) flex items-center justify-center mb-3">
+                    <Icon name="material-symbols:payments-outline-rounded" class="text-xl" />
+                </div>
+                <h3 class="font-bold text-base text-black/90 dark:text-white/90 mb-1">月付安全避坑</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                    坚持月付或小周期订阅，杜绝被超低价一次性“几年付”诱惑，最大程度降低服务商经营滑坡或跑路风险。
+                </p>
+            </div>
+        </div>
+
+        <!-- 专题精选文章 -->
+        {relatedPosts.length > 0 && (
+            <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:menu-book-outline-rounded" class="text-(--primary)" />
+                    机场精选评测与指南文章
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {relatedPosts.map((post) => (
+                        <a href={getPostUrlBySlug(post.id, lang)} class="p-4 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 transition border border-black/5 dark:border-white/5 flex flex-col justify-between group">
+                            <div>
+                                <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-2">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-xs text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
+                                    {post.data.description || "点击阅读完整评测与配置细节。"}
+                                </p>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between text-xs text-black/40 dark:text-white/40">
+                                <span>{post.data.category || "机场评测"}</span>
+                                <span class="group-hover:translate-x-1 transition text-(--primary)">阅读全文 →</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        )}
+
+        <!-- 常见问题 FAQ -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                机场挑选与使用常见问题 (FAQ)
+            </h2>
+            <div class="space-y-4">
+                {schemaData["@graph"][1].mainEntity.map((faq) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                        <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">
+                            {faq.name}
+                        </h3>
+                        <p class="text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                            {faq.acceptedAnswer.text}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

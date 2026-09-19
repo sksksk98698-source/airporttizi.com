@@ -38,21 +38,32 @@ export const siteConfig: SiteConfig = {
 		useDefault: true,
 		defaultSrc: "/media/images/banner.jpg",
 	},
+	verification: {
+		google: "", // 填入 Google Search Console 验证代码（如: google-site-verification=xxx 或 token）
+		bing: "", // 填入 Bing Webmaster Tools 验证代码（如: msvalidate.01 token）
+		baidu: "", // 填入 百度搜索资源平台验证代码
+		shenma: "", // 填入 神马站长平台验证代码（如: shenma-site-verification token）
+	},
 };
 
 export const navBarConfig: NavBarConfig = {
 	links: [
 		{ name: "首页", url: "/" },
-		{ name: "机场推荐", url: "/recommend/" },
-		{ name: "机场排行", url: "/ranking/" },
-		{ name: "机场数据库", url: "/airports/" },
-		{ name: "深度评测", url: "/reviews/" },
-		{ name: "机场对比", url: "/compare/" },
-		{ name: "套餐价格", url: "/pricing/" },
+		{ name: "机场推荐", url: "/jichang/" },
+		{ name: "VPN梯子", url: "/vpn/" },
+		{ name: "Clash配置", url: "/clash/" },
 		{ name: "线路节点", url: "/nodes/" },
-		{ name: "客户端", url: "/clients/" },
-		{ name: "教程中心", url: "/guides/" },
+		{ name: "梯子排行", url: "/tizi/" },
+		{ name: "免费资源", url: "/free/" },
+		{ name: "使用教程", url: "/tutorial/" },
+		{ name: "品牌库", url: "/brands/" },
+		{ name: "客户端合集", url: "/clients/" },
 		{ name: "AI与流媒体", url: "/streaming/" },
+		{ name: "深度评测", url: "/reviews/" },
+		{ name: "横向对比", url: "/compare/" },
+		{ name: "套餐价格", url: "/pricing/" },
+		{ name: "综合天梯榜", url: "/ranking/" },
+		{ name: "机场精选", url: "/recommend/" },
 		{ name: "网络诊断", url: "/diagnostics/" },
 		{ name: "风险监控", url: "/monitor/" },
 	],

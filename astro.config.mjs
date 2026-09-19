@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { unified } from "@astrojs/markdown-remark";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
@@ -106,6 +109,19 @@ export default defineConfig({
 		}),
 		svelte(),
 		sitemap(),
+		{
+			name: "sync-sitemap-xml",
+			hooks: {
+				"astro:build:done": ({ dir }) => {
+					const outDir = fileURLToPath(dir);
+					const indexXml = path.join(outDir, "sitemap-index.xml");
+					const sitemapXml = path.join(outDir, "sitemap.xml");
+					if (fs.existsSync(indexXml)) {
+						fs.copyFileSync(indexXml, sitemapXml);
+					}
+				},
+			},
+		},
 		partytown({
 			config: {
 				forward: ["dataLayer.push"],

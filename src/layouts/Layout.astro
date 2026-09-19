@@ -28,9 +28,21 @@ interface Props {
 	description?: string;
 	lang?: string;
 	setOGTypeArticle?: boolean;
+	noindex?: boolean;
+	customCanonical?: string;
+	customSchema?: Record<string, any> | Record<string, any>[];
 }
 
-let { title, banner, description, lang, setOGTypeArticle } = Astro.props;
+let {
+	title,
+	banner,
+	description,
+	lang,
+	setOGTypeArticle,
+	noindex,
+	customCanonical,
+	customSchema,
+} = Astro.props;
 
 const image = banner;
 
@@ -83,6 +95,9 @@ const bannerOffset =
 			description={description} 
 			image={image} 
 			setOGTypeArticle={setOGTypeArticle}
+			noindex={noindex}
+			customCanonical={customCanonical}
+			customSchema={customSchema}
 		/>
 
 		<meta name="viewport" content="width=device-width" />

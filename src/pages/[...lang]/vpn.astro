@@ -1,0 +1,214 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import FeaturedAirportsTable from "../../components/FeaturedAirportsTable.astro";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { getSortedPosts } from "../../utils/content-utils";
+import { getPostUrlBySlug } from "../../utils/url-utils";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle = "2026 高速稳定 VPN 梯子推荐与评测｜科学上网专线梯子精选";
+const pageDescription =
+	"梯子猫 2026 最新 VPN 与科学上网梯子全景评测指南。深度对比传统商业 VPN 与现代 IEPL/IPLC 专线机场，解析协议加密、抗封锁能力、4K流媒体与ChatGPT解锁表现，助您挑选最适合的科学上网工具。";
+
+const allPosts = await getSortedPosts(lang);
+const relatedPosts = allPosts
+	.filter((p) => {
+		const title = p.data.title.toLowerCase();
+		const tags = (p.data.tags || []).map((t) => t.toLowerCase());
+		return (
+			title.includes("vpn") ||
+			title.includes("梯子") ||
+			tags.includes("vpn") ||
+			tags.includes("梯子推荐")
+		);
+	})
+	.slice(0, 6);
+
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "CollectionPage",
+			"@id": "https://airporttizi.com/vpn/",
+			url: "https://airporttizi.com/vpn/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "VPN梯子专题",
+						item: "https://airporttizi.com/vpn/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "传统海外商业 VPN 与专线机场梯子有什么区别？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "传统商业 VPN（如 ExpressVPN、NordVPN）主要采用 OpenVPN/WireGuard 协议，强加密但特征明显，在国内网络环境下极易被识别干扰，延迟通常在 200ms 以上；专线机场梯子采用 Shadowsocks/V2Ray/Trojan/Hysteria2 协议，并通过内网专线（IPLC/IEPL）不过公网防火墙，延迟低至 20ms~50ms，速度和稳定性远超传统商业 VPN。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "科学上网应该选择 VPN 还是专线机场？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "如果您在国内日常办公、浏览网页、观看 4K 流媒体（YouTube/Netflix）或高频调用 AI 工具（ChatGPT/Claude），专线机场梯子是绝对首选；如果您身处海外且对端到端军事级加密有极端隐私需求，传统商业 VPN 更合适。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang} customSchema={schemaData}>
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 栏目标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">VPN梯子专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:vpn-key-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
+                    2026 高速稳定 VPN 梯子推荐与科学上网全景指南
+                </h1>
+            </div>
+            <p class="text-black/70 dark:text-white/70 leading-relaxed text-sm md:text-base">
+                针对中国大陆网络环境深度定制的科学上网与 VPN 梯子推荐专栏。全面解析专线网络加速架构、抗封锁技术演进与晚高峰真机测速，助您快速甄选高速、稳定、不跑路的靠谱工具。
+            </p>
+        </div>
+
+        <!-- 核心推荐精选榜单 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 flex items-center gap-2">
+                    <Icon name="material-symbols:star-outline-rounded" class="text-(--primary)" />
+                    2026 优质专线机场梯子精选推荐
+                </h2>
+                <span class="text-xs text-black/50 dark:text-white/50">三网晚高峰实测保障</span>
+            </div>
+            <FeaturedAirportsTable />
+        </div>
+
+        <!-- 深度科普：传统 VPN vs 专线机场对比 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:balance-rounded" class="text-(--primary)" />
+                传统商业 VPN 与现代专线机场梯子全维度对比
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs md:text-sm border-collapse">
+                    <thead>
+                        <tr class="border-b border-black/10 dark:border-white/10 text-black/60 dark:text-white/60">
+                            <th class="py-3 px-4 font-bold">对比维度</th>
+                            <th class="py-3 px-4 font-bold">传统海外商业 VPN</th>
+                            <th class="py-3 px-4 font-bold text-(--primary)">现代专线机场梯子（推荐）</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-black/5 dark:divide-white/5 text-black/80 dark:text-white/80">
+                        <tr>
+                            <td class="py-3 px-4 font-semibold">底层网络线路</td>
+                            <td class="py-3 px-4">公网国际互联直连，受 GFW 严重干扰</td>
+                            <td class="py-3 px-4 text-(--primary) font-semibold">企业级 IPLC / IEPL 物理内网专线，不过墙</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold">网络延迟表现</td>
+                            <td class="py-3 px-4">200ms - 450ms（卡顿明显）</td>
+                            <td class="py-3 px-4 text-(--primary) font-semibold">20ms - 60ms（近乎本地直连）</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold">4K 流媒体与 AI</td>
+                            <td class="py-3 px-4">机房 IP 易被 Netflix / ChatGPT 大面积屏蔽</td>
+                            <td class="py-3 px-4 text-(--primary) font-semibold">配备原生住宅/商用双 ISP 落地，完美秒开</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold">特殊时期可用率</td>
+                            <td class="py-3 px-4">敏感时期易大面积失联断连</td>
+                            <td class="py-3 px-4 text-(--primary) font-semibold">物理专线无惧外部封锁，99.9% 全年可用</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 专题相关文章列表 -->
+        {relatedPosts.length > 0 && (
+            <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:article-outline-rounded" class="text-(--primary)" />
+                    VPN 与梯子精选评测文章
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {relatedPosts.map((post) => (
+                        <a href={getPostUrlBySlug(post.id, lang)} class="p-4 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 transition border border-black/5 dark:border-white/5 flex flex-col justify-between group">
+                            <div>
+                                <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition mb-2">
+                                    {post.data.title}
+                                </h3>
+                                <p class="text-xs text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
+                                    {post.data.description || "点击阅读完整评测与配置细节。"}
+                                </p>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between text-xs text-black/40 dark:text-white/40">
+                                <span>{post.data.category || "梯子评测"}</span>
+                                <span class="group-hover:translate-x-1 transition text-(--primary)">阅读全文 →</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        )}
+
+        <!-- 常见问题 FAQ -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                VPN 与科学上网常见问题 (FAQ)
+            </h2>
+            <div class="space-y-4">
+                {schemaData["@graph"][1].mainEntity.map((faq) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                        <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">
+                            {faq.name}
+                        </h3>
+                        <p class="text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                            {faq.acceptedAnswer.text}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

@@ -1,13 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 import { siteUrl } from "@utils/url-utils";
-import { profileConfig, siteConfig } from "@/config";
+import { deployConfig, profileConfig, siteConfig } from "@/config";
 
 interface Props {
 	title?: string;
 	description?: string;
 	image?: string;
 	setOGTypeArticle?: boolean;
+	noindex?: boolean;
+	customCanonical?: string;
+	customSchema?: Record<string, any> | Record<string, any>[];
 }
 
 let {
@@ -15,6 +18,9 @@ let {
 	description = siteConfig.subtitle,
 	image,
 	setOGTypeArticle = false,
+	noindex = false,
+	customCanonical,
+	customSchema,
 } = Astro.props;
 
 const HOME_SEO_TITLE =
@@ -22,14 +28,36 @@ const HOME_SEO_TITLE =
 const HOME_SEO_DESC =
 	"梯子猫（AirportTizi.com）专注2026稳定高速SS/V2Ray/Trojan/Hysteria2机场梯子推荐与深度评测，提供高端IEPL专线机场梯子排行、价格套餐对比、4K流媒体与ChatGPT/Claude解锁支持，助您挑选最适合的科学上网服务。";
 
+const BRAND_SUFFIX = " - 梯子猫 AirportTizi";
 let pageTitle: string;
 if (title) {
-	pageTitle = `${title} - 梯子猫 AirportTizi`;
+	const trimmedTitle = title.trim();
+	if (
+		trimmedTitle.endsWith(BRAND_SUFFIX) ||
+		trimmedTitle.endsWith("- AirportTizi") ||
+		trimmedTitle.endsWith("- 梯子猫")
+	) {
+		pageTitle = trimmedTitle;
+	} else {
+		pageTitle = `${trimmedTitle}${BRAND_SUFFIX}`;
+	}
 } else {
 	pageTitle = HOME_SEO_TITLE;
 }
 
-const canonicalUrl = Astro.url;
+// 严格保证 Canonical URL 使用正式主域名并保持规范的尾部斜杠
+const baseSiteUrl = (deployConfig.siteUrl || "https://airporttizi.com").replace(
+	/\/+$/,
+	"",
+);
+const pathname = Astro.url.pathname.startsWith("/")
+	? Astro.url.pathname
+	: `/${Astro.url.pathname}`;
+const cleanPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
+const canonicalUrl =
+	customCanonical || `${baseSiteUrl}${cleanPath === "//" ? "/" : cleanPath}`;
+
+const isHomePage = cleanPath === "/" || cleanPath === "";
 
 const slug = Astro.url.pathname.split("/").filter(Boolean).pop();
 
@@ -38,6 +66,7 @@ interface PageData {
 	updated?: Date | string;
 	tags?: string[];
 	description?: string;
+	category?: string;
 }
 
 let pageData: PageData = {};
@@ -96,25 +125,118 @@ const defaultKeywords =
 const pageKeywords =
 	tags.length > 0 ? tags.join(", ") + ", " + defaultKeywords : defaultKeywords;
 
+const robotsContent = noindex
+	? "noindex, nofollow"
+	: "index, follow, max-image-preview:large";
+
+// 结构化数据 Schema 组装
+const graphItems: Record<string, any>[] = [
+	{
+		"@type": "WebSite",
+		"@id": `${baseSiteUrl}/#website`,
+		url: `${baseSiteUrl}/`,
+		name: "AirportTizi 梯子猫",
+		description: HOME_SEO_DESC,
+		inLanguage: "zh-CN",
+	},
+	{
+		"@type": "Organization",
+		"@id": `${baseSiteUrl}/#organization`,
+		name: "梯子猫 (AirportTizi)",
+		url: `${baseSiteUrl}/`,
+		logo: `${baseSiteUrl}/favicon/favicon-light-192.svg`,
+	},
+];
+
+if (setOGTypeArticle) {
+	// 文章页 Schema: BlogPosting / Article + 面包屑
+	graphItems.push({
+		"@type": "BlogPosting",
+		"@id": `${canonicalUrl}#article`,
+		isPartOf: {
+			"@type": "WebPage",
+			"@id": canonicalUrl,
+		},
+		headline: pageTitle,
+		description: description,
+		image: ogImage || `${baseSiteUrl}/media/images/banner.jpg`,
+		datePublished: publishedDate || undefined,
+		dateModified: updatedDate || publishedDate || undefined,
+		author: {
+			"@type": "Person",
+			name: profileConfig.name,
+			url: `${baseSiteUrl}/`,
+		},
+		publisher: {
+			"@id": `${baseSiteUrl}/#organization`,
+		},
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": canonicalUrl,
+		},
+		inLanguage: "zh-CN",
+	});
+
+	graphItems.push({
+		"@type": "BreadcrumbList",
+		"@id": `${canonicalUrl}#breadcrumb`,
+		itemListElement: [
+			{
+				"@type": "ListItem",
+				position: 1,
+				name: "首页",
+				item: `${baseSiteUrl}/`,
+			},
+			{
+				"@type": "ListItem",
+				position: 2,
+				name: pageData.category || "文章",
+				item: pageData.category
+					? `${baseSiteUrl}/archive/?category=${encodeURIComponent(pageData.category)}`
+					: `${baseSiteUrl}/`,
+			},
+			{
+				"@type": "ListItem",
+				position: 3,
+				name: title || pageTitle,
+				item: canonicalUrl,
+			},
+		],
+	});
+} else if (!isHomePage) {
+	// 非首页栏目页与专题页基础面包屑
+	graphItems.push({
+		"@type": "BreadcrumbList",
+		"@id": `${canonicalUrl}#breadcrumb`,
+		itemListElement: [
+			{
+				"@type": "ListItem",
+				position: 1,
+				name: "首页",
+				item: `${baseSiteUrl}/`,
+			},
+			{
+				"@type": "ListItem",
+				position: 2,
+				name: title || "专题页面",
+				item: canonicalUrl,
+			},
+		],
+	});
+}
+
+// 注入自定义 Schema
+if (customSchema) {
+	if (Array.isArray(customSchema)) {
+		graphItems.push(...customSchema);
+	} else {
+		graphItems.push(customSchema);
+	}
+}
+
 const structuredData = {
 	"@context": "https://schema.org",
-	"@graph": [
-		{
-			"@type": "WebSite",
-			"@id": "https://airporttizi.com/#website",
-			url: "https://airporttizi.com/",
-			name: "AirportTizi 梯子猫",
-			description: HOME_SEO_DESC,
-			inLanguage: "zh-CN",
-		},
-		{
-			"@type": "Organization",
-			"@id": "https://airporttizi.com/#organization",
-			name: "梯子猫 (AirportTizi)",
-			url: "https://airporttizi.com/",
-			logo: "https://airporttizi.com/favicon/favicon-light-192.svg",
-		},
-	],
+	"@graph": graphItems,
 };
 ---
 
@@ -123,7 +245,14 @@ const structuredData = {
 <meta name="description" content={description} />
 <meta name="keywords" content={pageKeywords} />
 <meta name="author" content={profileConfig.name} />
+<meta name="robots" content={robotsContent} />
 <link rel="canonical" href={canonicalUrl} />
+
+<!-- 搜索引擎站长平台安全验证代码预留（直接源码输出，无需客户端JS） -->
+{siteConfig.verification?.google && <meta name="google-site-verification" content={siteConfig.verification.google} />}
+{siteConfig.verification?.bing && <meta name="msvalidate.01" content={siteConfig.verification.bing} />}
+{siteConfig.verification?.baidu && <meta name="baidu-site-verification" content={siteConfig.verification.baidu} />}
+{siteConfig.verification?.shenma && <meta name="shenma-site-verification" content={siteConfig.verification.shenma} />}
 
 <meta property="og:site_name" content="AirportTizi 梯子猫" />
 <meta property="og:url" content={canonicalUrl} />
