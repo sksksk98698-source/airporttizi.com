@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:52:00+08:00",
+	"lastUpdated": "2026-09-19T17:58:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 149,
+	"existingUrlsCount": 161,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -2166,6 +2166,193 @@
 				"寰宇云套餐",
 				"寰宇云流媒体解锁",
 				"寰宇云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/xsus-review-2026/",
+			"path": "/posts/xsus-review-2026/",
+			"title": "XSUS 机场怎么样？2026 套餐价格、线路节点与稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "XSUS机场怎么样",
+			"secondaryKeywords": ["XSUS评测", "XSUS机场", "XSUS专线", "XSUS测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/xsus-website-plans-guide/",
+			"path": "/posts/xsus-website-plans-guide/",
+			"title": "XSUS 机场官网指南：节点速度、ChatGPT 与流媒体解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "XSUS机场官网",
+			"secondaryKeywords": [
+				"XSUS官网",
+				"XSUS机场官网",
+				"XSUS套餐",
+				"XSUS流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/yeshayun-review-2026/",
+			"path": "/posts/yeshayun-review-2026/",
+			"title": "夜煞云机场怎么样？2026 套餐价格、节点线路与使用体验评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "夜煞云怎么样",
+			"secondaryKeywords": [
+				"夜煞云评测",
+				"夜煞云机场",
+				"夜煞云专线",
+				"夜煞云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/yeshayun-website-plans-guide/",
+			"path": "/posts/yeshayun-website-plans-guide/",
+			"title": "夜煞云官网指南：节点速度、稳定性及 AI 解锁能力分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "夜煞云官网",
+			"secondaryKeywords": [
+				"夜煞云官网",
+				"夜煞云套餐",
+				"夜煞云流媒体解锁",
+				"夜煞云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/fscloud-review-2026/",
+			"path": "/posts/fscloud-review-2026/",
+			"title": "FSCloud 机场怎么样？2026 套餐价格、节点与线路速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "FSCloud怎么样",
+			"secondaryKeywords": [
+				"FSCloud评测",
+				"FSCloud机场",
+				"FSCloud专线",
+				"FSCloud测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/fscloud-website-plans-guide/",
+			"path": "/posts/fscloud-website-plans-guide/",
+			"title": "FSCloud 官网与套餐指南：稳定性、ChatGPT 和流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "FSCloud官网",
+			"secondaryKeywords": [
+				"FSCloud官网",
+				"FSCloud套餐",
+				"FSCloud流媒体解锁",
+				"FSCloud使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/taishan-review-2026/",
+			"path": "/posts/taishan-review-2026/",
+			"title": "泰山机场 Taishan 怎么样？2026 套餐价格、节点与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "泰山机场怎么样",
+			"secondaryKeywords": [
+				"泰山机场评测",
+				"Taishan机场评测",
+				"泰山机场专线",
+				"泰山机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/taishan-website-plans-guide/",
+			"path": "/posts/taishan-website-plans-guide/",
+			"title": "Taishan 泰山机场官网指南：速度、稳定性及 AI 解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "泰山机场官网",
+			"secondaryKeywords": [
+				"泰山机场官网",
+				"Taishan官网",
+				"泰山机场套餐",
+				"泰山机场流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cyberguard-review-2026/",
+			"path": "/posts/cyberguard-review-2026/",
+			"title": "CyberGuard CG 网络加速器怎么样？2026 套餐、节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "CyberGuard怎么样",
+			"secondaryKeywords": [
+				"CyberGuard评测",
+				"CG网络加速器",
+				"CyberGuard专线",
+				"CyberGuard测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cyberguard-website-plans-guide/",
+			"path": "/posts/cyberguard-website-plans-guide/",
+			"title": "CyberGuard 机场官网指南：线路稳定性、ChatGPT 与流媒体解锁",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "CyberGuard官网",
+			"secondaryKeywords": [
+				"CyberGuard官网",
+				"CG加速器官网",
+				"CyberGuard套餐",
+				"CyberGuard流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/wancheng-review-2026/",
+			"path": "/posts/wancheng-review-2026/",
+			"title": "万城网络机场怎么样？2026 套餐价格、节点线路与稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "万城网络怎么样",
+			"secondaryKeywords": [
+				"万城网络评测",
+				"万城网络机场",
+				"万城网络专线",
+				"万城网络测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/wancheng-website-plans-guide/",
+			"path": "/posts/wancheng-website-plans-guide/",
+			"title": "万城网络官网指南：节点速度、AI 解锁和流媒体使用体验",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "万城网络官网",
+			"secondaryKeywords": [
+				"万城网络官网",
+				"万城网络套餐",
+				"万城网络流媒体解锁",
+				"万城网络使用指南"
 			],
 			"status": "active",
 			"protected": true

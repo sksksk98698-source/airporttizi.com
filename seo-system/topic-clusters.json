@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:52:00+08:00",
+	"lastUpdated": "2026-09-19T17:58:00+08:00",
 	"clusters": [
 		{
 			"id": "cluster-brands",
@@ -137,7 +137,19 @@
 				"https://airporttizi.com/posts/scrssr-review-2026/",
 				"https://airporttizi.com/posts/scrssr-website-plans-guide/",
 				"https://airporttizi.com/posts/huanyuyun-review-2026/",
-				"https://airporttizi.com/posts/huanyuyun-website-plans-guide/"
+				"https://airporttizi.com/posts/huanyuyun-website-plans-guide/",
+				"https://airporttizi.com/posts/xsus-review-2026/",
+				"https://airporttizi.com/posts/xsus-website-plans-guide/",
+				"https://airporttizi.com/posts/yeshayun-review-2026/",
+				"https://airporttizi.com/posts/yeshayun-website-plans-guide/",
+				"https://airporttizi.com/posts/fscloud-review-2026/",
+				"https://airporttizi.com/posts/fscloud-website-plans-guide/",
+				"https://airporttizi.com/posts/taishan-review-2026/",
+				"https://airporttizi.com/posts/taishan-website-plans-guide/",
+				"https://airporttizi.com/posts/cyberguard-review-2026/",
+				"https://airporttizi.com/posts/cyberguard-website-plans-guide/",
+				"https://airporttizi.com/posts/wancheng-review-2026/",
+				"https://airporttizi.com/posts/wancheng-website-plans-guide/"
 			],
 			"linkingStrategy": "所有单品牌评测页（Spoke）必须反向链接到 Pillar（综合推荐）与 Hub（评测列表），Pillar 与 Hub 依照属性分流给各个单品牌 Spoke 页面，且单品牌之间按同等定位/价格段进行互链。"
 		},

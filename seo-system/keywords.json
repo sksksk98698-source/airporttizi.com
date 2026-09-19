@@ -1329,5 +1329,137 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新寰宇云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "XSUS机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/xsus-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新XSUS 机场深度技术评测与测速报告"
+	},
+	{
+		"keyword": "XSUS机场官网",
+		"targetUrl": "https://airporttizi.com/posts/xsus-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新XSUS 机场官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "夜煞云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/yeshayun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新夜煞云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "夜煞云官网",
+		"targetUrl": "https://airporttizi.com/posts/yeshayun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新夜煞云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "FSCloud怎么样",
+		"targetUrl": "https://airporttizi.com/posts/fscloud-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新FSCloud深度技术评测与测速报告"
+	},
+	{
+		"keyword": "FSCloud官网",
+		"targetUrl": "https://airporttizi.com/posts/fscloud-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新FSCloud官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "泰山机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/taishan-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新泰山机场 Taishan深度技术评测与测速报告"
+	},
+	{
+		"keyword": "泰山机场官网",
+		"targetUrl": "https://airporttizi.com/posts/taishan-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新泰山机场 Taishan官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "CyberGuard怎么样",
+		"targetUrl": "https://airporttizi.com/posts/cyberguard-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新CyberGuard CG深度技术评测与测速报告"
+	},
+	{
+		"keyword": "CyberGuard官网",
+		"targetUrl": "https://airporttizi.com/posts/cyberguard-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新CyberGuard CG官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "万城网络怎么样",
+		"targetUrl": "https://airporttizi.com/posts/wancheng-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新万城网络深度技术评测与测速报告"
+	},
+	{
+		"keyword": "万城网络官网",
+		"targetUrl": "https://airporttizi.com/posts/wancheng-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新万城网络官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]

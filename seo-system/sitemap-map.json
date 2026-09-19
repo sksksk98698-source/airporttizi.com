@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:52:00+08:00",
+	"lastUpdated": "2026-09-19T17:58:00+08:00",
 	"sitemapIndex": "https://airporttizi.com/sitemap-index.xml",
 	"groups": [
 		{
@@ -83,8 +83,8 @@
 			]
 		},
 		{
-			"name": "master_100_brand_articles",
-			"description": "50大主流品牌万字技术评测与官网解锁指南矩阵（共100篇权威文章）",
+			"name": "master_112_brand_articles",
+			"description": "56大主流品牌万字技术评测与官网解锁指南矩阵（共112篇权威文章）",
 			"changefreq": "weekly",
 			"priority": 0.85,
 			"urls": [
@@ -187,7 +187,19 @@
 				"https://airporttizi.com/posts/scrssr-review-2026/",
 				"https://airporttizi.com/posts/scrssr-website-plans-guide/",
 				"https://airporttizi.com/posts/huanyuyun-review-2026/",
-				"https://airporttizi.com/posts/huanyuyun-website-plans-guide/"
+				"https://airporttizi.com/posts/huanyuyun-website-plans-guide/",
+				"https://airporttizi.com/posts/xsus-review-2026/",
+				"https://airporttizi.com/posts/xsus-website-plans-guide/",
+				"https://airporttizi.com/posts/yeshayun-review-2026/",
+				"https://airporttizi.com/posts/yeshayun-website-plans-guide/",
+				"https://airporttizi.com/posts/fscloud-review-2026/",
+				"https://airporttizi.com/posts/fscloud-website-plans-guide/",
+				"https://airporttizi.com/posts/taishan-review-2026/",
+				"https://airporttizi.com/posts/taishan-website-plans-guide/",
+				"https://airporttizi.com/posts/cyberguard-review-2026/",
+				"https://airporttizi.com/posts/cyberguard-website-plans-guide/",
+				"https://airporttizi.com/posts/wancheng-review-2026/",
+				"https://airporttizi.com/posts/wancheng-website-plans-guide/"
 			]
 		}
 	]
