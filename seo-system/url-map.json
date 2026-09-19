@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:30:00+08:00",
+	"lastUpdated": "2026-09-19T17:35:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 109,
+	"existingUrlsCount": 119,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -1531,6 +1531,166 @@
 				"歪兔官网",
 				"YToo套餐",
 				"YToo流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ednovas-cloud-review-2026/",
+			"path": "/posts/ednovas-cloud-review-2026/",
+			"title": "EdNovas 云机场怎么样？2026 套餐价格、节点及线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "EdNovas云怎么样",
+			"secondaryKeywords": [
+				"EdNovas云评测",
+				"EdNovas机场",
+				"EdNovas云专线",
+				"EdNovas云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ednovas-cloud-website-plans-guide/",
+			"path": "/posts/ednovas-cloud-website-plans-guide/",
+			"title": "EdNovas 云官网指南：速度、稳定性和流媒体解锁表现怎么样",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "EdNovas云官网",
+			"secondaryKeywords": [
+				"EdNovas云官网",
+				"EdNovas云套餐",
+				"EdNovas云流媒体解锁",
+				"EdNovas云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/kycloud-review-2026/",
+			"path": "/posts/kycloud-review-2026/",
+			"title": "Kycloud 机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Kycloud怎么样",
+			"secondaryKeywords": [
+				"Kycloud评测",
+				"Kycloud机场",
+				"Kycloud专线",
+				"Kycloud测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/kycloud-website-plans-guide/",
+			"path": "/posts/kycloud-website-plans-guide/",
+			"title": "Kycloud 官网与套餐指南：稳定性、AI 和流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Kycloud官网",
+			"secondaryKeywords": [
+				"Kycloud官网",
+				"Kycloud套餐",
+				"Kycloud流媒体解锁",
+				"Kycloud使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/baiyueguang-review-2026/",
+			"path": "/posts/baiyueguang-review-2026/",
+			"title": "白月光机场怎么样？2026 套餐价格、节点数量与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "白月光机场怎么样",
+			"secondaryKeywords": [
+				"白月光评测",
+				"白月光机场",
+				"白月光专线",
+				"白月光测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/baiyueguang-website-plans-guide/",
+			"path": "/posts/baiyueguang-website-plans-guide/",
+			"title": "白月光机场官网指南：速度、稳定性、ChatGPT 与流媒体解锁",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "白月光官网",
+			"secondaryKeywords": [
+				"白月光官网",
+				"白月光套餐",
+				"白月光流媒体解锁",
+				"白月光使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/aladdinnet-review-2026/",
+			"path": "/posts/aladdinnet-review-2026/",
+			"title": "AladdinNet 阿拉丁机场怎么样？2026 套餐、节点和速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "阿拉丁机场怎么样",
+			"secondaryKeywords": [
+				"AladdinNet评测",
+				"阿拉丁评测",
+				"阿拉丁专线",
+				"阿拉丁机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/aladdinnet-website-plans-guide/",
+			"path": "/posts/aladdinnet-website-plans-guide/",
+			"title": "阿拉丁机场官网指南：线路稳定性、AI 与流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "阿拉丁机场官网",
+			"secondaryKeywords": [
+				"阿拉丁官网",
+				"AladdinNet官网",
+				"阿拉丁套餐",
+				"阿拉丁流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/beibeiyun-review-2026/",
+			"path": "/posts/beibeiyun-review-2026/",
+			"title": "贝贝云机场怎么样？2026 套餐价格、节点线路和稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "贝贝云怎么样",
+			"secondaryKeywords": [
+				"贝贝云评测",
+				"贝贝云机场",
+				"贝贝云专线",
+				"贝贝云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/beibeiyun-website-plans-guide/",
+			"path": "/posts/beibeiyun-website-plans-guide/",
+			"title": "贝贝云机场官网指南：节点速度、AI 解锁和流媒体使用体验",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "贝贝云官网",
+			"secondaryKeywords": [
+				"贝贝云官网",
+				"贝贝云套餐",
+				"贝贝云流媒体解锁",
+				"贝贝云使用指南"
 			],
 			"status": "active",
 			"protected": true

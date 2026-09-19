@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:30:00+08:00",
+	"lastUpdated": "2026-09-19T17:35:00+08:00",
 	"linkGraph": [
 		{
 			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
@@ -616,6 +616,82 @@
 			"anchorTexts": ["YToo (歪兔)深度评测", "YToo (歪兔)节点测速与稳定性分析"],
 			"relationship": "plans-guide-to-brand-review",
 			"context": "在 YToo (歪兔) 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/ednovas-cloud-review-2026/",
+			"target": "https://airporttizi.com/posts/ednovas-cloud-website-plans-guide/",
+			"anchorTexts": ["EdNovas 云官网指南", "EdNovas 云套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 EdNovas 云 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/ednovas-cloud-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/ednovas-cloud-review-2026/",
+			"anchorTexts": ["EdNovas 云深度评测", "EdNovas 云节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 EdNovas 云 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/kycloud-review-2026/",
+			"target": "https://airporttizi.com/posts/kycloud-website-plans-guide/",
+			"anchorTexts": ["Kycloud官网指南", "Kycloud套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Kycloud 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/kycloud-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/kycloud-review-2026/",
+			"anchorTexts": ["Kycloud深度评测", "Kycloud节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Kycloud 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/baiyueguang-review-2026/",
+			"target": "https://airporttizi.com/posts/baiyueguang-website-plans-guide/",
+			"anchorTexts": ["白月光官网指南", "白月光套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 白月光 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/baiyueguang-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/baiyueguang-review-2026/",
+			"anchorTexts": ["白月光深度评测", "白月光节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 白月光 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/aladdinnet-review-2026/",
+			"target": "https://airporttizi.com/posts/aladdinnet-website-plans-guide/",
+			"anchorTexts": [
+				"AladdinNet 阿拉丁官网指南",
+				"AladdinNet 阿拉丁套餐与流媒体解锁指南"
+			],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 AladdinNet 阿拉丁 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/aladdinnet-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/aladdinnet-review-2026/",
+			"anchorTexts": [
+				"AladdinNet 阿拉丁深度评测",
+				"AladdinNet 阿拉丁节点测速与稳定性分析"
+			],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 AladdinNet 阿拉丁 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/beibeiyun-review-2026/",
+			"target": "https://airporttizi.com/posts/beibeiyun-website-plans-guide/",
+			"anchorTexts": ["贝贝云官网指南", "贝贝云套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 贝贝云 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/beibeiyun-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/beibeiyun-review-2026/",
+			"anchorTexts": ["贝贝云深度评测", "贝贝云节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 贝贝云 官网指南中提供底层专线架构与晚高峰测速评测入口"
 		}
 	]
 }

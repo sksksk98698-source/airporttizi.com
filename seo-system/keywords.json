@@ -889,5 +889,115 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新YToo (歪兔)官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "EdNovas云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/ednovas-cloud-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新EdNovas 云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "EdNovas云官网",
+		"targetUrl": "https://airporttizi.com/posts/ednovas-cloud-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新EdNovas 云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "Kycloud怎么样",
+		"targetUrl": "https://airporttizi.com/posts/kycloud-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Kycloud深度技术评测与测速报告"
+	},
+	{
+		"keyword": "Kycloud官网",
+		"targetUrl": "https://airporttizi.com/posts/kycloud-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Kycloud官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "白月光机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/baiyueguang-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新白月光深度技术评测与测速报告"
+	},
+	{
+		"keyword": "白月光官网",
+		"targetUrl": "https://airporttizi.com/posts/baiyueguang-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新白月光官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "阿拉丁机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/aladdinnet-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新AladdinNet 阿拉丁深度技术评测与测速报告"
+	},
+	{
+		"keyword": "阿拉丁机场官网",
+		"targetUrl": "https://airporttizi.com/posts/aladdinnet-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新AladdinNet 阿拉丁官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "贝贝云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/beibeiyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新贝贝云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "贝贝云官网",
+		"targetUrl": "https://airporttizi.com/posts/beibeiyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新贝贝云官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]
