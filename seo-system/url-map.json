@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:58:00+08:00",
+	"lastUpdated": "2026-09-19T18:05:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 161,
+	"existingUrlsCount": 171,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -2353,6 +2353,169 @@
 				"万城网络套餐",
 				"万城网络流媒体解锁",
 				"万城网络使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/luyuyun-review-2026/",
+			"path": "/posts/luyuyun-review-2026/",
+			"title": "鹿语云机场怎么样？2026 套餐价格、线路节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "鹿语云怎么样",
+			"secondaryKeywords": [
+				"鹿语云评测",
+				"鹿语云机场",
+				"鹿语云专线",
+				"鹿语云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/luyuyun-website-plans-guide/",
+			"path": "/posts/luyuyun-website-plans-guide/",
+			"title": "鹿语云官网指南：稳定性、ChatGPT、Netflix 与套餐选择",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "鹿语云官网",
+			"secondaryKeywords": [
+				"鹿语云官网",
+				"鹿语云套餐",
+				"鹿语云流媒体解锁",
+				"鹿语云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/baiyangxing-review-2026/",
+			"path": "/posts/baiyangxing-review-2026/",
+			"title": "白羊星机场怎么样？2026 套餐价格、节点数量与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "白羊星怎么样",
+			"secondaryKeywords": [
+				"白羊星评测",
+				"白羊星机场",
+				"白羊星专线",
+				"白羊星测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/baiyangxing-website-plans-guide/",
+			"path": "/posts/baiyangxing-website-plans-guide/",
+			"title": "白羊星机场官网指南：速度、稳定性及 AI 流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "白羊星官网",
+			"secondaryKeywords": [
+				"白羊星官网",
+				"白羊星套餐",
+				"白羊星流媒体解锁",
+				"白羊星使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/yepfast-review-2026/",
+			"path": "/posts/yepfast-review-2026/",
+			"title": "YepFast 机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "YepFast怎么样",
+			"secondaryKeywords": [
+				"YepFast评测",
+				"YepFast机场",
+				"YepFast专线",
+				"YepFast测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/yepfast-website-plans-guide/",
+			"path": "/posts/yepfast-website-plans-guide/",
+			"title": "YepFast 官网指南：稳定性、ChatGPT 与流媒体解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "YepFast官网",
+			"secondaryKeywords": [
+				"YepFast官网",
+				"YepFast套餐",
+				"YepFast流媒体解锁",
+				"YepFast使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/thyss-review-2026/",
+			"path": "/posts/thyss-review-2026/",
+			"title": "桃花源 SS THYSS 机场怎么样？2026 套餐、节点与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "桃花源SS怎么样",
+			"secondaryKeywords": [
+				"桃花源SS评测",
+				"THYSS评测",
+				"桃花源机场",
+				"桃花源专线",
+				"THYSS测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/thyss-website-plans-guide/",
+			"path": "/posts/thyss-website-plans-guide/",
+			"title": "THYSS 桃花源机场官网指南：速度、稳定性和 AI 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "桃花源SS官网",
+			"secondaryKeywords": [
+				"THYSS官网",
+				"桃花源机场官网",
+				"桃花源套餐",
+				"THYSS套餐",
+				"桃花源流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cocoduck-review-2026/",
+			"path": "/posts/cocoduck-review-2026/",
+			"title": "CocoDuck 机场怎么样？2026 套餐价格、节点地区与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "CocoDuck怎么样",
+			"secondaryKeywords": [
+				"CocoDuck评测",
+				"可可鸭机场",
+				"CocoDuck专线",
+				"CocoDuck测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cocoduck-website-plans-guide/",
+			"path": "/posts/cocoduck-website-plans-guide/",
+			"title": "CocoDuck 官网指南：线路稳定性、ChatGPT 和流媒体解锁",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "CocoDuck官网",
+			"secondaryKeywords": [
+				"CocoDuck官网",
+				"可可鸭官网",
+				"CocoDuck套餐",
+				"CocoDuck流媒体解锁",
+				"CocoDuck使用指南"
 			],
 			"status": "active",
 			"protected": true

@@ -1461,5 +1461,115 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新万城网络官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "鹿语云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/luyuyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新鹿语云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "鹿语云官网",
+		"targetUrl": "https://airporttizi.com/posts/luyuyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新鹿语云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "白羊星怎么样",
+		"targetUrl": "https://airporttizi.com/posts/baiyangxing-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新白羊星深度技术评测与测速报告"
+	},
+	{
+		"keyword": "白羊星官网",
+		"targetUrl": "https://airporttizi.com/posts/baiyangxing-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新白羊星官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "YepFast怎么样",
+		"targetUrl": "https://airporttizi.com/posts/yepfast-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新YepFast深度技术评测与测速报告"
+	},
+	{
+		"keyword": "YepFast官网",
+		"targetUrl": "https://airporttizi.com/posts/yepfast-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新YepFast官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "桃花源SS怎么样",
+		"targetUrl": "https://airporttizi.com/posts/thyss-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新桃花源 SS深度技术评测与测速报告"
+	},
+	{
+		"keyword": "桃花源SS官网",
+		"targetUrl": "https://airporttizi.com/posts/thyss-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新桃花源 SS官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "CocoDuck怎么样",
+		"targetUrl": "https://airporttizi.com/posts/cocoduck-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新CocoDuck深度技术评测与测速报告"
+	},
+	{
+		"keyword": "CocoDuck官网",
+		"targetUrl": "https://airporttizi.com/posts/cocoduck-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新CocoDuck官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]
