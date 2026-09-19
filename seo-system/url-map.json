@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:46:00+08:00",
+	"lastUpdated": "2026-09-19T17:52:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 139,
+	"existingUrlsCount": 149,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -2006,6 +2006,166 @@
 				"彩虹云套餐",
 				"彩虹云流媒体解锁",
 				"彩虹云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/adaxi-review-2026/",
+			"path": "/posts/adaxi-review-2026/",
+			"title": "阿达西机场怎么样？2026 套餐价格、节点数量与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "阿达西机场怎么样",
+			"secondaryKeywords": [
+				"阿达西评测",
+				"阿达西机场",
+				"阿达西专线",
+				"阿达西机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/adaxi-website-plans-guide/",
+			"path": "/posts/adaxi-website-plans-guide/",
+			"title": "阿达西机场官网指南：线路稳定性、ChatGPT 与流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "阿达西机场官网",
+			"secondaryKeywords": [
+				"阿达西官网",
+				"阿达西机场官网",
+				"阿达西套餐",
+				"阿达西流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/baigeiyun-review-2026/",
+			"path": "/posts/baigeiyun-review-2026/",
+			"title": "白给云机场怎么样？2026 套餐价格、IEPL 线路与节点评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "白给云怎么样",
+			"secondaryKeywords": [
+				"白给云评测",
+				"白给云机场",
+				"白给云专线",
+				"白给云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/baigeiyun-website-plans-guide/",
+			"path": "/posts/baigeiyun-website-plans-guide/",
+			"title": "白给云官网与优惠指南：速度、AI 解锁、流媒体和套餐选择",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "白给云官网",
+			"secondaryKeywords": [
+				"白给云官网",
+				"白给云套餐",
+				"白给云流媒体解锁",
+				"白给云优惠码"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/web3-vpn-review-2026/",
+			"path": "/posts/web3-vpn-review-2026/",
+			"title": "Web3 加速器怎么样？2026 套餐价格、专线节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Web3加速器怎么样",
+			"secondaryKeywords": [
+				"Web3加速器评测",
+				"Web3 VPN评测",
+				"Web3加速器专线",
+				"Web3加速器测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/web3-vpn-website-plans-guide/",
+			"path": "/posts/web3-vpn-website-plans-guide/",
+			"title": "Web3 加速器官网指南：线路稳定性、AI 与流媒体解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Web3加速器官网",
+			"secondaryKeywords": [
+				"Web3加速器官网",
+				"Web3 VPN官网",
+				"Web3加速器套餐",
+				"Web3加速器流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/scrssr-review-2026/",
+			"path": "/posts/scrssr-review-2026/",
+			"title": "Scrssr机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Scrssr怎么样",
+			"secondaryKeywords": [
+				"Scrssr评测",
+				"Scrssr机场",
+				"Scrssr专线",
+				"Scrssr测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/scrssr-website-plans-guide/",
+			"path": "/posts/scrssr-website-plans-guide/",
+			"title": "Scrssr官网指南：稳定性、ChatGPT、Netflix 与套餐选择",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Scrssr官网",
+			"secondaryKeywords": [
+				"Scrssr官网",
+				"Scrssr套餐",
+				"Scrssr流媒体解锁",
+				"Scrssr使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/huanyuyun-review-2026/",
+			"path": "/posts/huanyuyun-review-2026/",
+			"title": "寰宇云机场怎么样？2026 套餐价格、节点地区与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "寰宇云怎么样",
+			"secondaryKeywords": [
+				"寰宇云评测",
+				"寰宇云机场",
+				"寰宇云专线",
+				"寰宇云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/huanyuyun-website-plans-guide/",
+			"path": "/posts/huanyuyun-website-plans-guide/",
+			"title": "寰宇云机场官网指南：速度、稳定性、AI 和流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "寰宇云官网",
+			"secondaryKeywords": [
+				"寰宇云官网",
+				"寰宇云套餐",
+				"寰宇云流媒体解锁",
+				"寰宇云使用指南"
 			],
 			"status": "active",
 			"protected": true

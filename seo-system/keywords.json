@@ -1219,5 +1219,115 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新彩虹云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "阿达西机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/adaxi-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新阿达西机场深度技术评测与测速报告"
+	},
+	{
+		"keyword": "阿达西机场官网",
+		"targetUrl": "https://airporttizi.com/posts/adaxi-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新阿达西机场官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "白给云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/baigeiyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新白给云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "白给云官网",
+		"targetUrl": "https://airporttizi.com/posts/baigeiyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新白给云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "Web3加速器怎么样",
+		"targetUrl": "https://airporttizi.com/posts/web3-vpn-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Web3 加速器深度技术评测与测速报告"
+	},
+	{
+		"keyword": "Web3加速器官网",
+		"targetUrl": "https://airporttizi.com/posts/web3-vpn-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Web3 加速器官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "Scrssr怎么样",
+		"targetUrl": "https://airporttizi.com/posts/scrssr-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Scrssr深度技术评测与测速报告"
+	},
+	{
+		"keyword": "Scrssr官网",
+		"targetUrl": "https://airporttizi.com/posts/scrssr-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Scrssr官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "寰宇云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/huanyuyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新寰宇云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "寰宇云官网",
+		"targetUrl": "https://airporttizi.com/posts/huanyuyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新寰宇云官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]

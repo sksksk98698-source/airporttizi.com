@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:46:00+08:00",
+	"lastUpdated": "2026-09-19T17:52:00+08:00",
 	"sitemapIndex": "https://airporttizi.com/sitemap-index.xml",
 	"groups": [
 		{
@@ -83,8 +83,8 @@
 			]
 		},
 		{
-			"name": "master_90_brand_articles",
-			"description": "45大主流品牌万字技术评测与官网解锁指南矩阵（共90篇权威文章）",
+			"name": "master_100_brand_articles",
+			"description": "50大主流品牌万字技术评测与官网解锁指南矩阵（共100篇权威文章）",
 			"changefreq": "weekly",
 			"priority": 0.85,
 			"urls": [
@@ -177,7 +177,17 @@
 				"https://airporttizi.com/posts/ssone-review-2026/",
 				"https://airporttizi.com/posts/ssone-website-plans-guide/",
 				"https://airporttizi.com/posts/caihongyun-review-2026/",
-				"https://airporttizi.com/posts/caihongyun-website-plans-guide/"
+				"https://airporttizi.com/posts/caihongyun-website-plans-guide/",
+				"https://airporttizi.com/posts/adaxi-review-2026/",
+				"https://airporttizi.com/posts/adaxi-website-plans-guide/",
+				"https://airporttizi.com/posts/baigeiyun-review-2026/",
+				"https://airporttizi.com/posts/baigeiyun-website-plans-guide/",
+				"https://airporttizi.com/posts/web3-vpn-review-2026/",
+				"https://airporttizi.com/posts/web3-vpn-website-plans-guide/",
+				"https://airporttizi.com/posts/scrssr-review-2026/",
+				"https://airporttizi.com/posts/scrssr-website-plans-guide/",
+				"https://airporttizi.com/posts/huanyuyun-review-2026/",
+				"https://airporttizi.com/posts/huanyuyun-website-plans-guide/"
 			]
 		}
 	]

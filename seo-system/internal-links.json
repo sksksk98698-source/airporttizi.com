@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:46:00+08:00",
+	"lastUpdated": "2026-09-19T17:52:00+08:00",
 	"linkGraph": [
 		{
 			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
@@ -856,6 +856,76 @@
 			"anchorTexts": ["彩虹云深度评测", "彩虹云节点测速与稳定性分析"],
 			"relationship": "plans-guide-to-brand-review",
 			"context": "在 彩虹云 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/adaxi-review-2026/",
+			"target": "https://airporttizi.com/posts/adaxi-website-plans-guide/",
+			"anchorTexts": ["阿达西机场官网指南", "阿达西机场套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 阿达西机场 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/adaxi-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/adaxi-review-2026/",
+			"anchorTexts": ["阿达西机场深度评测", "阿达西机场节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 阿达西机场 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/baigeiyun-review-2026/",
+			"target": "https://airporttizi.com/posts/baigeiyun-website-plans-guide/",
+			"anchorTexts": ["白给云官网指南", "白给云套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 白给云 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/baigeiyun-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/baigeiyun-review-2026/",
+			"anchorTexts": ["白给云深度评测", "白给云节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 白给云 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/web3-vpn-review-2026/",
+			"target": "https://airporttizi.com/posts/web3-vpn-website-plans-guide/",
+			"anchorTexts": ["Web3 加速器官网指南", "Web3 加速器套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Web3 加速器 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/web3-vpn-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/web3-vpn-review-2026/",
+			"anchorTexts": ["Web3 加速器深度评测", "Web3 加速器节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Web3 加速器 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/scrssr-review-2026/",
+			"target": "https://airporttizi.com/posts/scrssr-website-plans-guide/",
+			"anchorTexts": ["Scrssr官网指南", "Scrssr套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Scrssr 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/scrssr-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/scrssr-review-2026/",
+			"anchorTexts": ["Scrssr深度评测", "Scrssr节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Scrssr 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/huanyuyun-review-2026/",
+			"target": "https://airporttizi.com/posts/huanyuyun-website-plans-guide/",
+			"anchorTexts": ["寰宇云官网指南", "寰宇云套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 寰宇云 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/huanyuyun-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/huanyuyun-review-2026/",
+			"anchorTexts": ["寰宇云深度评测", "寰宇云节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 寰宇云 官网指南中提供底层专线架构与晚高峰测速评测入口"
 		}
 	]
 }
