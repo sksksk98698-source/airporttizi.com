@@ -2845,5 +2845,89 @@
 		"title": "灯塔 Cloud 官网指南：速度、稳定性和 AI 流媒体解锁测试",
 		"type": "Post",
 		"protected": true
+	},
+	"/posts/baibianxiaoying-review-2026/": {
+		"canonicalUrl": "/posts/baibianxiaoying-review-2026/",
+		"title": "百变小樱机场怎么样？2026 套餐价格、节点线路与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/baibianxiaoying-website-plans-guide/": {
+		"canonicalUrl": "/posts/baibianxiaoying-website-plans-guide/",
+		"title": "百变小樱机场官网指南：稳定性、ChatGPT 和流媒体解锁",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/zongyunti-review-2026/": {
+		"canonicalUrl": "/posts/zongyunti-review-2026/",
+		"title": "纵云梯机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/zongyunti-website-plans-guide/": {
+		"canonicalUrl": "/posts/zongyunti-website-plans-guide/",
+		"title": "纵云梯官网指南：节点速度、AI 解锁与流媒体使用体验",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/jiasula-review-2026/": {
+		"canonicalUrl": "/posts/jiasula-review-2026/",
+		"title": "加速啦机场怎么样？2026 套餐价格、线路节点与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/jiasula-website-plans-guide/": {
+		"canonicalUrl": "/posts/jiasula-website-plans-guide/",
+		"title": "加速啦官网指南：稳定性、ChatGPT、Netflix 与套餐选择",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/99ba-review-2026/": {
+		"canonicalUrl": "/posts/99ba-review-2026/",
+		"title": "99吧机场怎么样？2026 套餐价格、节点线路与稳定性评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/99ba-website-plans-guide/": {
+		"canonicalUrl": "/posts/99ba-website-plans-guide/",
+		"title": "99吧机场官网指南：速度、AI 与流媒体解锁能力分析",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/zhangzhongshijie-review-2026/": {
+		"canonicalUrl": "/posts/zhangzhongshijie-review-2026/",
+		"title": "掌中世界机场怎么样？2026 套餐价格、节点与线路评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/zhangzhongshijie-website-plans-guide/": {
+		"canonicalUrl": "/posts/zhangzhongshijie-website-plans-guide/",
+		"title": "掌中世界官网指南：节点速度、稳定性和 ChatGPT 解锁测试",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/shunyun-review-2026/": {
+		"canonicalUrl": "/posts/shunyun-review-2026/",
+		"title": "瞬云机场怎么样？2026 套餐价格、节点线路与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/shunyun-website-plans-guide/": {
+		"canonicalUrl": "/posts/shunyun-website-plans-guide/",
+		"title": "瞬云机场官网指南：稳定性、AI 解锁、Netflix 与使用体验",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/xxai-review-2026/": {
+		"canonicalUrl": "/posts/xxai-review-2026/",
+		"title": "XXAI 机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/xxai-website-plans-guide/": {
+		"canonicalUrl": "/posts/xxai-website-plans-guide/",
+		"title": "XXAI 官网指南：ChatGPT、Claude、Gemini 与流媒体解锁测试",
+		"type": "Post",
+		"protected": true
 	}
 }

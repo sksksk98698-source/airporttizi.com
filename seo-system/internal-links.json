@@ -1308,6 +1308,90 @@
 			"target": "/posts/dengtacloud-review-2026/",
 			"anchorText": "灯塔 Cloud 机场怎么样？2026 套餐价格、节点与线路评测",
 			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/baibianxiaoying-review-2026/",
+			"target": "/posts/baibianxiaoying-website-plans-guide/",
+			"anchorText": "百变小樱机场官网指南：稳定性、ChatGPT 和流媒体解锁",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/baibianxiaoying-website-plans-guide/",
+			"target": "/posts/baibianxiaoying-review-2026/",
+			"anchorText": "百变小樱机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/zongyunti-review-2026/",
+			"target": "/posts/zongyunti-website-plans-guide/",
+			"anchorText": "纵云梯官网指南：节点速度、AI 解锁与流媒体使用体验",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/zongyunti-website-plans-guide/",
+			"target": "/posts/zongyunti-review-2026/",
+			"anchorText": "纵云梯机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/jiasula-review-2026/",
+			"target": "/posts/jiasula-website-plans-guide/",
+			"anchorText": "加速啦官网指南：稳定性、ChatGPT、Netflix 与套餐选择",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/jiasula-website-plans-guide/",
+			"target": "/posts/jiasula-review-2026/",
+			"anchorText": "加速啦机场怎么样？2026 套餐价格、线路节点与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/99ba-review-2026/",
+			"target": "/posts/99ba-website-plans-guide/",
+			"anchorText": "99吧机场官网指南：速度、AI 与流媒体解锁能力分析",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/99ba-website-plans-guide/",
+			"target": "/posts/99ba-review-2026/",
+			"anchorText": "99吧机场怎么样？2026 套餐价格、节点线路与稳定性评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/zhangzhongshijie-review-2026/",
+			"target": "/posts/zhangzhongshijie-website-plans-guide/",
+			"anchorText": "掌中世界官网指南：节点速度、稳定性和 ChatGPT 解锁测试",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/zhangzhongshijie-website-plans-guide/",
+			"target": "/posts/zhangzhongshijie-review-2026/",
+			"anchorText": "掌中世界机场怎么样？2026 套餐价格、节点与线路评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/shunyun-review-2026/",
+			"target": "/posts/shunyun-website-plans-guide/",
+			"anchorText": "瞬云机场官网指南：稳定性、AI 解锁、Netflix 与使用体验",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/shunyun-website-plans-guide/",
+			"target": "/posts/shunyun-review-2026/",
+			"anchorText": "瞬云机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/xxai-review-2026/",
+			"target": "/posts/xxai-website-plans-guide/",
+			"anchorText": "XXAI 官网指南：ChatGPT、Claude、Gemini 与流媒体解锁测试",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/xxai-website-plans-guide/",
+			"target": "/posts/xxai-review-2026/",
+			"anchorText": "XXAI 机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+			"relationship": "Part A Speedtest Review"
 		}
 	]
 }
