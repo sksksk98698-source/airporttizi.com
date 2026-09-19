@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:42:00+08:00",
+	"lastUpdated": "2026-09-19T17:46:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 129,
+	"existingUrlsCount": 139,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -1851,6 +1851,161 @@
 				"火箭TNT套餐",
 				"火箭TNT流媒体解锁",
 				"火箭TNT使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/naiu-net-review-2026/",
+			"path": "/posts/naiu-net-review-2026/",
+			"title": "NaiU Net 奶优机场怎么样？2026 套餐、节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "奶优机场怎么样",
+			"secondaryKeywords": [
+				"NaiU Net评测",
+				"奶优评测",
+				"奶优专线",
+				"奶优机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/naiu-net-website-plans-guide/",
+			"path": "/posts/naiu-net-website-plans-guide/",
+			"title": "奶优机场官网指南：线路稳定性、流媒体和 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "奶优机场官网",
+			"secondaryKeywords": [
+				"奶优官网",
+				"NaiU Net官网",
+				"奶优套餐",
+				"奶优流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/keleyun-review-2026/",
+			"path": "/posts/keleyun-review-2026/",
+			"title": "可乐云机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "可乐云怎么样",
+			"secondaryKeywords": [
+				"可乐云评测",
+				"可乐云机场",
+				"可乐云专线",
+				"可乐云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/keleyun-website-plans-guide/",
+			"path": "/posts/keleyun-website-plans-guide/",
+			"title": "可乐云机场官网指南：稳定性、Netflix 和 AI 解锁表现分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "可乐云官网",
+			"secondaryKeywords": [
+				"可乐云官网",
+				"可乐云套餐",
+				"可乐云流媒体解锁",
+				"可乐云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/westdata-review-2026/",
+			"path": "/posts/westdata-review-2026/",
+			"title": "WestData 西部数据机场怎么样？2026 套餐、节点和速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "WestData怎么样",
+			"secondaryKeywords": [
+				"WestData评测",
+				"西部数据评测",
+				"WestData专线",
+				"西部数据机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/westdata-website-plans-guide/",
+			"path": "/posts/westdata-website-plans-guide/",
+			"title": "WestData 机场官网指南：线路稳定性、流媒体和 AI 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "WestData官网",
+			"secondaryKeywords": [
+				"WestData官网",
+				"西部数据官网",
+				"WestData套餐",
+				"WestData流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ssone-review-2026/",
+			"path": "/posts/ssone-review-2026/",
+			"title": "SSOne 机场怎么样？2026 套餐价格、节点地区与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "SSOne怎么样",
+			"secondaryKeywords": ["SSOne评测", "SSOne机场", "SSOne专线", "SSOne测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ssone-website-plans-guide/",
+			"path": "/posts/ssone-website-plans-guide/",
+			"title": "SSOne 官网指南：线路稳定性、ChatGPT 和流媒体解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "SSOne官网",
+			"secondaryKeywords": [
+				"SSOne官网",
+				"SSOne套餐",
+				"SSOne流媒体解锁",
+				"SSOne使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/caihongyun-review-2026/",
+			"path": "/posts/caihongyun-review-2026/",
+			"title": "彩虹云机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "彩虹云怎么样",
+			"secondaryKeywords": [
+				"彩虹云评测",
+				"彩虹云机场",
+				"彩虹云专线",
+				"彩虹云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/caihongyun-website-plans-guide/",
+			"path": "/posts/caihongyun-website-plans-guide/",
+			"title": "彩虹云机场官网指南：速度、AI 解锁、流媒体及套餐怎么选",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "彩虹云官网",
+			"secondaryKeywords": [
+				"彩虹云官网",
+				"彩虹云套餐",
+				"彩虹云流媒体解锁",
+				"彩虹云使用指南"
 			],
 			"status": "active",
 			"protected": true

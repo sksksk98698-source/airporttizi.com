@@ -1109,5 +1109,115 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新火箭 TNT 机场官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "奶优机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/naiu-net-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新NaiU Net 奶优深度技术评测与测速报告"
+	},
+	{
+		"keyword": "奶优机场官网",
+		"targetUrl": "https://airporttizi.com/posts/naiu-net-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新NaiU Net 奶优官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "可乐云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/keleyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新可乐云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "可乐云官网",
+		"targetUrl": "https://airporttizi.com/posts/keleyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新可乐云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "WestData怎么样",
+		"targetUrl": "https://airporttizi.com/posts/westdata-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新WestData 西部数据深度技术评测与测速报告"
+	},
+	{
+		"keyword": "WestData官网",
+		"targetUrl": "https://airporttizi.com/posts/westdata-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新WestData 西部数据官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "SSOne怎么样",
+		"targetUrl": "https://airporttizi.com/posts/ssone-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新SSOne深度技术评测与测速报告"
+	},
+	{
+		"keyword": "SSOne官网",
+		"targetUrl": "https://airporttizi.com/posts/ssone-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新SSOne官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "彩虹云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/caihongyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新彩虹云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "彩虹云官网",
+		"targetUrl": "https://airporttizi.com/posts/caihongyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新彩虹云官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]
