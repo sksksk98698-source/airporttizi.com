@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T16:45:00+08:00",
+	"lastUpdated": "2026-09-19T17:20:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 89,
+	"existingUrlsCount": 99,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -1216,6 +1216,166 @@
 				"老猫云流媒体解锁",
 				"老猫云稳定性",
 				"老猫云 AI 解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/mesl-cloud-review-2026/",
+			"path": "/posts/mesl-cloud-review-2026/",
+			"title": "MESL Cloud 机场怎么样？2026 套餐、线路节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "MESL Cloud怎么样",
+			"secondaryKeywords": [
+				"MESL Cloud评测",
+				"MESL机场",
+				"MESL Cloud专线",
+				"MESL Cloud测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/mesl-cloud-website-plans-guide/",
+			"path": "/posts/mesl-cloud-website-plans-guide/",
+			"title": "MESL Cloud 官网及套餐指南：稳定性、AI 与流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "MESL Cloud官网",
+			"secondaryKeywords": [
+				"MESL Cloud官网",
+				"MESL Cloud套餐",
+				"MESL Cloud流媒体解锁",
+				"MESL Cloud使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/fatcat-review-2026/",
+			"path": "/posts/fatcat-review-2026/",
+			"title": "FATCAT 肥猫云机场怎么样？2026 套餐价格与节点速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "肥猫云怎么样",
+			"secondaryKeywords": [
+				"FATCAT评测",
+				"肥猫云专线",
+				"肥猫云测速",
+				"FATCAT肥猫云"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/fatcat-website-plans-guide/",
+			"path": "/posts/fatcat-website-plans-guide/",
+			"title": "肥猫云官网指南：线路稳定性、流媒体和 ChatGPT 解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "肥猫云官网",
+			"secondaryKeywords": [
+				"肥猫云官网",
+				"FATCAT官网",
+				"肥猫云套餐",
+				"肥猫云流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/coffee-cloud-review-2026/",
+			"path": "/posts/coffee-cloud-review-2026/",
+			"title": "Coffee Cloud 咖啡云机场怎么样？2026 套餐、节点与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "咖啡云怎么样",
+			"secondaryKeywords": [
+				"Coffee Cloud评测",
+				"咖啡云专线",
+				"咖啡云测速",
+				"咖啡云机场"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/coffee-cloud-website-plans-guide/",
+			"path": "/posts/coffee-cloud-website-plans-guide/",
+			"title": "咖啡云机场官网指南：价格、速度、稳定性及 AI 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "咖啡云官网",
+			"secondaryKeywords": [
+				"咖啡云官网",
+				"Coffee Cloud官网",
+				"咖啡云套餐",
+				"咖啡云流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/yiyunti-review-2026/",
+			"path": "/posts/yiyunti-review-2026/",
+			"title": "一云梯机场怎么样？2026 套餐价格、线路和节点速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "一云梯怎么样",
+			"secondaryKeywords": [
+				"一云梯评测",
+				"一云梯机场",
+				"一云梯专线",
+				"一云梯测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/yiyunti-website-plans-guide/",
+			"path": "/posts/yiyunti-website-plans-guide/",
+			"title": "一云梯机场官网与使用指南：稳定性、流媒体和 AI 解锁分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "一云梯官网",
+			"secondaryKeywords": [
+				"一云梯官网",
+				"一云梯套餐",
+				"一云梯流媒体解锁",
+				"一云梯使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/shanhai-review-2026/",
+			"path": "/posts/shanhai-review-2026/",
+			"title": "山海 ShanHai 机场怎么样？2026 套餐价格、节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "山海机场怎么样",
+			"secondaryKeywords": [
+				"山海机场评测",
+				"ShanHai评测",
+				"山海专线",
+				"山海机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/shanhai-website-plans-guide/",
+			"path": "/posts/shanhai-website-plans-guide/",
+			"title": "山海机场官网指南：线路稳定性、流媒体和 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "山海机场官网",
+			"secondaryKeywords": [
+				"山海机场官网",
+				"ShanHai官网",
+				"山海套餐",
+				"山海机场流媒体解锁"
 			],
 			"status": "active",
 			"protected": true

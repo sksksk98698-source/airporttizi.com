@@ -669,5 +669,115 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新老猫云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "MESL Cloud怎么样",
+		"targetUrl": "https://airporttizi.com/posts/mesl-cloud-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新MESL Cloud深度技术评测与测速报告"
+	},
+	{
+		"keyword": "MESL Cloud官网",
+		"targetUrl": "https://airporttizi.com/posts/mesl-cloud-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新MESL Cloud官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "肥猫云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/fatcat-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新FATCAT 肥猫云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "肥猫云官网",
+		"targetUrl": "https://airporttizi.com/posts/fatcat-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新FATCAT 肥猫云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "咖啡云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/coffee-cloud-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Coffee Cloud 咖啡云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "咖啡云官网",
+		"targetUrl": "https://airporttizi.com/posts/coffee-cloud-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Coffee Cloud 咖啡云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "一云梯怎么样",
+		"targetUrl": "https://airporttizi.com/posts/yiyunti-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新一云梯深度技术评测与测速报告"
+	},
+	{
+		"keyword": "一云梯官网",
+		"targetUrl": "https://airporttizi.com/posts/yiyunti-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新一云梯官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "山海机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/shanhai-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新山海 ShanHai深度技术评测与测速报告"
+	},
+	{
+		"keyword": "山海机场官网",
+		"targetUrl": "https://airporttizi.com/posts/shanhai-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新山海 ShanHai官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]

@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T16:47:00+08:00",
+	"lastUpdated": "2026-09-19T17:20:00+08:00",
 	"sitemapIndex": "https://airporttizi.com/sitemap-index.xml",
 	"groups": [
 		{
@@ -83,8 +83,8 @@
 			]
 		},
 		{
-			"name": "master_40_brand_articles",
-			"description": "20大主流品牌万字技术评测与官网解锁指南矩阵",
+			"name": "master_50_brand_articles",
+			"description": "25大主流品牌万字技术评测与官网解锁指南矩阵（共50篇权威文章）",
 			"changefreq": "weekly",
 			"priority": 0.85,
 			"urls": [
@@ -127,7 +127,17 @@
 				"https://airporttizi.com/posts/kuromis-review-2026/",
 				"https://airporttizi.com/posts/kuromis-website-plans-guide/",
 				"https://airporttizi.com/posts/laomaoyun-review-2026/",
-				"https://airporttizi.com/posts/laomaoyun-website-plans-guide/"
+				"https://airporttizi.com/posts/laomaoyun-website-plans-guide/",
+				"https://airporttizi.com/posts/mesl-cloud-review-2026/",
+				"https://airporttizi.com/posts/mesl-cloud-website-plans-guide/",
+				"https://airporttizi.com/posts/fatcat-review-2026/",
+				"https://airporttizi.com/posts/fatcat-website-plans-guide/",
+				"https://airporttizi.com/posts/coffee-cloud-review-2026/",
+				"https://airporttizi.com/posts/coffee-cloud-website-plans-guide/",
+				"https://airporttizi.com/posts/yiyunti-review-2026/",
+				"https://airporttizi.com/posts/yiyunti-website-plans-guide/",
+				"https://airporttizi.com/posts/shanhai-review-2026/",
+				"https://airporttizi.com/posts/shanhai-website-plans-guide/"
 			]
 		}
 	]
