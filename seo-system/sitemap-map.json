@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:20:00+08:00",
+	"lastUpdated": "2026-09-19T17:30:00+08:00",
 	"sitemapIndex": "https://airporttizi.com/sitemap-index.xml",
 	"groups": [
 		{
@@ -83,8 +83,8 @@
 			]
 		},
 		{
-			"name": "master_50_brand_articles",
-			"description": "25大主流品牌万字技术评测与官网解锁指南矩阵（共50篇权威文章）",
+			"name": "master_60_brand_articles",
+			"description": "30大主流品牌万字技术评测与官网解锁指南矩阵（共60篇权威文章）",
 			"changefreq": "weekly",
 			"priority": 0.85,
 			"urls": [
@@ -137,7 +137,17 @@
 				"https://airporttizi.com/posts/yiyunti-review-2026/",
 				"https://airporttizi.com/posts/yiyunti-website-plans-guide/",
 				"https://airporttizi.com/posts/shanhai-review-2026/",
-				"https://airporttizi.com/posts/shanhai-website-plans-guide/"
+				"https://airporttizi.com/posts/shanhai-website-plans-guide/",
+				"https://airporttizi.com/posts/tntcloud-review-2026/",
+				"https://airporttizi.com/posts/tntcloud-website-plans-guide/",
+				"https://airporttizi.com/posts/laotou-vpn-review-2026/",
+				"https://airporttizi.com/posts/laotou-vpn-website-plans-guide/",
+				"https://airporttizi.com/posts/immtelecom-review-2026/",
+				"https://airporttizi.com/posts/immtelecom-website-plans-guide/",
+				"https://airporttizi.com/posts/anyland-review-2026/",
+				"https://airporttizi.com/posts/anyland-website-plans-guide/",
+				"https://airporttizi.com/posts/ytoo-review-2026/",
+				"https://airporttizi.com/posts/ytoo-website-plans-guide/"
 			]
 		}
 	]

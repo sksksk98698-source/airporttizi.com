@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:20:00+08:00",
+	"lastUpdated": "2026-09-19T17:30:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 99,
+	"existingUrlsCount": 109,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -1376,6 +1376,161 @@
 				"ShanHai官网",
 				"山海套餐",
 				"山海机场流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/tntcloud-review-2026/",
+			"path": "/posts/tntcloud-review-2026/",
+			"title": "TNTCloud 机场怎么样？2026 套餐、节点地区与线路速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "TNTCloud怎么样",
+			"secondaryKeywords": [
+				"TNTCloud评测",
+				"TNTCloud机场",
+				"TNTCloud专线",
+				"TNTCloud测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/tntcloud-website-plans-guide/",
+			"path": "/posts/tntcloud-website-plans-guide/",
+			"title": "TNTCloud 官网指南：价格、稳定性、AI 与流媒体解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "TNTCloud官网",
+			"secondaryKeywords": [
+				"TNTCloud官网",
+				"TNTCloud套餐",
+				"TNTCloud流媒体解锁",
+				"TNTCloud使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/laotou-vpn-review-2026/",
+			"path": "/posts/laotou-vpn-review-2026/",
+			"title": "老头 VPN怎么样？2026 套餐价格、节点与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "老头VPN怎么样",
+			"secondaryKeywords": [
+				"老头VPN评测",
+				"老头VPN机场",
+				"老头VPN专线",
+				"老头VPN测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/laotou-vpn-website-plans-guide/",
+			"path": "/posts/laotou-vpn-website-plans-guide/",
+			"title": "老头 VPN官网指南：节点速度、稳定性与 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "老头VPN官网",
+			"secondaryKeywords": [
+				"老头VPN官网",
+				"老头VPN套餐",
+				"老头VPN流媒体解锁",
+				"老头VPN使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/immtelecom-review-2026/",
+			"path": "/posts/immtelecom-review-2026/",
+			"title": "ImmTelecom机场怎么样？2026 套餐、节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "ImmTelecom怎么样",
+			"secondaryKeywords": [
+				"ImmTelecom评测",
+				"ImmTelecom机场",
+				"ImmTelecom专线",
+				"ImmTelecom测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/immtelecom-website-plans-guide/",
+			"path": "/posts/immtelecom-website-plans-guide/",
+			"title": "ImmTelecom机场官网指南：价格、线路稳定性及流媒体解锁分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "ImmTelecom官网",
+			"secondaryKeywords": [
+				"ImmTelecom官网",
+				"ImmTelecom套餐",
+				"ImmTelecom流媒体解锁",
+				"ImmTelecom使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/anyland-review-2026/",
+			"path": "/posts/anyland-review-2026/",
+			"title": "Anyland 机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Anyland怎么样",
+			"secondaryKeywords": [
+				"Anyland评测",
+				"Anyland机场",
+				"Anyland专线",
+				"Anyland测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/anyland-website-plans-guide/",
+			"path": "/posts/anyland-website-plans-guide/",
+			"title": "Anyland 官网使用指南：稳定性、Netflix 与 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Anyland官网",
+			"secondaryKeywords": [
+				"Anyland官网",
+				"Anyland套餐",
+				"Anyland流媒体解锁",
+				"Anyland使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ytoo-review-2026/",
+			"path": "/posts/ytoo-review-2026/",
+			"title": "YToo 机场怎么样？2026 套餐价格、节点与专线线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "YToo怎么样",
+			"secondaryKeywords": ["YToo评测", "歪兔机场", "YToo专线", "YToo测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ytoo-website-plans-guide/",
+			"path": "/posts/ytoo-website-plans-guide/",
+			"title": "YToo 官网指南：节点速度、稳定性、流媒体与 AI 解锁分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "YToo官网",
+			"secondaryKeywords": [
+				"YToo官网",
+				"歪兔官网",
+				"YToo套餐",
+				"YToo流媒体解锁"
 			],
 			"status": "active",
 			"protected": true
