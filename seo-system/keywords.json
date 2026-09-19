@@ -999,5 +999,115 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新贝贝云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "飞机云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/feijiyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新飞机云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "飞机云官网",
+		"targetUrl": "https://airporttizi.com/posts/feijiyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新飞机云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "M78星云机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/m78-xingyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新M78 星云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "M78星云官网",
+		"targetUrl": "https://airporttizi.com/posts/m78-xingyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新M78 星云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "最萌云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/cutecloud-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新最萌云 CuteCloud深度技术评测与测速报告"
+	},
+	{
+		"keyword": "最萌云官网",
+		"targetUrl": "https://airporttizi.com/posts/cutecloud-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新最萌云 CuteCloud官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "八戒机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/bajiejichang-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新八戒机场深度技术评测与测速报告"
+	},
+	{
+		"keyword": "八戒机场官网",
+		"targetUrl": "https://airporttizi.com/posts/bajiejichang-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新八戒机场官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "火箭TNT机场怎么样",
+		"targetUrl": "https://airporttizi.com/posts/huojian-tnt-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新火箭 TNT 机场深度技术评测与测速报告"
+	},
+	{
+		"keyword": "火箭TNT机场官网",
+		"targetUrl": "https://airporttizi.com/posts/huojian-tnt-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新火箭 TNT 机场官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]

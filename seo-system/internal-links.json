@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:35:00+08:00",
+	"lastUpdated": "2026-09-19T17:42:00+08:00",
 	"linkGraph": [
 		{
 			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
@@ -692,6 +692,88 @@
 			"anchorTexts": ["贝贝云深度评测", "贝贝云节点测速与稳定性分析"],
 			"relationship": "plans-guide-to-brand-review",
 			"context": "在 贝贝云 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/feijiyun-review-2026/",
+			"target": "https://airporttizi.com/posts/feijiyun-website-plans-guide/",
+			"anchorTexts": ["飞机云官网指南", "飞机云套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 飞机云 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/feijiyun-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/feijiyun-review-2026/",
+			"anchorTexts": ["飞机云深度评测", "飞机云节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 飞机云 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/m78-xingyun-review-2026/",
+			"target": "https://airporttizi.com/posts/m78-xingyun-website-plans-guide/",
+			"anchorTexts": ["M78 星云官网指南", "M78 星云套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 M78 星云 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/m78-xingyun-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/m78-xingyun-review-2026/",
+			"anchorTexts": ["M78 星云深度评测", "M78 星云节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 M78 星云 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/cutecloud-review-2026/",
+			"target": "https://airporttizi.com/posts/cutecloud-website-plans-guide/",
+			"anchorTexts": [
+				"最萌云 CuteCloud官网指南",
+				"最萌云 CuteCloud套餐与流媒体解锁指南"
+			],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 最萌云 CuteCloud 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/cutecloud-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/cutecloud-review-2026/",
+			"anchorTexts": [
+				"最萌云 CuteCloud深度评测",
+				"最萌云 CuteCloud节点测速与稳定性分析"
+			],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 最萌云 CuteCloud 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/bajiejichang-review-2026/",
+			"target": "https://airporttizi.com/posts/bajiejichang-website-plans-guide/",
+			"anchorTexts": ["八戒机场官网指南", "八戒机场套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 八戒机场 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/bajiejichang-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/bajiejichang-review-2026/",
+			"anchorTexts": ["八戒机场深度评测", "八戒机场节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 八戒机场 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/huojian-tnt-review-2026/",
+			"target": "https://airporttizi.com/posts/huojian-tnt-website-plans-guide/",
+			"anchorTexts": [
+				"火箭 TNT 机场官网指南",
+				"火箭 TNT 机场套餐与流媒体解锁指南"
+			],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 火箭 TNT 机场 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/huojian-tnt-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/huojian-tnt-review-2026/",
+			"anchorTexts": [
+				"火箭 TNT 机场深度评测",
+				"火箭 TNT 机场节点测速与稳定性分析"
+			],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 火箭 TNT 机场 官网指南中提供底层专线架构与晚高峰测速评测入口"
 		}
 	]
 }

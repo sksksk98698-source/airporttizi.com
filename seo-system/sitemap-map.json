@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:35:00+08:00",
+	"lastUpdated": "2026-09-19T17:42:00+08:00",
 	"sitemapIndex": "https://airporttizi.com/sitemap-index.xml",
 	"groups": [
 		{
@@ -83,8 +83,8 @@
 			]
 		},
 		{
-			"name": "master_70_brand_articles",
-			"description": "35大主流品牌万字技术评测与官网解锁指南矩阵（共70篇权威文章）",
+			"name": "master_80_brand_articles",
+			"description": "40大主流品牌万字技术评测与官网解锁指南矩阵（共80篇权威文章）",
 			"changefreq": "weekly",
 			"priority": 0.85,
 			"urls": [
@@ -157,7 +157,17 @@
 				"https://airporttizi.com/posts/aladdinnet-review-2026/",
 				"https://airporttizi.com/posts/aladdinnet-website-plans-guide/",
 				"https://airporttizi.com/posts/beibeiyun-review-2026/",
-				"https://airporttizi.com/posts/beibeiyun-website-plans-guide/"
+				"https://airporttizi.com/posts/beibeiyun-website-plans-guide/",
+				"https://airporttizi.com/posts/feijiyun-review-2026/",
+				"https://airporttizi.com/posts/feijiyun-website-plans-guide/",
+				"https://airporttizi.com/posts/m78-xingyun-review-2026/",
+				"https://airporttizi.com/posts/m78-xingyun-website-plans-guide/",
+				"https://airporttizi.com/posts/cutecloud-review-2026/",
+				"https://airporttizi.com/posts/cutecloud-website-plans-guide/",
+				"https://airporttizi.com/posts/bajiejichang-review-2026/",
+				"https://airporttizi.com/posts/bajiejichang-website-plans-guide/",
+				"https://airporttizi.com/posts/huojian-tnt-review-2026/",
+				"https://airporttizi.com/posts/huojian-tnt-website-plans-guide/"
 			]
 		}
 	]

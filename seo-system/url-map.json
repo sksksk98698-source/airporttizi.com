@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T17:35:00+08:00",
+	"lastUpdated": "2026-09-19T17:42:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 119,
+	"existingUrlsCount": 129,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -1691,6 +1691,166 @@
 				"贝贝云套餐",
 				"贝贝云流媒体解锁",
 				"贝贝云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/feijiyun-review-2026/",
+			"path": "/posts/feijiyun-review-2026/",
+			"title": "飞机云机场怎么样？2026 套餐价格、节点与线路速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "飞机云怎么样",
+			"secondaryKeywords": [
+				"飞机云评测",
+				"飞机云机场",
+				"飞机云专线",
+				"飞机云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/feijiyun-website-plans-guide/",
+			"path": "/posts/feijiyun-website-plans-guide/",
+			"title": "飞机云官网指南：稳定性、流媒体、ChatGPT 解锁及套餐选择",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "飞机云官网",
+			"secondaryKeywords": [
+				"飞机云官网",
+				"飞机云套餐",
+				"飞机云流媒体解锁",
+				"飞机云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/m78-xingyun-review-2026/",
+			"path": "/posts/m78-xingyun-review-2026/",
+			"title": "M78 星云机场怎么样？2026 套餐价格、节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "M78星云机场怎么样",
+			"secondaryKeywords": [
+				"M78星云评测",
+				"M78星云机场",
+				"M78专线",
+				"M78星云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/m78-xingyun-website-plans-guide/",
+			"path": "/posts/m78-xingyun-website-plans-guide/",
+			"title": "M78 星云机场官网指南：线路稳定性、AI 与流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "M78星云官网",
+			"secondaryKeywords": [
+				"M78星云官网",
+				"M78星云套餐",
+				"M78星云流媒体解锁",
+				"M78星云使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cutecloud-review-2026/",
+			"path": "/posts/cutecloud-review-2026/",
+			"title": "最萌云 CuteCloud 怎么样？2026 套餐价格、节点和速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "最萌云怎么样",
+			"secondaryKeywords": [
+				"CuteCloud评测",
+				"最萌云评测",
+				"CuteCloud专线",
+				"最萌云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cutecloud-website-plans-guide/",
+			"path": "/posts/cutecloud-website-plans-guide/",
+			"title": "CuteCloud 最萌云官网指南：稳定性、流媒体及 AI 解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "最萌云官网",
+			"secondaryKeywords": [
+				"CuteCloud官网",
+				"最萌云官网",
+				"CuteCloud套餐",
+				"最萌云流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/bajiejichang-review-2026/",
+			"path": "/posts/bajiejichang-review-2026/",
+			"title": "八戒机场怎么样？2026 套餐价格、节点数量与线路速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "八戒机场怎么样",
+			"secondaryKeywords": [
+				"八戒机场评测",
+				"八戒机场",
+				"八戒专线",
+				"八戒机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/bajiejichang-website-plans-guide/",
+			"path": "/posts/bajiejichang-website-plans-guide/",
+			"title": "八戒机场官网指南：稳定性、ChatGPT 和流媒体解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "八戒机场官网",
+			"secondaryKeywords": [
+				"八戒机场官网",
+				"八戒机场套餐",
+				"八戒机场流媒体解锁",
+				"八戒机场使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/huojian-tnt-review-2026/",
+			"path": "/posts/huojian-tnt-review-2026/",
+			"title": "火箭 TNT 机场怎么样？2026 套餐价格、节点与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "火箭TNT机场怎么样",
+			"secondaryKeywords": [
+				"火箭TNT评测",
+				"火箭TNT机场",
+				"火箭TNT专线",
+				"火箭TNT测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/huojian-tnt-website-plans-guide/",
+			"path": "/posts/huojian-tnt-website-plans-guide/",
+			"title": "火箭 TNT 机场官网指南：速度、稳定性及 AI 解锁使用体验",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "火箭TNT机场官网",
+			"secondaryKeywords": [
+				"火箭TNT官网",
+				"火箭TNT套餐",
+				"火箭TNT流媒体解锁",
+				"火箭TNT使用指南"
 			],
 			"status": "active",
 			"protected": true
