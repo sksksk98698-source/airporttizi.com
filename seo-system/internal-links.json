@@ -1236,6 +1236,78 @@
 			"target": "/posts/xunda-review-2026/",
 			"anchorText": "迅达机场怎么样？2026 套餐价格、节点数量与线路评测",
 			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/lingdongyun-review-2026/",
+			"target": "/posts/lingdongyun-website-plans-guide/",
+			"anchorText": "灵动云机场官网指南：稳定性、ChatGPT 和流媒体解锁",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/lingdongyun-website-plans-guide/",
+			"target": "/posts/lingdongyun-review-2026/",
+			"anchorText": "灵动云机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/langwang-review-2026/",
+			"target": "/posts/langwang-website-plans-guide/",
+			"anchorText": "浪网机场官网指南：速度、AI 解锁、流媒体与套餐选择",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/langwang-website-plans-guide/",
+			"target": "/posts/langwang-review-2026/",
+			"anchorText": "浪网机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/superbiu-review-2026/",
+			"target": "/posts/superbiu-website-plans-guide/",
+			"anchorText": "SuperBiu 官网指南：线路稳定性、ChatGPT 与流媒体解锁测试",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/superbiu-website-plans-guide/",
+			"target": "/posts/superbiu-review-2026/",
+			"anchorText": "SuperBiu 机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/runway-review-2026/",
+			"target": "/posts/runway-website-plans-guide/",
+			"anchorText": "Runway 机场官网指南：节点速度、稳定性与 AI 解锁表现",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/runway-website-plans-guide/",
+			"target": "/posts/runway-review-2026/",
+			"anchorText": "Runway 机场怎么样？2026 套餐价格、节点与线路评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/mengxiangyun-review-2026/",
+			"target": "/posts/mengxiangyun-website-plans-guide/",
+			"anchorText": "梦想云官网指南：稳定性、ChatGPT、流媒体与套餐怎么选",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/mengxiangyun-website-plans-guide/",
+			"target": "/posts/mengxiangyun-review-2026/",
+			"anchorText": "梦想云机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/dengtacloud-review-2026/",
+			"target": "/posts/dengtacloud-website-plans-guide/",
+			"anchorText": "灯塔 Cloud 官网指南：速度、稳定性和 AI 流媒体解锁测试",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/dengtacloud-website-plans-guide/",
+			"target": "/posts/dengtacloud-review-2026/",
+			"anchorText": "灯塔 Cloud 机场怎么样？2026 套餐价格、节点与线路评测",
+			"relationship": "Part A Speedtest Review"
 		}
 	]
 }

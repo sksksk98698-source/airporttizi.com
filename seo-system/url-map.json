@@ -2773,5 +2773,77 @@
 		"title": "迅达机场官网指南：节点速度、稳定性和 AI 解锁测试",
 		"type": "Post",
 		"protected": true
+	},
+	"/posts/lingdongyun-review-2026/": {
+		"canonicalUrl": "/posts/lingdongyun-review-2026/",
+		"title": "灵动云机场怎么样？2026 套餐价格、节点线路与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/lingdongyun-website-plans-guide/": {
+		"canonicalUrl": "/posts/lingdongyun-website-plans-guide/",
+		"title": "灵动云机场官网指南：稳定性、ChatGPT 和流媒体解锁",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/langwang-review-2026/": {
+		"canonicalUrl": "/posts/langwang-review-2026/",
+		"title": "浪网机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/langwang-website-plans-guide/": {
+		"canonicalUrl": "/posts/langwang-website-plans-guide/",
+		"title": "浪网机场官网指南：速度、AI 解锁、流媒体与套餐选择",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/superbiu-review-2026/": {
+		"canonicalUrl": "/posts/superbiu-review-2026/",
+		"title": "SuperBiu 机场怎么样？2026 套餐价格、节点线路与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/superbiu-website-plans-guide/": {
+		"canonicalUrl": "/posts/superbiu-website-plans-guide/",
+		"title": "SuperBiu 官网指南：线路稳定性、ChatGPT 与流媒体解锁测试",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/runway-review-2026/": {
+		"canonicalUrl": "/posts/runway-review-2026/",
+		"title": "Runway 机场怎么样？2026 套餐价格、节点与线路评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/runway-website-plans-guide/": {
+		"canonicalUrl": "/posts/runway-website-plans-guide/",
+		"title": "Runway 机场官网指南：节点速度、稳定性与 AI 解锁表现",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/mengxiangyun-review-2026/": {
+		"canonicalUrl": "/posts/mengxiangyun-review-2026/",
+		"title": "梦想云机场怎么样？2026 套餐价格、节点线路与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/mengxiangyun-website-plans-guide/": {
+		"canonicalUrl": "/posts/mengxiangyun-website-plans-guide/",
+		"title": "梦想云官网指南：稳定性、ChatGPT、流媒体与套餐怎么选",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/dengtacloud-review-2026/": {
+		"canonicalUrl": "/posts/dengtacloud-review-2026/",
+		"title": "灯塔 Cloud 机场怎么样？2026 套餐价格、节点与线路评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/dengtacloud-website-plans-guide/": {
+		"canonicalUrl": "/posts/dengtacloud-website-plans-guide/",
+		"title": "灯塔 Cloud 官网指南：速度、稳定性和 AI 流媒体解锁测试",
+		"type": "Post",
+		"protected": true
 	}
 }
