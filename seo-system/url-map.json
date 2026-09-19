@@ -1,8 +1,8 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T18:05:00+08:00",
+	"lastUpdated": "2026-09-19T18:10:00+08:00",
 	"baseCanonicalDomain": "https://airporttizi.com",
-	"existingUrlsCount": 171,
+	"existingUrlsCount": 181,
 	"urls": [
 		{
 			"url": "https://airporttizi.com/",
@@ -2516,6 +2516,161 @@
 				"CocoDuck套餐",
 				"CocoDuck流媒体解锁",
 				"CocoDuck使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/flybit-review-2026/",
+			"path": "/posts/flybit-review-2026/",
+			"title": "Flybit 机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Flybit怎么样",
+			"secondaryKeywords": [
+				"Flybit评测",
+				"Flybit机场",
+				"Flybit专线",
+				"Flybit测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/flybit-website-plans-guide/",
+			"path": "/posts/flybit-website-plans-guide/",
+			"title": "Flybit 官网使用指南：速度、AI 解锁、Netflix 与套餐选择",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Flybit官网",
+			"secondaryKeywords": [
+				"Flybit官网",
+				"Flybit套餐",
+				"Flybit流媒体解锁",
+				"Flybit使用指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/xxyun-review-2026/",
+			"path": "/posts/xxyun-review-2026/",
+			"title": "XX云机场怎么样？2026 套餐价格、节点线路和速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "XX云怎么样",
+			"secondaryKeywords": ["XX云评测", "XX云机场", "XXCloud评测", "XX云测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/xxyun-website-plans-guide/",
+			"path": "/posts/xxyun-website-plans-guide/",
+			"title": "XX云机场官网指南：稳定性、ChatGPT 与流媒体解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "XX云官网",
+			"secondaryKeywords": [
+				"XX云官网",
+				"XXCloud官网",
+				"XX云套餐",
+				"XX云流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/wangjikuaiche-review-2026/",
+			"path": "/posts/wangjikuaiche-review-2026/",
+			"title": "网际快车机场怎么样？2026 套餐价格、节点与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "网际快车怎么样",
+			"secondaryKeywords": [
+				"网际快车评测",
+				"FlashExpress评测",
+				"网际快车机场",
+				"网际快车测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/wangjikuaiche-website-plans-guide/",
+			"path": "/posts/wangjikuaiche-website-plans-guide/",
+			"title": "网际快车官网指南：节点速度、稳定性和 AI 解锁能力",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "网际快车官网",
+			"secondaryKeywords": [
+				"网际快车官网",
+				"FlashExpress官网",
+				"网际快车不限时",
+				"网际快车流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/adaxi-experience-review-2026/",
+			"path": "/posts/adaxi-experience-review-2026/",
+			"title": "阿达西机场怎么样？2026 套餐价格、节点线路与使用体验",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "阿达西使用体验",
+			"secondaryKeywords": [
+				"阿达西线路评测",
+				"阿达西机场体验",
+				"阿达西专线稳定性",
+				"阿达西测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/adaxi-speed-streaming-guide/",
+			"path": "/posts/adaxi-speed-streaming-guide/",
+			"title": "阿达西机场官网指南：速度、稳定性、ChatGPT 与流媒体解锁",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "阿达西速度与解锁",
+			"secondaryKeywords": [
+				"阿达西官网进阶",
+				"阿达西流媒体解锁",
+				"阿达西ChatGPT体验",
+				"阿达西套餐选购"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/chongshangyunxiao-review-2026/",
+			"path": "/posts/chongshangyunxiao-review-2026/",
+			"title": "冲上云霄机场怎么样？2026 套餐价格、节点与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "冲上云霄怎么样",
+			"secondaryKeywords": [
+				"冲上云霄评测",
+				"冲上云霄机场",
+				"冲上云霄台湾家宽",
+				"冲上云霄测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/chongshangyunxiao-website-plans-guide/",
+			"path": "/posts/chongshangyunxiao-website-plans-guide/",
+			"title": "冲上云霄官网指南：节点速度、稳定性及 AI 解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "冲上云霄官网",
+			"secondaryKeywords": [
+				"冲上云霄官网",
+				"冲上云霄套餐",
+				"冲上云霄积分优惠",
+				"冲上云霄流媒体解锁"
 			],
 			"status": "active",
 			"protected": true

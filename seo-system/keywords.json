@@ -1571,5 +1571,115 @@
 		"searchVolumeTier": "high",
 		"cannibalizationRisk": "low",
 		"notes": "2026最新CocoDuck官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "Flybit怎么样",
+		"targetUrl": "https://airporttizi.com/posts/flybit-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Flybit深度技术评测与测速报告"
+	},
+	{
+		"keyword": "Flybit官网",
+		"targetUrl": "https://airporttizi.com/posts/flybit-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新Flybit官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "XX云怎么样",
+		"targetUrl": "https://airporttizi.com/posts/xxyun-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新XX云深度技术评测与测速报告"
+	},
+	{
+		"keyword": "XX云官网",
+		"targetUrl": "https://airporttizi.com/posts/xxyun-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新XX云官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "网际快车怎么样",
+		"targetUrl": "https://airporttizi.com/posts/wangjikuaiche-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新网际快车深度技术评测与测速报告"
+	},
+	{
+		"keyword": "网际快车官网",
+		"targetUrl": "https://airporttizi.com/posts/wangjikuaiche-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新网际快车官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "阿达西使用体验",
+		"targetUrl": "https://airporttizi.com/posts/adaxi-experience-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新阿达西进阶深度技术评测与测速报告"
+	},
+	{
+		"keyword": "阿达西速度与解锁",
+		"targetUrl": "https://airporttizi.com/posts/adaxi-speed-streaming-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新阿达西进阶官网套餐、防钓鱼与流媒体AI解锁指南"
+	},
+	{
+		"keyword": "冲上云霄怎么样",
+		"targetUrl": "https://airporttizi.com/posts/chongshangyunxiao-review-2026/",
+		"clusterId": "cluster-brands",
+		"category": "品牌技术评测与测速",
+		"intent": "commercial",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新冲上云霄深度技术评测与测速报告"
+	},
+	{
+		"keyword": "冲上云霄官网",
+		"targetUrl": "https://airporttizi.com/posts/chongshangyunxiao-website-plans-guide/",
+		"clusterId": "cluster-brands",
+		"category": "官网指南与流媒体解锁",
+		"intent": "navigational",
+		"priority": "P1",
+		"searchVolumeTier": "high",
+		"cannibalizationRisk": "low",
+		"notes": "2026最新冲上云霄官网套餐、防钓鱼与流媒体AI解锁指南"
 	}
 ]

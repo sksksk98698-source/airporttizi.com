@@ -1,6 +1,6 @@
 {
 	"version": "1.0.0",
-	"lastUpdated": "2026-09-19T18:05:00+08:00",
+	"lastUpdated": "2026-09-19T18:10:00+08:00",
 	"sitemapIndex": "https://airporttizi.com/sitemap-index.xml",
 	"groups": [
 		{
@@ -83,8 +83,8 @@
 			]
 		},
 		{
-			"name": "master_122_brand_articles",
-			"description": "61大主流品牌万字技术评测与官网解锁指南矩阵（共122篇权威文章）",
+			"name": "master_132_brand_articles",
+			"description": "66大主流品牌万字技术评测与官网解锁指南矩阵（共132篇权威文章）",
 			"changefreq": "weekly",
 			"priority": 0.85,
 			"urls": [
@@ -209,7 +209,17 @@
 				"https://airporttizi.com/posts/thyss-review-2026/",
 				"https://airporttizi.com/posts/thyss-website-plans-guide/",
 				"https://airporttizi.com/posts/cocoduck-review-2026/",
-				"https://airporttizi.com/posts/cocoduck-website-plans-guide/"
+				"https://airporttizi.com/posts/cocoduck-website-plans-guide/",
+				"https://airporttizi.com/posts/flybit-review-2026/",
+				"https://airporttizi.com/posts/flybit-website-plans-guide/",
+				"https://airporttizi.com/posts/xxyun-review-2026/",
+				"https://airporttizi.com/posts/xxyun-website-plans-guide/",
+				"https://airporttizi.com/posts/wangjikuaiche-review-2026/",
+				"https://airporttizi.com/posts/wangjikuaiche-website-plans-guide/",
+				"https://airporttizi.com/posts/adaxi-experience-review-2026/",
+				"https://airporttizi.com/posts/adaxi-speed-streaming-guide/",
+				"https://airporttizi.com/posts/chongshangyunxiao-review-2026/",
+				"https://airporttizi.com/posts/chongshangyunxiao-website-plans-guide/"
 			]
 		}
 	]
