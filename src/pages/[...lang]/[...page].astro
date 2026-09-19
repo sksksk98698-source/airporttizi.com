@@ -36,6 +36,69 @@ const len = page.data.length;
 ---
 
 <MainGridLayout lang={lang}>
+    {page.currentPage === 1 && (
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large) mb-6 onload-animation">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-(--primary)/10 text-(--primary) border border-(--primary)/20">
+                            2026 权威科学上网指南
+                        </span>
+                        <span class="text-xs text-black/50 dark:text-white/50">三网晚高峰长周期实测</span>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-black text-black/90 dark:text-white/90 leading-tight">
+                        AirportTizi 梯子猫 · 机场推荐与数据库
+                    </h1>
+                </div>
+                <a href="/recommend/" class="btn-regular px-4 py-2 rounded-xl text-xs md:text-sm font-bold transition flex items-center gap-1.5 hover:text-(--primary)">
+                    <span>查看精选推荐榜</span>
+                    <span>→</span>
+                </a>
+            </div>
+            <p class="text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed mb-5">
+                专注 2026 高端 IEPL/IPLC 专线机场梯子推荐、深度实测与科学上网数据库。真实采集晚高峰（20:00 - 23:00）抗丢包率与测速跑分，提供全域流媒体与 ChatGPT/Claude 纯净解锁实测报告。
+            </p>
+            <!-- 12 栏目快速直达网格 -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 text-xs font-semibold">
+                <a href="/recommend/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    🌟 机场推荐
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    📊 机场排行
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    🗄️ 机场数据库
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    📝 深度评测
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    ⚖️ 机场对比
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    💰 套餐价格
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    🌐 线路节点
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    💻 客户端合集
+                </a>
+                <a href="/guides/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    📖 教程中心
+                </a>
+                <a href="/streaming/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    🎬 AI与流媒体
+                </a>
+                <a href="/diagnostics/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    🩺 网络诊断
+                </a>
+                <a href="/monitor/" class="p-2.5 rounded-xl bg-black/3 dark:bg-white/5 hover:bg-(--primary)/10 hover:text-(--primary) transition text-center border border-black/5 dark:border-white/5">
+                    🚨 风险监控
+                </a>
+            </div>
+        </div>
+    )}
     <PostPage page={page} lang={lang}></PostPage>
     <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
 </MainGridLayout>

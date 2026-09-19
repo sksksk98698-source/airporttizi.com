@@ -27,29 +27,51 @@ let links: NavBarLink[] = navBarConfig.links.map(
 		return item;
 	},
 );
+const PRIMARY_LINK_COUNT = 7;
+const primaryLinks = links.slice(0, PRIMARY_LINK_COUNT);
+const moreLinks = links.slice(PRIMARY_LINK_COUNT);
 ---
 <div id="navbar" class="z-50 onload-animation">
     <div class="absolute h-8 left-0 right-0 -top-8 bg-(--card-bg) transition"></div> <!-- used for onload animation -->
     <div class:list={[
         className,
-        "card-base overflow-visible! max-w-(--page-width) h-[4.5rem] rounded-t-none! mx-auto flex items-center justify-between px-4"]}>
-        <a href={url('/', lang)} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95">
-            <div class="flex flex-row text-(--primary) items-center text-md">
-                <Icon name="material-symbols:home-outline-rounded" class="text-[1.75rem] mb-1 mr-2" />
-                {siteConfig.title}
+        "card-base overflow-visible! max-w-(--page-width) h-[4.5rem] rounded-t-none! mx-auto flex items-center justify-between px-3 md:px-4"]}>
+        <a href={url('/', lang)} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-3 md:px-4 font-bold active:scale-95 shrink-0">
+            <div class="flex flex-row text-(--primary) items-center text-md md:text-lg">
+                <Icon name="material-symbols:vpn-key-outline-rounded" class="text-[1.5rem] md:text-[1.75rem] mr-2" />
+                <span class="font-black tracking-tight">{siteConfig.title}</span>
+                <span class="text-[11px] px-1.5 py-0.5 rounded-md bg-(--primary)/10 text-(--primary) ml-1.5 font-bold border border-(--primary)/20">梯子猫</span>
             </div>
         </a>
-        <div class="hidden md:flex">
-            {links.map((l) => {
+        <div class="hidden lg:flex items-center gap-0.5">
+            {primaryLinks.map((l) => {
                 return <a aria-label={l.name} href={l.external ? l.url : url(l.url, lang)} target={l.external ? "_blank" : null}
-                          class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"
+                          class="btn-plain scale-animation rounded-lg h-10 font-bold px-2.5 text-xs md:text-sm active:scale-95"
                 >
                     <div class="flex items-center">
                         {l.name}
-                        {l.external && <Icon name="fa6-solid:arrow-up-right-from-square" class="text-[0.875rem] transition -translate-y-px ml-1 text-black/20 dark:text-white/20"></Icon>}
+                        {l.external && <Icon name="fa6-solid:arrow-up-right-from-square" class="text-[0.75rem] transition -translate-y-px ml-1 text-black/20 dark:text-white/20"></Icon>}
                     </div>
                 </a>;
             })}
+
+            {moreLinks.length > 0 && (
+                <div class="relative group">
+                    <button class="btn-plain scale-animation rounded-lg h-10 font-bold px-2.5 text-xs md:text-sm active:scale-95 flex items-center gap-1">
+                        <span>更多</span>
+                        <Icon name="material-symbols:keyboard-arrow-down-rounded" class="text-base transition group-hover:rotate-180" />
+                    </button>
+                    <div class="absolute right-0 top-full mt-1 w-44 card-base p-2 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 flex flex-col gap-1 border border-black/5 dark:border-white/10">
+                        {moreLinks.map((l) => (
+                            <a href={l.external ? l.url : url(l.url, lang)} target={l.external ? "_blank" : null}
+                               class="px-3 py-2 rounded-lg text-xs md:text-sm font-semibold text-black/75 dark:text-white/75 hover:bg-(--btn-plain-bg-hover) hover:text-(--primary) transition"
+                            >
+                                {l.name}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
         <div class="flex">
             <!--<SearchPanel client:load>-->

@@ -1,0 +1,289 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import { airportsList } from "../../data/airports";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"机场深度实测与真机跑分专栏｜三网晚高峰延迟与流媒体体验报告 - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫深度评测专栏。汇聚光速云、飞猫云、微风网络、星岛梦等19大品牌真机实测数据、Speedtest 测速截图、晚高峰抗丢包率分析及流媒体/ChatGPT 真实解锁报告。";
+
+// 过滤出有测速截图的品牌
+const speedtestBrands = airportsList.filter((a) => Boolean(a.speedtestImage));
+
+const unlockPhotos = [
+	{
+		name: "流媒体与AI全区解锁实测",
+		url: "/media/unlock/photo_2026-08-19_12-13-01.jpg",
+	},
+	{
+		name: "香港/日本原生IP纯净度检测",
+		url: "/media/unlock/photo_2026-08-19_12-13-50.jpg",
+	},
+	{
+		name: "Netflix/Disney+ 4K播放测试",
+		url: "/media/unlock/photo_2026-08-19_12-13-58.jpg",
+	},
+	{
+		name: "ChatGPT/Claude 零阻断风控测试",
+		url: "/media/unlock/photo_2026-08-19_12-18-40.jpg",
+	},
+	{
+		name: "晚高峰并发高压吞吐拨测",
+		url: "/media/unlock/photo_2026-08-19_12-20-10.jpg",
+	},
+	{
+		name: "三网多路由跳数 MTR 追踪",
+		url: "/media/unlock/photo_2026-09-07_12-51-58.jpg",
+	},
+	{
+		name: "DNS 泄露与 WebRTC 防污染实测",
+		url: "/media/unlock/photo_2026-09-07_12-51-59.jpg",
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/reviews/",
+			url: "https://airporttizi.com/reviews/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "深度评测",
+						item: "https://airporttizi.com/reviews/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "测速报告中的单线程和多线程有什么本质区别？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "多线程测速相当于同时开启多条连接同时拉取数据，容易掩盖线路不稳定和丢包；而单线程测速（如单连接拉取YouTube 4K视频流）更能真实反映线路的底层物理质量。梯子猫实测重点以单线程下行吞吐为核心考核指标。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "为什么必须在晚高峰（20:00-23:00）进行测速压测？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "白天国际公网出口相对空闲，即便是不良公网中继也能跑出不错的分数；只有在全网流量高度拥挤的晚高峰时段，国际出口公网发生严重拥堵时，才能检验出 IEPL 内网专线真正的抗丢包与保带宽实力。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">深度评测专栏</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:rate-review-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">机场深度实测与真机跑分专栏</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                不看广告看疗效。梯子猫评测团队自费采购节点订阅，拒绝云评测与虚假吹捧。通过长达数月的真实晚高峰（20:00 - 23:00）高压测试、MTR 链路抓包与流媒体/AI 解锁检测，公开全部原始测速截图与测试证据。
+            </p>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：科学阅读 Speedtest 测速与 MTR 路由报告的 3 个关键点
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">1. 单线程下行速率</h3>
+                    <p class="text-black/70 dark:text-white/70">单线程直接决定了 YouTube 4K/8K 缓冲速度与大文件下载体验，通常应达到 <strong>300 Mbps 以上</strong> 方能保证丝滑播放。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">2. 晚高峰丢包率 (Packet Loss)</h3>
+                    <p class="text-black/70 dark:text-white/70">丢包率是网络稳定性的生死线。优质 IEPL 专线在 21:00 丢包率应保持在 <strong>0.5% 以下</strong>，高于 2% 即会出现明显断流。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">3. 路由跳数与抖动 (Jitter)</h3>
+                    <p class="text-black/70 dark:text-white/70">MTR 跳数越少，中间节点故障概率越低；抖动应控制在 <strong>5ms 以内</strong>，保证实时语音与联机游戏顺畅。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：真实测速证据展示区 (Anchors) -->
+        <div class="card-base p-6 rounded-(--radius-large)">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <Icon name="material-symbols:speed-outline" class="text-xl text-(--primary)" />
+                    <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90">各品牌真机节点测速实测图谱 (全部 19 品牌)</h2>
+                </div>
+                <span class="text-xs text-black/40 dark:text-white/40">点击卡片可查阅各品牌专属万字报告</span>
+            </div>
+            <p class="text-xs text-black/50 dark:text-white/50 mb-6">
+                原始测速截图由自动化测试集群生成，保留完整测试时间与协议类型，禁止裁切篡改。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {speedtestBrands.map((item) => (
+                    <div id={item.id} class="p-4 rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <a href={`/reviews/${item.id}/`} class="flex items-center gap-2 group/title hover:text-(--primary) transition">
+                                    <span class="font-bold text-sm text-black/90 dark:text-white/90 group-hover/title:text-(--primary)">{item.name}</span>
+                                    <span class="text-[11px] text-black/40 dark:text-white/40">{item.est}</span>
+                                </a>
+                                <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold">
+                                    {item.peakSpeed}
+                                </span>
+                            </div>
+                            <p class="text-xs text-black/60 dark:text-white/60 mb-3">{item.lineType}</p>
+                            
+                            <a href={`/reviews/${item.id}/`} class="block relative rounded-lg overflow-hidden border border-black/10 dark:border-white/10 group mb-3">
+                                <img src={item.speedtestImage} alt={`${item.name} 节点测速实测图`} class="w-full h-48 object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy" />
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-bold gap-1.5">
+                                    <Icon name="material-symbols:rate-review-outline-rounded" class="text-lg" />
+                                    <span>阅读万字深度评测报告</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-2 border-t border-black/5 dark:border-white/5 text-xs">
+                            <span class="text-black/50 dark:text-white/50">{item.price}</span>
+                            <div class="flex items-center gap-3">
+                                <a href={`/reviews/${item.id}/`} class="text-(--primary) font-bold hover:underline flex items-center gap-0.5">
+                                    <span>深度评测</span>
+                                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                                </a>
+                                <a href={item.affUrl} target="_blank" rel="noopener noreferrer" class="text-black/60 dark:text-white/60 hover:text-(--primary) flex items-center gap-0.5">
+                                    <span>官网</span>
+                                    <Icon name="material-symbols:open-in-new-rounded" class="text-xs" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- 第三章：解锁实测与网络排查证据 -->
+        <div class="card-base p-6 rounded-(--radius-large)">
+            <div class="flex items-center gap-2 mb-4">
+                <Icon name="material-symbols:lock-open-rounded" class="text-xl text-(--primary)" />
+                <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90">流媒体、AI 与网络诊断实测证据库</h2>
+            </div>
+            <p class="text-xs text-black/50 dark:text-white/50 mb-6">
+                梯子猫实验室真实截取的 4K 流媒体播放、ChatGPT 原生解锁与网络路由排查实测图片：
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {unlockPhotos.map((photo) => (
+                    <a href={photo.url} target="_blank" rel="noopener noreferrer" class="group rounded-xl overflow-hidden border border-black/5 dark:border-white/5 block bg-black/5 dark:bg-white/5">
+                        <img src={photo.url} alt={photo.name} class="w-full h-36 object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+                        <div class="p-2.5 text-xs font-medium text-black/80 dark:text-white/80 line-clamp-1 group-hover:text-(--primary)">
+                            {photo.name}
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <!-- 第四章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第四章：测速与跑分评测常见问题解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：为什么有的节点测速高达 1000M，但刷推特和看网页依然卡顿？</h4>
+                    <p class="text-black/70 dark:text-white/70">很多时候是因为节点的 DNS 解析被本地污染或者代理客户端未开启 DoH 加密 DNS，导致域名解析耗时占据了大部分等待时间。建议在 Clash 或 Sing-box 中配置阿里 DNS 与 Cloudflare DNS 作为分流上游。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：如果测速图上的节点我连不上怎么办？</h4>
+                    <p class="text-black/70 dark:text-white/70">测速图展示的是测试时刻的全局节点拓扑。服务商会根据网络拥堵情况动态调度落地机房 IP，请在客户端中点击「更新订阅」以拉取最新有效 IP 列表。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/streaming/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🎬 AI与流媒体解锁</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

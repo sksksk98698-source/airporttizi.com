@@ -21,6 +21,7 @@ interface Props {
 	draft: boolean;
 	style: string;
 	lang?: string;
+	pinned?: boolean;
 }
 const {
 	entry,
@@ -34,6 +35,7 @@ const {
 	description,
 	style,
 	lang,
+	pinned = false,
 } = Astro.props;
 const className = Astro.props.class;
 
@@ -52,6 +54,12 @@ const { remarkPluginFrontmatter } = await render(entry);
         before:w-1 before:h-5 before:rounded-md before:bg-(--primary)
         before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block
         ">
+            {pinned && (
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 mr-2 rounded-lg text-xs font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 align-middle">
+                    <Icon name="material-symbols:bookmark-rounded" class="text-sm" />
+                    置顶
+                </span>
+            )}
             {title}
             <Icon class="inline text-[2rem] text-(--primary) md:hidden translate-y-0.5 absolute" name="material-symbols:chevron-right-rounded" ></Icon>
             <Icon class="text-(--primary) text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" name="material-symbols:chevron-right-rounded"></Icon>

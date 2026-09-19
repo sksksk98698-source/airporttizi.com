@@ -1,0 +1,166 @@
+---
+import { Icon } from "astro-icon/components";
+
+const featuredAirports = [
+	{
+		name: "光速云",
+		url: "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y",
+		reviewUrl: "/reviews/guangsucloud/",
+		architecture: "IEPL 企业级内网专线",
+		price: "折合 ¥7.5/月 (年付折算)",
+		code: "AMM",
+		discount: "8折",
+		feature: "2020年老牌，综合线路与晚高峰稳定性极高",
+	},
+	{
+		name: "飞猫云",
+		url: "https://guangs.flycataff.com/#/?code=6uq0Xe9y",
+		reviewUrl: "/reviews/feimaoyun/",
+		architecture: "IEPL 专线小流量",
+		price: "折合 ¥7.0/月 (年付折算)",
+		code: "flycat888",
+		discount: "8折",
+		feature: "低门槛年付小流量，日常网页/AI轻度首选",
+	},
+	{
+		name: "微风网络",
+		url: "https://edp01.breezenetaff.com/#/?code=t3huofyI",
+		reviewUrl: "/reviews/breezenet/",
+		architecture: "IEPL 专线小流量",
+		price: "折合 ¥7.0/月 (年付折算)",
+		code: "flat888",
+		discount: "9折",
+		feature: "IEPL 专线网络，低预算高品质个人梯子",
+	},
+	{
+		name: "星岛梦",
+		url: "https://guangs.xingdaomeng.com/#/?code=1TynBYnR",
+		reviewUrl: "/reviews/xingdaomeng/",
+		architecture: "企业级内网专线",
+		price: "折合 ¥8.0/月 (年付折算)",
+		code: "nmw888",
+		discount: "9折",
+		feature: "2020年运营，套餐极其丰富，提供不限时流量包",
+	},
+	{
+		name: "无忧链接",
+		url: "https://wep01.worryfreeaff.com/#/?code=4ZoSbLdL",
+		reviewUrl: "/reviews/wuyou/",
+		architecture: "IEPL 专线",
+		price: "¥19.0/月 (月付 100GB)",
+		code: "wuyou666",
+		discount: "",
+		feature: "订阅免转换支持全平台客户端，IEPL 专线稳定",
+	},
+	{
+		name: "暮光加速",
+		url: "https://varnexa.twilightaff.com/#/?code=D1LHglg3",
+		reviewUrl: "/reviews/muguang/",
+		architecture: "IEPL 专线",
+		price: "¥20.0/月 (月付 120GB)",
+		code: "muguang5555",
+		discount: "",
+		feature: "20元档位 120GB 实用配置，线路稳健可靠",
+	},
+	{
+		name: "唯兔云",
+		url: "https://guangs.v2yunvipaff.com/#/?code=xIutqOBA",
+		reviewUrl: "/reviews/weitu/",
+		architecture: "60+节点 / 三网优化",
+		price: "¥14.9/月 (月付 100GB)",
+		code: "weitu666",
+		discount: "9折",
+		feature: "60+丰富节点，三网优化与智能负载均衡",
+	},
+	{
+		name: "灵猫网络",
+		url: "https://vip01.civetnet.com/#/?code=8MIAyxak",
+		reviewUrl: "/reviews/civetnet/",
+		architecture: "企业级内网专线",
+		price: "¥19.0/月 (月付 150GB)",
+		code: "lmao888",
+		discount: "9折",
+		feature: "19元月付享 150GB 超大流量，支持不限时套餐",
+	},
+	{
+		name: "极连云",
+		url: "https://guangs.jlyvipaff.com/#/?code=VM1rKGUu",
+		reviewUrl: "/reviews/jilian/",
+		architecture: "IEPL 专线",
+		price: "¥18.0/月 (月付 100GB)",
+		code: "ji8888",
+		discount: "",
+		feature: "18元月付兼顾 AI、流媒体与自研客户端",
+	},
+	{
+		name: "宇宙云",
+		url: "https://wzjc.yuzoucloud.cc/#/?code=yrThwMP1",
+		reviewUrl: "/reviews/yuzhou/",
+		architecture: "IEPL 专线",
+		price: "¥14.9/月 (月付 100GB)",
+		code: "YUZHOU553",
+		discount: "",
+		feature: "15元档极致性价比，VLESS 协议与 IEPL 专线",
+	},
+];
+
+interface Props {
+	class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<div class:list={["w-full my-6", className]}>
+    <h3 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+        <span>🏆</span>
+        <span>2026 梯子猫精选机场横向评测速查表</span>
+    </h3>
+    <div class="overflow-x-auto rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-black/20 shadow-xs">
+        <table class="w-full text-left text-xs md:text-sm border-collapse">
+            <thead>
+                <tr class="bg-sky-50 dark:bg-sky-950/40 text-sky-900 dark:text-sky-300 border-b border-sky-100 dark:border-sky-900/50 font-bold whitespace-nowrap">
+                    <th class="py-3 px-3.5">机场名称</th>
+                    <th class="py-3 px-3.5">线路架构</th>
+                    <th class="py-3 px-3.5 text-center">官网注册</th>
+                    <th class="py-3 px-3.5">入门价格 (类型)</th>
+                    <th class="py-3 px-3.5 text-center">优惠码</th>
+                    <th class="py-3 px-3.5">核心特色</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-black/5 dark:divide-white/5">
+                {featuredAirports.map((airport) => (
+                    <tr class="hover:bg-sky-50/50 dark:hover:bg-white/5 transition">
+                        <td class="py-3 px-3.5 font-bold whitespace-nowrap">
+                            <a href={airport.url} target="_blank" rel="noopener noreferrer" class="text-sky-600 dark:text-sky-400 hover:underline">
+                                {airport.name}
+                            </a>
+                        </td>
+                        <td class="py-3 px-3.5 text-black/70 dark:text-white/70 whitespace-nowrap">
+                            {airport.architecture}
+                        </td>
+                        <td class="py-3 px-3.5 text-center whitespace-nowrap">
+                            <a href={airport.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-bold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 hover:underline">
+                                <span>官网注册</span>
+                                <span>↗</span>
+                            </a>
+                        </td>
+                        <td class="py-3 px-3.5 text-black/80 dark:text-white/80 whitespace-nowrap">
+                            {airport.price}
+                        </td>
+                        <td class="py-3 px-3.5 text-center whitespace-nowrap">
+                            <span class="inline-block px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-700 dark:text-sky-300 font-mono text-xs font-semibold border border-sky-500/20">
+                                {airport.code}
+                            </span>
+                            {airport.discount && (
+                                <span class="ml-1 text-xs text-black/60 dark:text-white/60">({airport.discount})</span>
+                            )}
+                        </td>
+                        <td class="py-3 px-3.5 text-black/70 dark:text-white/70 min-w-[240px]">
+                            {airport.feature}
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    </div>
+</div>

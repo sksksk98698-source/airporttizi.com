@@ -1,9 +1,30 @@
 [
 	{
-		"id": "fuwari",
-		"siteTitle": "Fuwari",
-		"siteDesc": "✨A static blog template built with Astro.",
-		"siteUrl": "https://fuwari.vercel.app/",
-		"siteIcon": "https://raw.githubusercontent.com/saicaca/fuwari/refs/heads/main/src/assets/images/demo-avatar.png"
+		"id": "speedtest",
+		"siteTitle": "Speedtest by Ookla",
+		"siteDesc": "全球权威的网络宽带与节点延迟测速基准服务",
+		"siteUrl": "https://www.speedtest.net/",
+		"siteIcon": "https://www.speedtest.net/favicon.ico"
+	},
+	{
+		"id": "ipinfo",
+		"siteTitle": "IPinfo.io",
+		"siteDesc": "精准 IP 地理位置、ASN 路由与机房/住宅属性检测平台",
+		"siteUrl": "https://ipinfo.io/",
+		"siteIcon": "https://ipinfo.io/favicon.ico"
+	},
+	{
+		"id": "bgp-he",
+		"siteTitle": "Hurricane Electric BGP Toolkit",
+		"siteDesc": "国际骨干网络 AS 路径追踪与全球 BGP 路由表分析工具",
+		"siteUrl": "https://bgp.he.net/",
+		"siteIcon": "https://bgp.he.net/favicon.ico"
+	},
+	{
+		"id": "dnsperf",
+		"siteTitle": "DNSPerf",
+		"siteDesc": "全球公共 DNS 权威性能与时延对比监控平台",
+		"siteUrl": "https://www.dnsperf.com/",
+		"siteIcon": "https://www.dnsperf.com/favicon.ico"
 	}
 ]

@@ -1,0 +1,338 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"主流机场梯子横向深度对比｜专线vs中转、高端vs平价全维度PK - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫机场梯子横向对比工具。针对光速云、飞猫云、微风网络、唯兔云、灵猫网络等主流品牌，从IEPL物理专线vs公网中继、月付制vs年付制等多维度横向PK，提供不同预算与场景下的精准选购决策树。";
+
+const comparisonTiers = [
+	{
+		tier: "S级 老牌企业级 IEPL 专线 (代表: 光速云 / 飞猫云 / 微风网络)",
+		priceRange: "年付折合 ¥7 - ¥8 / 月 (年付折算)",
+		targetUser: "外贸商务、科研人员、AI 开发者、追求高稳定低成本长期使用者",
+		pros: [
+			"物理内网 IEPL 专线，完全不过 GFW 公网出口，敏感时期无感抗封锁",
+			"晚高峰零丢包（< 0.1%），三网延迟极低（香港 30-45ms 左右）",
+			"自研客户端与第三方 Clash / Sing-box / 小火箭订阅双模式兼容",
+			"年付折算月均成本低至 7-8 元，长期使用性价比极高",
+		],
+		cons: [
+			"起步通常需按年或按季支付以享受极低折算价",
+			"小流量套餐适合日常轻度与中度用户，超大流量需升级套餐",
+		],
+		score: "9.9 / 10",
+		recUrl: "/reviews/guangsucloud/",
+	},
+	{
+		tier: "A级 15 - 20 元主流灵活月付专线 (代表: 唯兔云 / 宇宙云 / 灵猫网络 / 无忧链接)",
+		priceRange: "¥14.9 - ¥20.0 / 月 (真实月付)",
+		targetUser: "拒绝长期绑定、按月付费、追求 100G-150G 充足流量的用户",
+		pros: [
+			"支持真实单月付款，无跑路或资金沉没风险",
+			"唯兔云拥有 60+ 丰富节点与智能负载均衡；灵猫网络 19 元享 150GB 大流量",
+			"全面采用现代化 VLESS 协议与 IEPL 专线，抗 DPI 深度包检测能力极强",
+			"三网优化适配，各主流流媒体及 AI 工具访问顺畅",
+		],
+		cons: [
+			"单月价格稍高于年付折算单价",
+			"部分品牌开业时间在 1-2 年左右，建议长期按月续费观察",
+		],
+		score: "9.5 / 10",
+		recUrl: "/reviews/weitu/",
+	},
+	{
+		tier: "B级 25 元档 150GB 综合大流量与 AI 强化 (代表: 速界 / SOGO云 / 可信云)",
+		priceRange: "¥24 - ¥25 / 月 (真实月付)",
+		targetUser:
+			"重度海外视频、海外多平台 AI 生产力（ChatGPT/Claude/Gemini）、多设备家庭",
+		pros: [
+			"150GB 充足月度流量配额，4K 视频随意看",
+			"速界等品牌重点针对海外 AI 场景优化落地节点纯净度",
+			"提供自研独立客户端与一键导入功能，新手上手容易",
+		],
+		cons: ["月预算在 25 元档位，对纯轻度浏览用户略有冗余"],
+		score: "9.2 / 10",
+		recUrl: "/reviews/sujie/",
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/compare/",
+			url: "https://airporttizi.com/compare/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "机场对比",
+						item: "https://airporttizi.com/compare/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "IEPL专线和BGP公网中转相比，核心差距在哪里？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "核心差距在于跨境传输环节。BGP中转在国内入口是多线BGP，但过境跨境环节依然走国际公网，晚高峰容易遭遇公网QoS限速并被防火墙DPI检测；而IEPL专线是端到端物理企业光缆互联，跨境完全不过公网，丢包率降低90%以上。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "年付折算7元和单月付20元，该怎么选？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "如果您是轻中度使用者且信赖运营3年以上的老牌大站（如光速云、飞猫云），年付折算7-8元月均成本极具性价比；如果您是新接触翻墙的小白用户或需求变动较大，强烈建议选择唯兔云（14.9元/月）或灵猫网络（19元/月）等单月付方案。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">机场对比专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:compare-arrows-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">主流机场梯子横向深度对比</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                面对市场上五花八门的机场宣传，普通用户往往难以抉择。梯子猫通过客观严谨的横向对比，明确区分<strong>年付低价折算型</strong>与<strong>真实灵活月付型</strong>，帮助你根据个人使用预算和业务场景精准匹配最佳方案。
+            </p>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：2026 科学上网机场横向选型对比三要素
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">1. 物理专线 vs 公网中继</h3>
+                    <p class="text-black/70 dark:text-white/70">IEPL 专线晚高峰丢包率通常低于 <strong>0.2%</strong>；而普通公网中转晚高峰丢包往往高达 <strong>5%-15%</strong>，敏感期更容易大面积阻断。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">2. 年付折算 vs 真实月付</h3>
+                    <p class="text-black/70 dark:text-white/70">7-8 元档多为年付套餐折算价（一次性付 80-100 元）；15-20 元档为真实单月购买价，零跑路风险但单月单价稍高。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">3. 原生住宅 vs 广播机房</h3>
+                    <p class="text-black/70 dark:text-white/70">广播 IP 极易触发 ChatGPT 1020 报错与 Netflix 自制剧限制；商用住宅 IP 纯净度高，无需验证码直接秒进。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：三大物理架构底层参数横向 PK 表 -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:table-chart-outline-rounded" class="text-(--primary)" />
+                IEPL 专线 vs BGP 中转 vs 公网直连 核心参数对决
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-black/10 dark:border-white/10 text-black/50 dark:text-white/50 pb-2">
+                            <th class="py-2.5 px-2">对比维度</th>
+                            <th class="py-2.5 px-2 text-(--primary) font-bold">IEPL 企业内网专线</th>
+                            <th class="py-2.5 px-2">BGP 公网中转</th>
+                            <th class="py-2.5 px-2">公网直连 / 廉价梯子</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-black/5 dark:divide-white/5">
+                        <tr>
+                            <td class="py-2.5 px-2 font-bold">跨境光缆性质</td>
+                            <td class="py-2.5 px-2 font-bold text-emerald-600 dark:text-emerald-400">端到端物理内网 (完全不过公网)</td>
+                            <td class="py-2.5 px-2">国内入口BGP，跨境走公网</td>
+                            <td class="py-2.5 px-2 text-rose-600 dark:text-rose-400">全程公网直接跨境传输</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-2 font-bold">晚高峰抗丢包</td>
+                            <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400 font-bold">&lt; 0.2% (近乎零丢包)</td>
+                            <td class="py-2.5 px-2 font-mono text-amber-600 dark:text-amber-400">3% - 10%</td>
+                            <td class="py-2.5 px-2 font-mono text-rose-600 dark:text-rose-400">&gt; 25% (严重卡顿)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-2 font-bold">敏感时期稳定性</td>
+                            <td class="py-2.5 px-2 font-bold text-emerald-600 dark:text-emerald-400">100% 存活 (避开 GFW DPI)</td>
+                            <td class="py-2.5 px-2">频繁换端口或备用 IP</td>
+                            <td class="py-2.5 px-2 text-rose-600 dark:text-rose-400">大面积 IP 封锁与断网</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-2 font-bold">带宽物理成本</td>
+                            <td class="py-2.5 px-2">极其昂贵 (约 ¥20-30/Mbps/月)</td>
+                            <td class="py-2.5 px-2">中等 (约 ¥5-10/Mbps/月)</td>
+                            <td class="py-2.5 px-2 text-emerald-600 dark:text-emerald-400">极低 (VPS自带公网带宽)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 第三章：三大梯队横向对比 -->
+        <div class="grid grid-cols-1 gap-6">
+            {comparisonTiers.map((item) => (
+                <div class="card-base p-6 rounded-(--radius-large)">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-black/5 dark:border-white/5">
+                        <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90">{item.tier}</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-2.5 py-1 rounded bg-(--primary)/10 text-(--primary) font-semibold">
+                                {item.priceRange}
+                            </span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold">
+                                推荐得分：{item.score}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-xs md:text-sm mb-4 text-black/70 dark:text-white/70">
+                        <strong class="text-black/90 dark:text-white/90">目标画像：</strong>{item.targetUser}
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm mb-4">
+                        <div class="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10">
+                            <h3 class="font-bold text-emerald-600 dark:text-emerald-400 mb-2 flex items-center gap-1.5">
+                                <Icon name="material-symbols:check-circle-outline-rounded" class="text-base" />
+                                优势与核心亮点
+                            </h3>
+                            <ul class="space-y-1.5 text-black/70 dark:text-white/70">
+                                {item.pros.map((p) => (
+                                    <li class="flex items-start gap-1.5">
+                                        <span class="text-emerald-600 dark:text-emerald-400">✓</span>
+                                        <span>{p}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-rose-500/5 border border-rose-500/10">
+                            <h3 class="font-bold text-rose-600 dark:text-rose-400 mb-2 flex items-center gap-1.5">
+                                <Icon name="material-symbols:warning-outline-rounded" class="text-base" />
+                                局限与适用注意
+                            </h3>
+                            <ul class="space-y-1.5 text-black/70 dark:text-white/70">
+                                {item.cons.map((c) => (
+                                    <li class="flex items-start gap-1.5">
+                                        <span class="text-rose-600 dark:text-rose-400">!</span>
+                                        <span>{c}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-end gap-3">
+                        <a href={item.recUrl} class="btn-regular px-4 py-2 rounded-lg text-xs font-bold transition">
+                            查看该梯队评测报告
+                        </a>
+                        <a href="/recommend/" class="btn-primary px-4 py-2 rounded-lg text-xs font-bold transition">
+                            查看推荐品牌 →
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <!-- 第四章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第四章：对比与决策常见问题解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：为什么有的廉价机场写着“IPLC专线”，价格却只要 5 元/月？</h4>
+                    <p class="text-black/70 dark:text-white/70">这是典型的“挂羊头卖狗肉”。真正的 IPLC/IEPL 专线带宽成本极为高昂，不可能做到 5 元/月且不限速。此类超低价机场通常是单台便宜 VPS 直连，仅将节点名称改名为“IPLC”，晚高峰丢包率立刻原形毕露。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：如果我不确定自己的宽带适合哪个机场，该怎么快速试水？</h4>
+                    <p class="text-black/70 dark:text-white/70">建议先选择唯兔云（14.9元/月）或灵猫网络（19元/月）购买单月套餐，在每天晚上 20:30 - 22:30 的晚高峰时段，播放一段 YouTube 4K 60FPS 视频并测试 ChatGPT 交互。如果本地宽带表现平稳，再决定长期续订。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/streaming/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🎬 AI与流媒体解锁</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

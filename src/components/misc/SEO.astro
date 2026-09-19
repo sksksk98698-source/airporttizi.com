@@ -17,11 +17,16 @@ let {
 	setOGTypeArticle = false,
 } = Astro.props;
 
+const HOME_SEO_TITLE =
+	"2026高端稳定机场推荐与机场排行｜性价比机场评测、价格、线路与机场梯子指南 - AirportTizi";
+const HOME_SEO_DESC =
+	"梯子猫（AirportTizi.com）专注2026稳定高速SS/V2Ray/Trojan/Hysteria2机场梯子推荐与深度评测，提供高端IEPL专线机场梯子排行、价格套餐对比、4K流媒体与ChatGPT/Claude解锁支持，助您挑选最适合的科学上网服务。";
+
 let pageTitle: string;
 if (title) {
-	pageTitle = `${title} - ${siteConfig.title}`;
+	pageTitle = `${title} - 梯子猫 AirportTizi`;
 } else {
-	pageTitle = `${siteConfig.title} - ${siteConfig.subtitle}`;
+	pageTitle = HOME_SEO_TITLE;
 }
 
 const canonicalUrl = Astro.url;
@@ -82,18 +87,45 @@ const updatedDate = formatDate(pageData.updated);
 
 const tags: string[] = pageData.tags || [];
 
-if (!description) {
-	description = pageData.description || pageTitle;
+if (!description || description === siteConfig.subtitle) {
+	description = pageData.description || HOME_SEO_DESC;
 }
+
+const defaultKeywords =
+	"机场推荐,机场梯子,科学上网,2026机场推荐,梯子排行,机场测评,IPLC专线,IEPL专线,4K流媒体解锁,ChatGPT机场,Clash配置,Shadowrocket,科学上网梯子";
+const pageKeywords =
+	tags.length > 0 ? tags.join(", ") + ", " + defaultKeywords : defaultKeywords;
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": "https://airporttizi.com/#website",
+			url: "https://airporttizi.com/",
+			name: "AirportTizi 梯子猫",
+			description: HOME_SEO_DESC,
+			inLanguage: "zh-CN",
+		},
+		{
+			"@type": "Organization",
+			"@id": "https://airporttizi.com/#organization",
+			name: "梯子猫 (AirportTizi)",
+			url: "https://airporttizi.com/",
+			logo: "https://airporttizi.com/favicon/favicon-light-192.svg",
+		},
+	],
+};
 ---
 
 <title>{pageTitle}</title>
 <meta name="title" content={pageTitle} />
 <meta name="description" content={description} />
-<meta name="author" content={profileConfig.name}>
+<meta name="keywords" content={pageKeywords} />
+<meta name="author" content={profileConfig.name} />
 <link rel="canonical" href={canonicalUrl} />
 
-<meta property="og:site_name" content={siteConfig.title}>
+<meta property="og:site_name" content="AirportTizi 梯子猫" />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
@@ -118,3 +150,5 @@ if (!description) {
 <meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={description} />
 {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>

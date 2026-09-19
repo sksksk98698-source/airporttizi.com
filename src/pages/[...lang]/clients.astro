@@ -1,0 +1,352 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"全平台科学上网客户端下载与配置合集｜Windows/Mac/iOS/Android/Linux - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫全平台科学上网客户端下载与配置合集。整理 2026 年最新开源客户端（Clash Verge Rev、Sing-box、Shadowrocket、v2rayN、Loon、Stash）的官方 GitHub Release 下载渠道、核心特性、Tun 模式与快速上手教程。";
+
+const clientPlatforms = [
+	{
+		os: "Windows 平台",
+		icon: "fa6-brands:windows",
+		clients: [
+			{
+				name: "Clash Verge Rev (强烈推荐)",
+				kernel: "Mihomo (Clash.Meta)",
+				features:
+					"现代高颜值 UI、内置 Tun 虚拟网卡、原生支持中文、自动转换订阅、内存占用低、支持多节点负载均衡",
+				githubUrl: "https://github.com/clash-verge-rev/clash-verge-rev",
+				recommendLevel: "⭐⭐⭐⭐⭐",
+			},
+			{
+				name: "v2rayN",
+				kernel: "Xray / Sing-box",
+				features:
+					"老牌经典客户端、功能极其丰富、支持单节点手动添加与多核心自由切换，适合高阶调试",
+				githubUrl: "https://github.com/2dust/v2rayN",
+				recommendLevel: "⭐⭐⭐⭐☆",
+			},
+		],
+	},
+	{
+		os: "macOS 平台 (Intel & Apple Silicon)",
+		icon: "fa6-brands:apple",
+		clients: [
+			{
+				name: "Clash Verge Rev for Mac",
+				kernel: "Mihomo (Clash.Meta)",
+				features:
+					"原生适配 M1/M2/M3/M4 芯片、支持菜单栏图标常驻、低发热能耗、Tun 模式接管系统全部流量",
+				githubUrl: "https://github.com/clash-verge-rev/clash-verge-rev",
+				recommendLevel: "⭐⭐⭐⭐⭐",
+			},
+			{
+				name: "Loon for Mac",
+				kernel: "Loon Core",
+				features:
+					"UI 精致、规则系统极为强大、支持插件与脚本编写，适合中进阶用户与跨设备同步",
+				githubUrl: "https://apps.apple.com/us/app/loon/id1372238848",
+				recommendLevel: "⭐⭐⭐⭐☆",
+			},
+		],
+	},
+	{
+		os: "iOS / iPadOS 平台",
+		icon: "fa6-brands:apple",
+		clients: [
+			{
+				name: "Shadowrocket (小火箭)",
+				kernel: "多协议混合",
+				features:
+					"iOS 最流行客户端、操作极简、支持扫码导入订阅、价格亲民（美区 $2.99）、支持按需连接与策略分流",
+				githubUrl: "https://apps.apple.com/us/app/shadowrocket/id932747118",
+				recommendLevel: "⭐⭐⭐⭐⭐",
+			},
+			{
+				name: "Quantumult X (圈X)",
+				kernel: "Q-Engine",
+				features:
+					"界面酷炫、策略分流极为精准、支持丰富的重写和脚本自动化，适合高级极客玩家",
+				githubUrl: "https://apps.apple.com/us/app/quantumult-x/id1453922612",
+				recommendLevel: "⭐⭐⭐⭐☆",
+			},
+		],
+	},
+	{
+		os: "Android 平台",
+		icon: "fa6-brands:android",
+		clients: [
+			{
+				name: "Clash Meta for Android (CMFA)",
+				kernel: "Mihomo (Clash.Meta)",
+				features:
+					"全面支持最新 Hysteria2/VLESS 协议、应用分流、分应用代理、耗电控制极佳、UI 优雅",
+				githubUrl: "https://github.com/MetaCubeX/ClashMetaForAndroid",
+				recommendLevel: "⭐⭐⭐⭐⭐",
+			},
+			{
+				name: "v2rayNG",
+				kernel: "Xray Core",
+				features:
+					"老牌安卓客户端、轻巧稳定、支持订阅更新与自定义路由分流规则，低配置手机首选",
+				githubUrl: "https://github.com/2dust/v2rayNG",
+				recommendLevel: "⭐⭐⭐⭐",
+			},
+		],
+	},
+	{
+		os: "Linux / 软路由平台",
+		icon: "fa6-brands:linux",
+		clients: [
+			{
+				name: "OpenWrt OpenClash / PassWall",
+				kernel: "Mihomo / Xray",
+				features:
+					"家庭路由器全局透明代理、全屋电视手机自动科学加速、智能 DNS 防污染与局域网设备分组",
+				githubUrl: "https://github.com/vernesong/OpenClash",
+				recommendLevel: "⭐⭐⭐⭐⭐",
+			},
+			{
+				name: "Sing-box CLI / Mihomo CLI",
+				kernel: "Sing-box / Mihomo",
+				features:
+					"纯命令行轻量运行、资源占用极少（< 30MB 内存）、适合 VPS 服务器与嵌入式 Linux 设备",
+				githubUrl: "https://github.com/SagerNet/sing-box",
+				recommendLevel: "⭐⭐⭐⭐",
+			},
+		],
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/clients/",
+			url: "https://airporttizi.com/clients/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "客户端",
+						item: "https://airporttizi.com/clients/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "原 Clash for Windows (CFW) 停更后，现在电脑端应该用什么？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "CFW 停更后，原社区已被完全重构升级为 Clash Verge Rev。该客户端由全新开源团队基于开源 Tauri + React 框架重写，内核全面迁移至活跃更新的 Mihomo（Clash.Meta），完美支持 VLESS、Hysteria2 等现代协议，内置 Tun 虚拟网卡且内存占用仅为原版的三分之一。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "什么是 Tun 虚拟网卡模式？什么时候需要开启它？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "系统代理模式只能接管遵循系统 HTTP/SOCKS 代理协议的软件（如浏览器）；而对于终端命令行（CMD/Terminal）、Git 命令行、海外联机游戏、以及部分不遵循系统代理的特定软件，必须在客户端中开启 Tun 虚拟网卡模式，在网络协议栈底层劫持所有出站流量，实现全局无死角加速。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">客户端专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:devices-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">全平台科学上网客户端下载与配置合集</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                工欲善其事，必先利其器。梯子猫汇总 2026 年最新、最安全的主流开源客户端下载入口与特性指南。所有链接均直达官方 GitHub Release 或 App Store 官方商城，彻底杜绝第三方篡改与木马后门风险。
+            </p>
+            <div class="mt-3 p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-700 dark:text-rose-400 font-medium">
+                ⚠️ 安全警告：切勿在第三方个人网盘、非官方镜像站或不明软件管家下载代理客户端！曾有多次黑客利用被篡改的客户端窃取用户账号密码与虚拟货币资产的恶性事件。
+            </div>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：2026 全平台科学上网客户端黄金选型指南
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>Windows / macOS 首选：</strong><strong>Clash Verge Rev</strong>。基于现代 Rust Tauri 构建，内存占用比旧版 CFW 降低 60%，原生中文支持，内置一键开启 Tun 虚拟网卡。</p>
+                    <p><strong>iOS / iPadOS 首选：</strong><strong>Shadowrocket (小火箭)</strong>。美区 App Store 售价 $2.99，支持扫码导入订阅与按需连接，稳定易用。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>Android 首选：</strong><strong>Clash Meta for Android (CMFA)</strong>。支持应用分流，全面兼容 VLESS/Hysteria2 协议，后台省电优化极佳。</p>
+                    <p><strong>软路由 / 旁路由首选：</strong><strong>OpenClash / PassWall</strong>。实现全屋设备（电视盒子、游戏机、手机）免客户端透明加速。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：平台列表 -->
+        <div class="space-y-6">
+            {clientPlatforms.map((platform) => (
+                <div class="card-base p-6 rounded-(--radius-large)">
+                    <div class="flex items-center gap-2 mb-4 pb-3 border-b border-black/5 dark:border-white/5">
+                        <Icon name={platform.icon} class="text-xl text-(--primary)" />
+                        <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90">{platform.os}</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {platform.clients.map((c) => (
+                            <div class="p-4 rounded-xl bg-black/3 dark:bg-white/3 border border-black/5 dark:border-white/5 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between gap-2 mb-2">
+                                        <h3 class="font-bold text-black/90 dark:text-white/90">{c.name}</h3>
+                                        <span class="text-xs">{c.recommendLevel}</span>
+                                    </div>
+                                    <div class="text-xs text-black/50 dark:text-white/50 mb-2">
+                                        核心驱动：<span class="font-mono text-(--primary)">{c.kernel}</span>
+                                    </div>
+                                    <p class="text-xs text-black/70 dark:text-white/70 leading-relaxed mb-4">
+                                        {c.features}
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
+                                    <a href={c.githubUrl} target="_blank" rel="noopener noreferrer"
+                                       class="btn-regular px-3 py-1.5 rounded-lg text-xs font-bold inline-flex items-center gap-1.5"
+                                    >
+                                        <Icon name="fa6-brands:github" class="text-xs" />
+                                        官方发布页
+                                    </a>
+                                    <a href="/guides/" class="text-xs text-(--primary) font-bold hover:underline">
+                                        配置教程 →
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <!-- 第三章：Tun 模式实战解析 -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:vpn-lock-outline-rounded" class="text-(--primary)" />
+                Tun 虚拟网卡模式实战与配置要点
+            </h2>
+            <div class="space-y-3 text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                <p>
+                    普通代理模式依赖系统设置的代理环境变量，遇到以下情况往往失效：
+                </p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>终端执行 <code>git clone</code>、<code>npm install</code> 或 <code>curl</code> 仍然遭遇连接超时；</li>
+                    <li>Steam / Epic / Origin 等游戏平台在联机时提示网络错误；</li>
+                    <li>各类使用私有网络栈开发的专业客户端软件不遵守系统代理。</li>
+                </ul>
+                <p>
+                    <strong>解决方案：</strong>在 Clash Verge Rev 的「设置 (Settings)」中安装「服务模式 (Service Mode)」，然后开启「Tun 模式 (Tun Mode)」。此时客户端会在操作系统底层创建一块虚拟网卡，强制接管所有出站 TCP/UDP 数据包，彻底消除任何代理盲区。
+                </p>
+            </div>
+        </section>
+
+        <!-- 第四章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第四章：客户端下载与使用常见问题解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：为什么在 GitHub 下载客户端安装包时速度极慢甚至无法打开？</h4>
+                    <p class="text-black/70 dark:text-white/70">GitHub 官网及资源服务器在国内受到严重 DNS 污染与限速。如果您当前尚未配置好代理，可以借助光速云或飞猫云官网后台提供的「一键安装包」进行免翻墙极速下载。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：Shadowrocket (小火箭) 在国内 App Store 为什么搜不到？</h4>
+                    <p class="text-black/70 dark:text-white/70">因为中国大陆区 App Store 下架了所有网络加速类工具。您需要注册或购买一个美区或港区 Apple ID，登录 App Store 搜索即可正常下载。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/streaming/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🎬 AI与流媒体解锁</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

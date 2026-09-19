@@ -6,16 +6,31 @@ import { url } from "../utils/url-utils";
 const currentYear = new Date().getFullYear();
 ---
 
-<!--<div class="border-t border-[var(--primary)] mx-16 border-dashed py-8 max-w-[var(--page-width)] flex flex-col items-center justify-center px-6">-->
-<div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div>
-<!--<div class="transition bg-[oklch(92%_0.01_var(--hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">-->
-<div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
-    <div class="transition text-50 text-sm text-center">
-        &copy; <span id="copyright-year">{currentYear}</span> {profileConfig.name}. All Rights Reserved. / {""}
-        <a class="transition link text-(--primary) font-medium" target="_blank" href={url('rss.xml')}>RSS</a> / {""}
-        <a class="transition link text-(--primary) font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a><br>
-        Powered by {""}
-        <a class="transition link text-(--primary) font-medium" target="_blank" href="https://astro.build">Astro</a> & {""}
-        <a class="transition link text-(--primary) font-medium" target="_blank" href="https://github.com/iyanarmanda/fumika">Fumika</a>
+<div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-8 md:mx-32"></div>
+<div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6 py-6 card-base">
+    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4 text-xs md:text-sm text-black/60 dark:text-white/60">
+        <a class="hover:text-(--primary) transition" href={url('/')}>首页</a>
+        <span>•</span>
+        <a class="hover:text-(--primary) transition" href={url('/recommend/')}>机场推荐</a>
+        <span>•</span>
+        <a class="hover:text-(--primary) transition" href={url('/ranking/')}>机场排行</a>
+        <span>•</span>
+        <a class="hover:text-(--primary) transition" href={url('/airports/')}>机场数据库</a>
+        <span>•</span>
+        <a class="hover:text-(--primary) transition" href={url('/reviews/')}>深度评测</a>
+        <span>•</span>
+        <a class="hover:text-(--primary) transition" href={url('/clients/')}>客户端</a>
+        <span>•</span>
+        <a class="hover:text-(--primary) transition" href={url('/guides/')}>教程中心</a>
+        <span>•</span>
+        <a class="hover:text-(--primary) transition" href={url('/monitor/')}>风险监控</a>
+    </div>
+    <div class="transition text-50 text-xs md:text-sm text-center leading-relaxed">
+        &copy; <span id="copyright-year">{currentYear}</span> {profileConfig.name} (AirportTizi.com). All Rights Reserved. &nbsp;|&nbsp;
+        <a class="transition link text-(--primary) font-medium" target="_blank" href={url('rss.xml')}>RSS</a> &nbsp;|&nbsp;
+        <a class="transition link text-(--primary) font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a>
+        <div class="mt-2 text-[11px] text-black/40 dark:text-white/40 max-w-xl mx-auto">
+            免责声明：本站所有内容仅供网络技术研究、科学上网客户端配置学习与跨国科研企业合法加速参考，请严格遵守您所在国家与地区的法律法规。
+        </div>
     </div>
 </div>

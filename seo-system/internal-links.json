@@ -1,0 +1,463 @@
+{
+	"version": "1.0.0",
+	"lastUpdated": "2026-09-19T16:47:00+08:00",
+	"linkGraph": [
+		{
+			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"target": "https://airporttizi.com/posts/iplc-iepl-dedicated-line-guide/",
+			"anchorTexts": [
+				"IPLC专线与IEPL专线深度解析",
+				"什么是专线机场",
+				"专线与中继的区别"
+			],
+			"relationship": "pillar-to-supporting-tech",
+			"context": "在综合推荐对比表格和线路解析章节中引导用户理解专线概念"
+		},
+		{
+			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"target": "https://airporttizi.com/posts/chatgpt-claude-netflix-disney-unlock-guide/",
+			"anchorTexts": [
+				"ChatGPT与流媒体解锁指南",
+				"流媒体IP纯净度防封策略",
+				"AI工具与奈飞解锁教程"
+			],
+			"relationship": "pillar-to-application-usecase",
+			"context": "在流媒体与AI使用场景段落中提供专项解锁攻略入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"target": "https://airporttizi.com/posts/cross-platform-vpn-client-setup-guide/",
+			"anchorTexts": [
+				"全平台客户端下载与配置指南",
+				"各系统翻墙客户端新手教程",
+				"客户端软件配置"
+			],
+			"relationship": "pillar-to-client-guide",
+			"context": "在购买机场后的客户端导入环节引导配置"
+		},
+		{
+			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"target": "https://airporttizi.com/reviews/amytelecom/",
+			"anchorTexts": [
+				"AmyTelecom评测",
+				"AmyTelecom专线实测",
+				"老牌IPLC机场AmyTelecom"
+			],
+			"relationship": "pillar-to-brand-spoke",
+			"context": "推荐列表中的品牌详情深度评测链接"
+		},
+		{
+			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"target": "https://airporttizi.com/reviews/nexitally/",
+			"anchorTexts": [
+				"Nexitally奶昔评测",
+				"Nexitally深度测评",
+				"顶级旗舰机场奶昔"
+			],
+			"relationship": "pillar-to-brand-spoke",
+			"context": "高端旗舰梯子梯队推荐跳转"
+		},
+		{
+			"source": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"target": "https://airporttizi.com/reviews/tag-vpn/",
+			"anchorTexts": [
+				"TAG VPN评测",
+				"全球冷门节点TAG VPN",
+				"TAG VPN流媒体体验"
+			],
+			"relationship": "pillar-to-brand-spoke",
+			"context": "全球节点覆盖与小众国家梯队跳转"
+		},
+		{
+			"source": "https://airporttizi.com/posts/latest-airport-ladder-speed-stability-ranking-2026/",
+			"target": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"anchorTexts": [
+				"2026年翻墙机场推荐综合榜单",
+				"优质翻墙机场选购指南",
+				"年度机场推荐"
+			],
+			"relationship": "sister-pillar-linking",
+			"context": "在天梯榜引言与总结处指向综合推荐长文"
+		},
+		{
+			"source": "https://airporttizi.com/posts/cross-platform-vpn-client-setup-guide/",
+			"target": "https://airporttizi.com/posts/clash-rules-advanced-guide-2026/",
+			"anchorTexts": [
+				"Clash分流规则进阶教程",
+				"Clash进阶分流与防封配置",
+				"Clash规则一键导入指南"
+			],
+			"relationship": "pillar-to-advanced-tutorial",
+			"context": "在Windows/Mac客户端章节推荐使用Clash进阶分流规则"
+		},
+		{
+			"source": "https://airporttizi.com/posts/cross-platform-vpn-client-setup-guide/",
+			"target": "https://airporttizi.com/posts/free-us-apple-id-shadowrocket-daily-update/",
+			"anchorTexts": [
+				"免费美区Apple ID共享账号",
+				"获取美区账号下载小火箭",
+				"Shadowrocket美区账号每日更新"
+			],
+			"relationship": "pillar-to-account-resource",
+			"context": "在iOS小火箭下载教程中解决无美区账号痛点"
+		},
+		{
+			"source": "https://airporttizi.com/posts/cross-platform-vpn-client-setup-guide/",
+			"target": "https://airporttizi.com/posts/cannot-access-site-troubleshooting/",
+			"anchorTexts": [
+				"点击无法访问网站排查指南",
+				"翻墙连不上常见排查",
+				"科学上网打不开网页解决方法"
+			],
+			"relationship": "pillar-to-troubleshooting",
+			"context": "在客户端配置常见错误排查章节提供跳转"
+		},
+		{
+			"source": "https://airporttizi.com/posts/chatgpt-claude-netflix-disney-unlock-guide/",
+			"target": "https://airporttizi.com/reviews/tag-vpn/",
+			"anchorTexts": [
+				"TAG VPN原生节点解锁",
+				"TAG VPN流媒体解锁实测",
+				"TAG VPN评测"
+			],
+			"relationship": "usecase-to-brand-spoke",
+			"context": "在解锁AI与奈飞推荐节点时列举具备原生家庭宽带IP的机场"
+		},
+		{
+			"source": "https://airporttizi.com/posts/openwrt-soft-router-vpn-setup-guide/",
+			"target": "https://airporttizi.com/posts/best-vpn-proxy-tools-2026/",
+			"anchorTexts": [
+				"常用翻墙代理工具汇总",
+				"2026翻墙工具推荐",
+				"科学上网工具对比"
+			],
+			"relationship": "hardware-to-software-hub",
+			"context": "在软路由插件选择（OpenClash vs PassWall）时对比各底层协议"
+		},
+		{
+			"source": "https://airporttizi.com/reviews/amytelecom/",
+			"target": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"anchorTexts": [
+				"2026最新翻墙机场推荐",
+				"优质机场排行榜",
+				"翻墙机场综合榜"
+			],
+			"relationship": "brand-spoke-to-pillar",
+			"context": "在单品牌评测文末返回全站综合推荐总榜"
+		},
+		{
+			"source": "https://airporttizi.com/reviews/blinkload/",
+			"target": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"anchorTexts": [
+				"翻墙机场选购推荐指南",
+				"最新机场梯子综合实力排行",
+				"2026翻墙机场推荐"
+			],
+			"relationship": "brand-spoke-to-pillar",
+			"context": "在单品牌评测文末返回全站综合推荐总榜"
+		},
+		{
+			"source": "https://airporttizi.com/reviews/flowercloud/",
+			"target": "https://airporttizi.com/posts/iplc-iepl-dedicated-line-guide/",
+			"anchorTexts": [
+				"什么是唯云专线与IPLC",
+				"专线与公网中继技术对比",
+				"IPLC专线解析"
+			],
+			"relationship": "brand-spoke-to-tech-pillar",
+			"context": "在解析花云唯云专线技术架构时提供科普深度链接"
+		},
+		{
+			"source": "https://airporttizi.com/posts/wgetcloud-review-2026/",
+			"target": "https://airporttizi.com/posts/wgetcloud-website-plans-unlock-guide/",
+			"anchorTexts": ["WgetCloud官网指南", "WgetCloud套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 WgetCloud 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/wgetcloud-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/wgetcloud-review-2026/",
+			"anchorTexts": ["WgetCloud深度评测", "WgetCloud节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 WgetCloud 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/nexitally-review-2026/",
+			"target": "https://airporttizi.com/posts/nexitally-website-plans-unlock-guide/",
+			"anchorTexts": ["Nexitally官网指南", "Nexitally套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Nexitally 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/nexitally-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/nexitally-review-2026/",
+			"anchorTexts": ["Nexitally深度评测", "Nexitally节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Nexitally 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/tag-vpn-review-2026/",
+			"target": "https://airporttizi.com/posts/tag-vpn-worth-buying-analysis/",
+			"anchorTexts": ["TAG VPN官网指南", "TAG VPN套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 TAG VPN 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/tag-vpn-worth-buying-analysis/",
+			"target": "https://airporttizi.com/posts/tag-vpn-review-2026/",
+			"anchorTexts": ["TAG VPN深度评测", "TAG VPN节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 TAG VPN 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/flowercloud-review-2026/",
+			"target": "https://airporttizi.com/posts/flowercloud-website-plans-unlock-guide/",
+			"anchorTexts": ["FlowerCloud官网指南", "FlowerCloud套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 FlowerCloud 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/flowercloud-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/flowercloud-review-2026/",
+			"anchorTexts": ["FlowerCloud深度评测", "FlowerCloud节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 FlowerCloud 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/totoro-cloud-review-2026/",
+			"target": "https://airporttizi.com/posts/totoro-cloud-website-plans-unlock-guide/",
+			"anchorTexts": [
+				"Totoro Cloud官网指南",
+				"Totoro Cloud套餐与流媒体解锁指南"
+			],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Totoro Cloud 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/totoro-cloud-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/totoro-cloud-review-2026/",
+			"anchorTexts": [
+				"Totoro Cloud深度评测",
+				"Totoro Cloud节点测速与稳定性分析"
+			],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Totoro Cloud 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/flyingbird-review-2026/",
+			"target": "https://airporttizi.com/posts/flyingbird-website-plans-unlock-guide/",
+			"anchorTexts": ["FlyingBird官网指南", "FlyingBird套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 FlyingBird 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/flyingbird-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/flyingbird-review-2026/",
+			"anchorTexts": ["FlyingBird深度评测", "FlyingBird节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 FlyingBird 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/ssrdog-review-2026/",
+			"target": "https://airporttizi.com/posts/ssrdog-website-plans-unlock-guide/",
+			"anchorTexts": ["SSRDOG官网指南", "SSRDOG套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 SSRDOG 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/ssrdog-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/ssrdog-review-2026/",
+			"anchorTexts": ["SSRDOG深度评测", "SSRDOG节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 SSRDOG 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/speedcat-review-2026/",
+			"target": "https://airporttizi.com/posts/speedcat-website-plans-unlock-guide/",
+			"anchorTexts": ["SpeedCAT官网指南", "SpeedCAT套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 SpeedCAT 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/speedcat-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/speedcat-review-2026/",
+			"anchorTexts": ["SpeedCAT深度评测", "SpeedCAT节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 SpeedCAT 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/youtu-review-2026/",
+			"target": "https://airporttizi.com/posts/youtu-website-plans-unlock-guide/",
+			"anchorTexts": ["Youtu官网指南", "Youtu套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Youtu 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/youtu-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/youtu-review-2026/",
+			"anchorTexts": ["Youtu深度评测", "Youtu节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Youtu 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/boostnet-review-2026/",
+			"target": "https://airporttizi.com/posts/boostnet-website-plans-unlock-guide/",
+			"anchorTexts": ["BoostNet官网指南", "BoostNet套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 BoostNet 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/boostnet-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/boostnet-review-2026/",
+			"anchorTexts": ["BoostNet深度评测", "BoostNet节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 BoostNet 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/amytelecom-review-2026/",
+			"target": "https://airporttizi.com/posts/amytelecom-website-plans-unlock-guide/",
+			"anchorTexts": ["AmyTelecom官网指南", "AmyTelecom套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 AmyTelecom 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/amytelecom-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/amytelecom-review-2026/",
+			"anchorTexts": ["AmyTelecom深度评测", "AmyTelecom节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 AmyTelecom 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/mojie-review-2026/",
+			"target": "https://airporttizi.com/posts/mojie-website-plans-unlock-guide/",
+			"anchorTexts": ["Mojie官网指南", "Mojie套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Mojie 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/mojie-website-plans-unlock-guide/",
+			"target": "https://airporttizi.com/posts/mojie-review-2026/",
+			"anchorTexts": ["Mojie深度评测", "Mojie节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Mojie 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/just-my-socks-review-2026/",
+			"target": "https://airporttizi.com/posts/justmysocks-website-plans-guide/",
+			"anchorTexts": [
+				"Just My Socks官网指南",
+				"Just My Socks套餐与流媒体解锁指南"
+			],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Just My Socks 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/justmysocks-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/just-my-socks-review-2026/",
+			"anchorTexts": [
+				"Just My Socks深度评测",
+				"Just My Socks节点测速与稳定性分析"
+			],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Just My Socks 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/fastlink-review-2026/",
+			"target": "https://airporttizi.com/posts/fastlink-website-status-plans-guide/",
+			"anchorTexts": ["Fastlink官网指南", "Fastlink套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Fastlink 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/fastlink-website-status-plans-guide/",
+			"target": "https://airporttizi.com/posts/fastlink-review-2026/",
+			"anchorTexts": ["Fastlink深度评测", "Fastlink节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Fastlink 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/bywave-review-2026/",
+			"target": "https://airporttizi.com/posts/bywave-website-plans-guide/",
+			"anchorTexts": ["ByWave官网指南", "ByWave套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 ByWave 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/bywave-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/bywave-review-2026/",
+			"anchorTexts": ["ByWave深度评测", "ByWave节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 ByWave 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/gatern-review-2026/",
+			"target": "https://airporttizi.com/posts/gatern-website-plans-guide/",
+			"anchorTexts": ["Gatern官网指南", "Gatern套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Gatern 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/gatern-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/gatern-review-2026/",
+			"anchorTexts": ["Gatern深度评测", "Gatern节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Gatern 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/qingyunti-review-2026/",
+			"target": "https://airporttizi.com/posts/qingyunti-website-plans-guide/",
+			"anchorTexts": ["Qingyunti官网指南", "Qingyunti套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Qingyunti 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/qingyunti-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/qingyunti-review-2026/",
+			"anchorTexts": ["Qingyunti深度评测", "Qingyunti节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Qingyunti 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/dageyun-review-2026/",
+			"target": "https://airporttizi.com/posts/dageyun-website-plans-guide/",
+			"anchorTexts": ["Dageyun官网指南", "Dageyun套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Dageyun 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/dageyun-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/dageyun-review-2026/",
+			"anchorTexts": ["Dageyun深度评测", "Dageyun节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Dageyun 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/kuromis-review-2026/",
+			"target": "https://airporttizi.com/posts/kuromis-website-plans-guide/",
+			"anchorTexts": ["Kuromis官网指南", "Kuromis套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Kuromis 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/kuromis-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/kuromis-review-2026/",
+			"anchorTexts": ["Kuromis深度评测", "Kuromis节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Kuromis 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/laomaoyun-review-2026/",
+			"target": "https://airporttizi.com/posts/laomaoyun-website-plans-guide/",
+			"anchorTexts": ["Laomaoyun官网指南", "Laomaoyun套餐与流媒体解锁指南"],
+			"relationship": "brand-review-to-plans-guide",
+			"context": "在 Laomaoyun 技术评测中提供官网选型与流媒体解锁深度指南入口"
+		},
+		{
+			"source": "https://airporttizi.com/posts/laomaoyun-website-plans-guide/",
+			"target": "https://airporttizi.com/posts/laomaoyun-review-2026/",
+			"anchorTexts": ["Laomaoyun深度评测", "Laomaoyun节点测速与稳定性分析"],
+			"relationship": "plans-guide-to-brand-review",
+			"context": "在 Laomaoyun 官网指南中提供底层专线架构与晚高峰测速评测入口"
+		}
+	]
+}

@@ -1,7 +1,8 @@
 {
-	"name": "fumika",
+	"name": "airporttizi",
+	"description": "AirportTizi 梯子猫 - 2026高端稳定机场推荐、机场梯子排行与机场数据库",
 	"type": "module",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build && pagefind --site dist",

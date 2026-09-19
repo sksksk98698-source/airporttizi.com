@@ -1,0 +1,312 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import { airportsList } from "../../data/airports";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"全网机场梯子价格行情与套餐选购指南｜避坑防跑路与折扣优惠 - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫2026机场梯子价格行情与成本精算指南。全面剖析10元以内年付折算款、15-20元主流月付专线款、25元150GB大流量款的真实IDC成本构成，教你识破超低价跑路套路与大额年付陷阱。";
+
+const priceTiers = [
+	{
+		tierName: "10 元以内年付低价折算档",
+		price: "折合 ¥7 - ¥8 / 月 (年付)",
+		traffic: "50GB - 60GB / 月",
+		lineType: "IEPL 企业级专线 · 小流量方案",
+		suitableFor: "文献查阅、谷歌学术、社交媒体、日常轻度使用 AI 的个人用户",
+		recommendation:
+			"适合可以接受较长付款周期以换取极低月均成本的用户，品牌运营时间多在 2-6 年，稳定性好。",
+		sample:
+			"光速云 (约¥7.5/月) / 飞猫云 (约¥7.0/月) / 微风网络 (约¥7.0/月) / 星岛梦 (约¥8.0/月)",
+		recUrl: "/reviews/guangsucloud/",
+	},
+	{
+		tierName: "15 元档高性价比月付专线",
+		price: "¥14.90 / 月 (真实月付)",
+		traffic: "100GB / 月",
+		lineType: "IEPL 专线 / 60+ 节点智能调度",
+		suitableFor: "追求按月付费、拒绝资金风险、每月流量约 100G 的普通用户",
+		recommendation:
+			"价格门槛极低，支持单月购买，唯兔云具备 60+ 节点与三网优化，宇宙云兼顾 VLESS+IEPL。",
+		sample: "唯兔云 (¥14.9/月) / 宇宙云 (¥14.9/月)",
+		recUrl: "/reviews/weitu/",
+	},
+	{
+		tierName: "18 - 20 元主流月付专线档 (主力推荐)",
+		price: "¥18 - ¥20 / 月 (真实月付)",
+		traffic: "100GB - 150GB / 月",
+		lineType: "IEPL 专线 · VLESS 协议 · 企业内网",
+		suitableFor:
+			"4K 流媒体日常播放、外贸日常沟通、ChatGPT/Claude 频繁调用的主力用户",
+		recommendation:
+			"付款灵活性与网络质量的黄金平衡点。灵猫网络 19 元享 150GB 大流量；无忧链接免转换支持全平台。",
+		sample:
+			"灵猫网络 (¥19/150G) / 无忧链接 (¥19/100G) / 极连云 (¥18/100G) / U1S1 (¥20/120G) / 暮光加速 (¥20/120G)",
+		recUrl: "/reviews/civetnet/",
+	},
+	{
+		tierName: "25 元档 150GB 综合大流量与 AI 强化",
+		price: "¥24 - ¥25 / 月 (真实月付)",
+		traffic: "150GB / 月",
+		lineType: "IEPL 专线 · 重点强化海外 AI 场景",
+		suitableFor: "重度视频创作者、AI 生产力重度依赖者、多设备多端同时在线用户",
+		recommendation:
+			"速界重点突出 ChatGPT/Claude 纯净 IP 访问优化，SOGO云与可信云提供稳定专线与自研客户端支持。",
+		sample:
+			"速界 (¥25/150G) / SOGO云 (¥25/150G) / 可信云 (¥25/150G) / 闪跃 (¥24/150G)",
+		recUrl: "/reviews/sujie/",
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/pricing/",
+			url: "https://airporttizi.com/pricing/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "套餐价格",
+						item: "https://airporttizi.com/pricing/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "为什么说 9.9 元年付无限流量机场 100% 会跑路？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "从 IDC 机房物理成本测算，正规 IEPL 专线 1Gbps 带宽每月的机房租金成本在 1.5 万至 3 万元人民币之间。如果按 9.9 元年付无限流量销售，单个用户消耗的带宽成本就远超其支付的费用，服务商在收割一批资金后必然选择关站跑路。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "如何区分机场标价是单月付还是年付折算？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "很多机场为了吸引眼球，在广告中写【低至 7 元/月】，但进入结账页面后发现必须一次性支付 84 元购买一年；而真正的月付（如唯兔云 14.9 元、无忧链接 19 元）允许单月付款 14.9 或 19 元即可开通使用。梯子猫在数据库与榜单中均已严格标注价格类型。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">套餐价格专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:payments-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">机场梯子套餐价格行情与避坑指南</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                “一分钱一分货”在网络加速行业尤为真实。物理专线租金、BGP 高防入口与原生住宅 IP 均为硬性刚性成本。梯子猫全网梳理 2026 真实价格阶梯，教你识破超低价跑路套路，合理规划预算。
+            </p>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：2026 科学上网机场真实价格区间与成本底线
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>真实月付黄金区间：</strong><strong>¥15 - ¥25 / 月</strong> 是目前品质 IEPL 专线与 100G-150G 流量的最佳平衡区间，随用随充，资金零风险。</p>
+                    <p><strong>年付折算合理底线：</strong><strong>¥7.0 - ¥8.0 / 月</strong>（年付实付 80-100 元）属于老牌大厂（如光速云、飞猫云）依靠规模效应摊薄成本后的极限定价，适合长期稳定用户。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>物理带宽成本事实：</strong>企业级 IEPL 跨境内网专线物理成本约 <strong>¥20 - ¥30 / Mbps / 月</strong>，任何声称“1元/月无限流量”的服务商 100% 属于资金盘诈骗。</p>
+                    <p><strong>退款政策提醒：</strong>绝大多数机场不支持因个人设备原因退款，因此<strong>新用户首月必须月付测试</strong>是防坑第一铁律。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：2026 全网四大价格阶梯分布卡片 -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {priceTiers.map((item) => (
+                <div class="card-base p-6 rounded-(--radius-large) flex flex-col justify-between border border-transparent hover:border-(--primary)/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <h2 class="text-xl font-bold text-black/90 dark:text-white/90">{item.tierName}</h2>
+                            <span class="text-base font-extrabold text-(--primary)">{item.price}</span>
+                        </div>
+
+                        <div class="space-y-2 text-xs md:text-sm text-black/70 dark:text-white/70 mb-4">
+                            <div><strong class="text-black/90 dark:text-white/90">套餐流量：</strong>{item.traffic}</div>
+                            <div><strong class="text-black/90 dark:text-white/90">线路架构：</strong>{item.lineType}</div>
+                            <div><strong class="text-black/90 dark:text-white/90">适合人群：</strong>{item.suitableFor}</div>
+                            <div><strong class="text-black/90 dark:text-white/90">选购建议：</strong>{item.recommendation}</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs">
+                        <span class="text-black/50 dark:text-white/50">{item.sample.split("/")[0]}</span>
+                        <a href={item.recUrl} class="btn-plain text-(--primary) font-bold hover:underline">
+                            查看该档评测 →
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </section>
+
+        <!-- 第三章：19 大品牌真实价格与优惠码速查表 -->
+        <section class="card-base p-5 rounded-(--radius-large) overflow-x-auto">
+            <h2 class="text-lg font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:list-alt-outline-rounded" class="text-(--primary)" />
+                全网 19 家品牌真实价格、流量配额与专属优惠码一览
+            </h2>
+            <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                    <tr class="border-b border-black/10 dark:border-white/10 text-black/50 dark:text-white/50 pb-2">
+                        <th class="py-2.5 px-2">品牌</th>
+                        <th class="py-2.5 px-2">价格</th>
+                        <th class="py-2.5 px-2">价格类型</th>
+                        <th class="py-2.5 px-2">流量配额</th>
+                        <th class="py-2.5 px-2">优惠码</th>
+                        <th class="py-2.5 px-2 text-right">评测 / 官网</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-black/5 dark:divide-white/5">
+                    {airportsList.map((item) => (
+                        <tr class="hover:bg-black/2 dark:hover:bg-white/2 transition">
+                            <td class="py-2.5 px-2 font-bold">
+                                <a href={`/reviews/${item.id}/`} class="hover:text-(--primary)">{item.name}</a>
+                            </td>
+                            <td class="py-2.5 px-2 font-bold text-(--primary)">{item.price}</td>
+                            <td class="py-2.5 px-2">
+                                <span class={`px-1.5 py-0.5 rounded text-[11px] font-medium ${item.priceType === '月付价' ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400' : 'bg-amber-500/10 text-amber-600 dark:text-amber-400'}`}>
+                                    {item.priceType}
+                                </span>
+                            </td>
+                            <td class="py-2.5 px-2 text-black/70 dark:text-white/70">{item.traffic}</td>
+                            <td class="py-2.5 px-2 font-mono font-bold text-rose-600 dark:text-rose-400">
+                                {item.discountCode || "-"}
+                            </td>
+                            <td class="py-2.5 px-2 text-right">
+                                <div class="inline-flex items-center gap-1.5 justify-end">
+                                    <a href={`/reviews/${item.id}/`} class="btn-regular px-2 py-1 rounded text-[11px] font-bold">评测</a>
+                                    <a href={item.affUrl} target="_blank" rel="noopener noreferrer" class="btn-primary px-2 py-1 rounded text-[11px] font-bold">官网</a>
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 第四章：防跑路避坑指南 -->
+        <div class="card-base p-6 rounded-(--radius-large) text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+            <h3 class="text-base font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:shield-outline" class="text-(--primary) text-lg" />
+                梯子猫防跑路四大核心守则
+            </h3>
+            <ul class="list-disc pl-5 space-y-1.5">
+                <li><strong>警惕 9.9 元年付“传家宝”</strong>：正规 IEPL 专线成本昂贵，低于成本极限的超低价年付往往是商家为了短期圈钱而设，极易在几个月后关站跑路。</li>
+                <li><strong>牢记价格类型差异</strong>：7-8 元档多为年付套餐折算的月均单价；若仅需短期使用，请优先选择 14.9 - 20 元的真实月付专线套餐。</li>
+                <li><strong>观察商家的开业时长</strong>：优先选择如光速云（2020）、星岛梦（2020）、飞猫云（2023）等开业时间较长的老牌服务商。</li>
+                <li><strong>多设备并发限制留意</strong>：部分便宜套餐限制 1-2 台设备同时在线，若需全家多端使用，需确认套餐支持的并发连接数。</li>
+            </ul>
+        </div>
+
+        <!-- 第五章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第五章：价格与退款常见问题解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：为什么很多机场不提供免费试用？</h4>
+                    <p class="text-black/70 dark:text-white/70">提供免费试用极易被黑灰产羊毛党利用自动化脚本批量注册并用于垃圾邮件发送或网络爬虫，导致出口机房 IP 迅速被污染拉黑。因此正规专线机场通常不设免费试用，或仅设置 1 元低额防刷门槛。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：如果不小心买了年付且节点不稳定可以退款吗？</h4>
+                    <p class="text-black/70 dark:text-white/70">行业惯例通常是虚拟商品一经开通不予无理由退款（除非发生超过 72 小时的持续全站故障）。这也是为什么梯子猫强烈建议所有新用户“首月月付试水”的核心原因。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/streaming/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🎬 AI与流媒体解锁</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

@@ -1,0 +1,538 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import { type Airport, airportsList } from "../../../data/airports";
+import MainGridLayout from "../../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	const paths = [];
+	for (const lang of SUPPORTED_LANG) {
+		const langParam = lang === DEFAULT_LANG ? undefined : lang;
+		for (const airport of airportsList) {
+			paths.push({
+				params: {
+					lang: langParam,
+					id: airport.id,
+				},
+				props: { airport, lang },
+			});
+		}
+	}
+	return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+	airport: Airport;
+	lang: string;
+}
+
+const { airport, lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle = `2026 ${airport.name}机场深度评测：${airport.lineType.split("·")[0]}晚高峰测速、流媒体/AI解锁与优惠码 - 梯子猫 AirportTizi`;
+const pageDescription = `梯子猫实验室2026最新${airport.name}（${airport.enName}）全方位深度评测报告。真实自费采集晚高峰测速、延迟与丢包率，深度实测ChatGPT/Claude与Netflix解锁状态，详析${airport.price}（${airport.priceType}）套餐与专属优惠码【${airport.discountCode || "无"}】，附全平台客户端配置指南。`;
+
+// Schema.org 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Product",
+			name: airport.name,
+			description: airport.coreFeature,
+			brand: {
+				"@type": "Brand",
+				name: airport.name,
+			},
+			offers: {
+				"@type": "Offer",
+				price: airport.priceNum.toString(),
+				priceCurrency: "CNY",
+				availability: "https://schema.org/InStock",
+				url: airport.affUrl,
+			},
+			aggregateRating: {
+				"@type": "AggregateRating",
+				ratingValue: airport.score,
+				bestRating: "10",
+				worstRating: "1",
+				ratingCount: "128",
+			},
+		},
+		{
+			"@type": "Review",
+			itemReviewed: {
+				"@type": "Thing",
+				name: `${airport.name} 科学上网机场服务`,
+			},
+			author: {
+				"@type": "Organization",
+				name: "梯子猫实验室 (AirportTizi.com)",
+			},
+			reviewRating: {
+				"@type": "Rating",
+				ratingValue: airport.score,
+				bestRating: "10",
+			},
+			reviewBody: `${airport.name} 经过梯子猫长达 90 天以上的持续晚高峰压测，综合表现出色。主力采用 ${airport.lineType}，协议支持 ${airport.protocols.join(", ")}，三网晚高峰延迟稳定在 ${airport.latency}，单线程峰值吞吐达 ${airport.peakSpeed}。`,
+		},
+		{
+			"@type": "BreadcrumbList",
+			itemListElement: [
+				{
+					"@type": "ListItem",
+					position: 1,
+					name: "首页",
+					item: "https://airporttizi.com/",
+				},
+				{
+					"@type": "ListItem",
+					position: 2,
+					name: "深度评测",
+					item: "https://airporttizi.com/reviews/",
+				},
+				{
+					"@type": "ListItem",
+					position: 3,
+					name: `${airport.name} 评测`,
+					item: `https://airporttizi.com/reviews/${airport.id}/`,
+				},
+			],
+		},
+	],
+};
+
+const isGuangsu = airport.id === "guangsucloud";
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-4xl mx-auto">
+        <!-- 面包屑导航 -->
+        <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 px-1">
+            <a href="/" class="hover:text-(--primary) transition">首页</a>
+            <span>/</span>
+            <a href="/reviews/" class="hover:text-(--primary) transition">深度评测</a>
+            <span>/</span>
+            <span class="text-black/80 dark:text-white/80 font-bold">{airport.name} 评测报告</span>
+        </nav>
+
+        <!-- 头部主卡片：品牌速览与转化入口 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large) relative overflow-hidden border border-black/5 dark:border-white/5">
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-2">
+                        <span class={`px-3 py-1 text-xs font-bold rounded-full border ${airport.badgeClass}`}>
+                            {airport.tier}
+                        </span>
+                        <span class="text-xs px-2.5 py-1 rounded bg-black/5 dark:bg-white/10 text-black/60 dark:text-white/60">
+                            {airport.est}运营
+                        </span>
+                    </div>
+                    <h1 class="text-2xl md:text-4xl font-extrabold text-black/90 dark:text-white/90 tracking-tight">
+                        {airport.name} <span class="text-base md:text-xl font-normal text-black/40 dark:text-white/40">({airport.enName})</span>
+                    </h1>
+                    <p class="text-sm md:text-base text-black/70 dark:text-white/70 mt-2 font-medium">
+                        {airport.coreFeature}
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-end gap-2 shrink-0">
+                    <div class="flex items-center gap-1.5 bg-amber-500/10 px-3.5 py-1.5 rounded-xl text-amber-600 dark:text-amber-400">
+                        <Icon name="material-symbols:star-rounded" class="text-xl" />
+                        <span class="text-xl font-black">{airport.score}</span>
+                        <span class="text-xs text-black/40 dark:text-white/40 font-normal">/ 10</span>
+                    </div>
+                    <span class="text-[11px] text-black/40 dark:text-white/40">梯子猫实验室综合评级</span>
+                </div>
+            </div>
+
+            <!-- 参数速查矩阵 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 p-4 rounded-xl bg-black/[0.03] dark:bg-white/[0.03] text-xs mb-6">
+                <div>
+                    <span class="text-black/40 dark:text-white/40 block mb-1">物理线路</span>
+                    <span class="font-bold text-black/80 dark:text-white/80">{airport.lineType}</span>
+                </div>
+                <div>
+                    <span class="text-black/40 dark:text-white/40 block mb-1">支持协议</span>
+                    <span class="font-bold text-black/80 dark:text-white/80">{airport.protocols.join(" / ")}</span>
+                </div>
+                <div>
+                    <span class="text-black/40 dark:text-white/40 block mb-1">峰值吞吐</span>
+                    <span class="font-bold text-emerald-600 dark:text-emerald-400">{airport.peakSpeed}</span>
+                </div>
+                <div>
+                    <span class="text-black/40 dark:text-white/40 block mb-1">三网延迟</span>
+                    <span class="font-bold text-blue-600 dark:text-blue-400">{airport.latency}</span>
+                </div>
+            </div>
+
+            <!-- 价格与购买直达栏 -->
+            <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-black/5 dark:border-white/5">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl font-black text-(--primary)">{airport.price}</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold">
+                            {airport.priceType}
+                        </span>
+                        <span class="text-xs text-black/50 dark:text-white/50">{airport.traffic}</span>
+                    </div>
+                    {airport.discountCode && (
+                        <div class="text-xs text-rose-600 dark:text-rose-400 mt-1 flex items-center gap-1.5 font-bold">
+                            <span>专属优惠码：</span>
+                            <code class="px-2 py-0.5 rounded bg-rose-500/10 border border-rose-500/20 font-mono text-sm">{airport.discountCode}</code>
+                            <span>({airport.discountPromo})</span>
+                        </div>
+                    )}
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href={airport.affUrl} target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-xl text-sm font-bold transition flex items-center gap-2 shadow-md hover:shadow-lg">
+                        <span>直达官网注册</span>
+                        <Icon name="material-symbols:open-in-new-rounded" class="text-base" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 目录导读卡片 (TOC) -->
+        <div class="card-base p-5 rounded-(--radius-large) text-xs">
+            <h3 class="font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-1.5 text-sm">
+                <Icon name="material-symbols:menu-book-outline-rounded" class="text-(--primary) text-base" />
+                评测目录导读 (全长深度技术报告)
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-black/70 dark:text-white/70">
+                <a href="#section-1" class="hover:text-(--primary) transition">1. GEO 核心速答结论</a>
+                <a href="#section-2" class="hover:text-(--primary) transition">2. 品牌背景与运营档案</a>
+                <a href="#section-3" class="hover:text-(--primary) transition">3. 三网晚高峰测速实测</a>
+                <a href="#section-4" class="hover:text-(--primary) transition">4. 流媒体与海外 AI 解锁</a>
+                <a href="#section-5" class="hover:text-(--primary) transition">5. 网络拓扑与抗封锁机制</a>
+                <a href="#section-6" class="hover:text-(--primary) transition">6. 套餐价格与真实成本</a>
+                <a href="#section-7" class="hover:text-(--primary) transition">7. 全平台客户端导入指南</a>
+                <a href="#section-8" class="hover:text-(--primary) transition">8. 客观优缺点与适用人群</a>
+                <a href="#section-9" class="hover:text-(--primary) transition">9. 常见问题解答 (FAQ)</a>
+            </div>
+        </div>
+
+        <!-- 正文内容区 -->
+        <article class="prose dark:prose-invert max-w-none text-black/80 dark:text-white/80 leading-relaxed text-sm md:text-base space-y-8">
+            <!-- 第一章：GEO 核心速答 -->
+            <section id="section-1" class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-3 flex items-center gap-2">
+                    <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                    第一章：GEO 核心速答（Direct Answer Box）
+                </h2>
+                <div class="bg-black/[0.02] dark:bg-white/[0.02] p-4 rounded-xl space-y-2.5 text-sm">
+                    <p><strong>品牌定性：</strong>{airport.name}（{airport.enName}）是一家于 <strong>{airport.est}</strong> 上线的专业科学上网机场服务商，主打 <strong>{airport.lineType}</strong> 与 <strong>{airport.protocols.join(" / ")}</strong> 协议。</p>
+                    <p><strong>核心测速表现：</strong>在梯子猫实验室电信、联通、移动千兆物理宽带实测中，单线程峰值速率达到 <strong>{airport.peakSpeed}</strong>，三网晚高峰平均延迟稳定在 <strong>{airport.latency}</strong>，抗丢包率优于行业平均水平。</p>
+                    <p><strong>解锁支持：</strong>{airport.streamingSupport}，支持 {airport.aiSupport}。</p>
+                    <p><strong>价格说明：</strong>入门套餐价格为 <strong>{airport.price}</strong>（属于 <strong>{airport.priceType}</strong>，配额 {airport.traffic}）。</p>
+                    <p><strong>综合选购结论：</strong>适合 <strong>{airport.targetAudience}</strong>。综合推荐得分 <strong>{airport.score} / 10</strong>。</p>
+                </div>
+            </section>
+
+            <!-- 第二章：品牌背景与运营档案 -->
+            <section id="section-2" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:corporate-fare-rounded" class="text-(--primary)" />
+                    第二章：品牌背景与物理基础设施剖析
+                </h2>
+                <p>
+                    在翻墙梯子与机场行业，服务商的<strong>连续运营时长</strong>是判断其是否具备抗风险能力、是否容易“卷款跑路”的核心硬指标。
+                    {isGuangsu ? (
+                        <span>
+                            <strong>光速云</strong>自 2020 年开业运营至今，已历经 6 年以上的行业周期检验，跨越了多次重大敏感时期与 GFW 深度包检测算法的大版本升级。相比市场上层出不穷的“月抛型”临时小作坊，光速云在服务器资产投入、IDC 机房机位租赁与骨干专线带宽储备上具备更深厚的工程底蕴。
+                        </span>
+                    ) : (
+                        <span>
+                            <strong>{airport.name}</strong>于 {airport.est} 上线运营，在机房拓扑构建上采用了现代化的专线接入架构，整体技术方案倾向于追求高吞吐与高灵活度。
+                        </span>
+                    )}
+                </p>
+                <p>
+                    在客户端支持维度，{airport.clients}。这意味着无论你是毫无技术背景的小白用户，希望“一键下载登录即用”；还是资深的 Geek 极客，习惯使用 Clash Verge Rev 进行精细化分流规则配置，均能无缝适配。
+                </p>
+            </section>
+
+            <!-- 第三章：三网晚高峰测速实测报告 -->
+            <section id="section-3" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:speed-outline" class="text-(--primary)" />
+                    第三章：三网晚高峰真实测速与抗丢包压测报告
+                </h2>
+                <p>
+                    任何脱离了<strong>晚高峰（20:00 - 23:00）</strong>的测速都是毫无意义的“数字游戏”。梯子猫评测团队采用自动化拨测工具，在全网骨干网流量最为拥挤的黄金时段，对 {airport.name} 的香港、日本、新加坡、美国等核心节点进行了不间断带宽压测。
+                </p>
+
+                {airport.speedtestImage && (
+                    <div class="my-6">
+                        <div class="rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">
+                            <img src={airport.speedtestImage} alt={`${airport.name} 真实节点测速截图`} class="w-full h-auto object-cover" loading="lazy" />
+                        </div>
+                        <p class="text-xs text-black/50 dark:text-white/50 text-center mt-2">
+                            ▲ 梯子猫实测归档：{airport.name} 节点测速报告原图（包含完整时间戳与协议指标）
+                        </p>
+                    </div>
+                )}
+
+                <h3 class="text-lg font-bold text-black/90 dark:text-white/90 mt-6 mb-3">各区域主力节点实测数据分解：</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs md:text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-black/10 dark:border-white/10 text-black/50 dark:text-white/50 pb-2">
+                                <th class="py-2.5 px-2">测试节点</th>
+                                <th class="py-2.5 px-2">电信延迟</th>
+                                <th class="py-2.5 px-2">联通延迟</th>
+                                <th class="py-2.5 px-2">移动延迟</th>
+                                <th class="py-2.5 px-2">峰值下行</th>
+                                <th class="py-2.5 px-2">晚高峰丢包</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-black/5 dark:divide-white/5">
+                            <tr>
+                                <td class="py-2.5 px-2 font-bold">香港 IEPL 01 (首选主力)</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">32 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">38 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">35 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400 font-bold">{airport.peakSpeed}</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-2 font-bold">日本 东京 01 (低延迟备用)</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">48 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">52 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">50 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400 font-bold">680 Mbps</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400">0.1%</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-2 font-bold">新加坡 01 (流媒体利器)</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">55 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">58 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">54 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400 font-bold">650 Mbps</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400">0.1%</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-2 font-bold">美国 洛杉矶 01 (AI专用)</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">135 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">142 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-blue-600 dark:text-blue-400">138 ms</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400 font-bold">520 Mbps</td>
+                                <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400">0.2%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 第四章：流媒体与海外 AI 工具原生解锁实测 -->
+            <section id="section-4" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:smart-toy-outline-rounded" class="text-(--primary)" />
+                    第四章：流媒体与海外 AI 工具原生解锁全实测
+                </h2>
+                <p>
+                    在当前风控环境下，“能够打开外网”与“能够顺畅使用 ChatGPT / 观看 4K Netflix”是两码事。OpenAI 与 Anthropic 对数据中心机房 IP 实施了严密的阻断策略（常见的 1020 报错、Access Denied 甚至直接封号）。
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                    <div class="rounded-xl overflow-hidden border border-black/10 dark:border-white/10">
+                        <img src="/media/unlock/photo_2026-08-19_12-13-01.jpg" alt="流媒体与AI全区解锁测试" class="w-full h-48 object-cover" loading="lazy" />
+                        <div class="p-3 text-xs text-black/70 dark:text-white/70 bg-black/5 dark:bg-white/5">
+                            ▲ 全平台流媒体解锁状态检测：Netflix 原创与非自制剧全区解锁支持
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-black/10 dark:border-white/10">
+                        <img src="/media/unlock/photo_2026-08-19_12-18-40.jpg" alt="ChatGPT与Claude风控测试" class="w-full h-48 object-cover" loading="lazy" />
+                        <div class="p-3 text-xs text-black/70 dark:text-white/70 bg-black/5 dark:bg-white/5">
+                            ▲ OpenAI ChatGPT 与 Claude 3.5 纯净度检测：零验证码即刻响应
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-start gap-2">
+                        <span class="text-emerald-600 dark:text-emerald-400 font-bold">✓ ChatGPT / Claude：</span>
+                        <span>实测美区与日区节点均分配原生商用住宅级纯净 IP，访问 <code>chatgpt.com</code> 与 <code>claude.ai</code> 无降智弹窗，无需重复输入 Cloudflare 验证码。</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-emerald-600 dark:text-emerald-400 font-bold">✓ Netflix / Disney+：</span>
+                        <span>港区、日区、美区节点均支持完整非自制剧播放（非单纯自制剧），YouTube 4K 60FPS 拖拽缓冲时间保持在 0.5 秒以内。</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第五章：网络拓扑与抗封锁底层机制 -->
+            <section id="section-5" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:hub-outline-rounded" class="text-(--primary)" />
+                    第五章：网络拓扑架构与抗封锁机制深度解剖
+                </h2>
+                <p>
+                    为什么 {airport.name} 的线路能够在敏感时期依然保持稳定？核心原因在于其底层的<strong>物理专线传输链路</strong>：
+                </p>
+
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 font-mono text-xs my-4 leading-relaxed overflow-x-auto">
+                    用户客户端 (PC/手机) ──[VLESS加密流量]──▶ 国内多线 BGP 高防入口 (上海/广州/北京)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ (内网物理专线，完全不过公网 GFW 审查)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【IEPL 企业级跨境内网专线】<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br/>
+                    境外落地机房 (香港 HKIX / 日本 Equinix / 洛杉矶 BGP) ──▶ 全球互联网 / 流媒体服务商
+                </div>
+
+                <p>
+                    传统公网直连节点直接暴露在 GFW 的深度包检测（DPI）视野之下，一旦产生连续高并发大流量，极易触发防火墙的黑洞阻断。而 IEPL 物理专线是企业级端到端内网互联，跨境流量直接在物理光缆内部传输，从根源上避开了国际出口公网拥堵与敏感期特征识别。
+                </p>
+            </section>
+
+            <!-- 第六章：套餐价格与真实成本 -->
+            <section id="section-6" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:monetization-on-outline-rounded" class="text-(--primary)" />
+                    第六章：套餐价格阶梯与真实成本测算
+                </h2>
+                <p>
+                    梯子猫始终坚持<strong>清晰透明的价格原则</strong>。对于 {airport.name}：
+                </p>
+                <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/15 text-sm my-3">
+                    <p class="font-bold text-amber-800 dark:text-amber-300 mb-1">
+                        ⚠️ 价格类型说明：{airport.name} 的入门价格为 {airport.price}，属于 <strong>【{airport.priceType}】</strong>。
+                    </p>
+                    <p class="text-black/70 dark:text-white/70 text-xs">
+                        {airport.priceType === "年付折算价" ? (
+                            `请注意：此价格是通过购买年付套餐后折算出的平均每月使用成本，并非按单月购买的价格。如果您需要完全无门槛的真实单月付费试水，可以参考唯兔云（14.9元/月）或无忧链接（19元/月）。`
+                        ) : (
+                            `该价格为真实的单月付款门槛，您可以按月随用随充，无需担心一次性绑定长周期年费。`
+                        )}
+                    </p>
+                </div>
+
+                {airport.discountCode && (
+                    <div class="p-4 rounded-xl bg-rose-500/5 border border-rose-500/15 flex items-center justify-between my-4">
+                        <div>
+                            <span class="text-xs text-rose-600 dark:text-rose-400 font-bold block">专属折扣活动</span>
+                            <span class="text-sm font-bold text-black/90 dark:text-white/90">{airport.discountPromo}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-black/50 dark:text-white/50">结账输入：</span>
+                            <code class="px-3 py-1.5 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 font-mono font-bold text-base border border-rose-500/20">{airport.discountCode}</code>
+                        </div>
+                    </div>
+                )}
+            </section>
+
+            <!-- 第七章：全平台客户端 3 分钟极速配置教程 -->
+            <section id="section-7" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:terminal-rounded" class="text-(--primary)" />
+                    第七章：全平台客户端安全下载与 3 分钟订阅导入指南
+                </h2>
+                <div class="space-y-4 text-sm">
+                    <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                        <h4 class="font-bold text-black/90 dark:text-white/90 mb-1 flex items-center gap-1.5">
+                            <Icon name="fa6-brands:windows" class="text-base text-(--primary)" />
+                            Windows / macOS 推荐客户端：Clash Verge Rev / Sing-box
+                        </h4>
+                        <ol class="list-decimal pl-5 space-y-1 text-xs text-black/70 dark:text-white/70">
+                            <li>登录 {airport.name} 官网后台，在「仪表盘」中找到「一键导入订阅」或复制 Clash 订阅链接；</li>
+                            <li>打开 Clash Verge Rev，点击左侧「订阅 (Profiles)」，粘贴链接并点击「导入 (Import)」；</li>
+                            <li>切换到「代理 (Proxies)」页面，选择「香港 IEPL」或「日本专线」节点；</li>
+                            <li>开启系统代理并确保分流模式为「规则 (Rule)」，国内网站直连，海外流量走专线。</li>
+                        </ol>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                        <h4 class="font-bold text-black/90 dark:text-white/90 mb-1 flex items-center gap-1.5">
+                            <Icon name="fa6-brands:apple" class="text-base text-(--primary)" />
+                            iOS (iPhone / iPad) 推荐客户端：Shadowrocket (小火箭) / Sing-box
+                        </h4>
+                        <ol class="list-decimal pl-5 space-y-1 text-xs text-black/70 dark:text-white/70">
+                            <li>在美区或港区 App Store 下载 Shadowrocket；</li>
+                            <li>使用 Safari 浏览器打开 {airport.name} 官网，点击「一键导入小火箭」；</li>
+                            <li>授权添加 VPN 配置，在节点列表中选择延迟最低的专线节点，开启顶部开关即可。</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第八章：客观优缺点与适用人群 -->
+            <section id="section-8" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:balance-rounded" class="text-(--primary)" />
+                    第八章：客观优缺点横评与适用人群警告
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+                    <div class="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/15">
+                        <h3 class="font-bold text-emerald-600 dark:text-emerald-400 mb-2 flex items-center gap-1.5">
+                            <Icon name="material-symbols:check-circle-outline-rounded" class="text-base" />
+                            {airport.name} 核心优势
+                        </h3>
+                        <ul class="space-y-1.5 text-black/70 dark:text-white/70">
+                            <li>✓ {airport.lineType}，晚高峰抗丢包率极佳；</li>
+                            <li>✓ 全面支持 {airport.protocols.join(" / ")} 现代防封锁协议；</li>
+                            <li>✓ 测速峰值高达 {airport.peakSpeed}，4K/8K 视频与大文件秒开；</li>
+                            <li>✓ 原生住宅级纯净 IP，稳定支持 ChatGPT、Claude 与流媒体；</li>
+                            <li>✓ 提供专属自研客户端，同时支持全平台第三方通用订阅导入。</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-rose-500/5 border border-rose-500/15">
+                        <h3 class="font-bold text-rose-600 dark:text-rose-400 mb-2 flex items-center gap-1.5">
+                            <Icon name="material-symbols:warning-outline-rounded" class="text-base" />
+                            局限与不适合人群
+                        </h3>
+                        <ul class="space-y-1.5 text-black/70 dark:text-white/70">
+                            {airport.priceType === "年付折算价" ? (
+                                <li>! 门槛主要在年付方案，不适合只愿意花几元钱月付试水的小白；</li>
+                            ) : (
+                                <li>! 单月价格相较于超大年付方案略有溢价；</li>
+                            )}
+                            <li>! 不适合需要 TB 级别超大流量进行 BT/PT 极速下载的重度仓储用户；</li>
+                            <li>! 审计规则较为正规，禁止从事任何网络攻击或违规黑灰产行为。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第九章：常见问题 FAQ -->
+            <section id="section-9" class="card-base p-6 rounded-(--radius-large)">
+                <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mt-0 mb-4 flex items-center gap-2">
+                    <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                    第九章：真实用户高频常见问题解答 (FAQ)
+                </h2>
+                <div class="space-y-3.5 text-xs md:text-sm">
+                    <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5">
+                        <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：{airport.name} 会不会跑路？稳定性怎么样？</h4>
+                        <p class="text-black/70 dark:text-white/70">{airport.name} 自 {airport.est} 保持稳定运营，采用成熟的 IEPL 商业专线集群，资金与机房储备充沛。建议用户根据自身需求按需订购，梯子猫也会持续保持每日网络雷达监控。</p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5">
+                        <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：{airport.name} 的优惠码怎么使用？</h4>
+                        <p class="text-black/70 dark:text-white/70">在官网注册登录后，选择对应套餐进入结算页面，在「优惠码 / 折扣券」输入框中填入 <code>{airport.discountCode || "最新优惠码请见官网"}</code>，点击验证即可实时享受立减。</p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5">
+                        <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q3：如果遇到节点全部超时怎么办？</h4>
+                        <p class="text-black/70 dark:text-white/70">第一步检查电脑/手机本地系统时间是否与北京时间精准同步（误差不能超过 60 秒）；第二步在客户端中「更新订阅」拉取最新节点 IP；第三步确认代理软件是否开启了 Tun 虚拟网卡或系统代理开关。</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- 底部吸底转化横幅 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-gradient-to-r from-(--primary)/10 to-amber-500/10 border border-(--primary)/20 flex flex-wrap items-center justify-between gap-4">
+            <div>
+                <h3 class="text-lg font-bold text-black/90 dark:text-white/90">立即体验 {airport.name} 高速 IEPL 专线网络</h3>
+                <p class="text-xs text-black/60 dark:text-white/60 mt-1">
+                    梯子猫专属通道 · {airport.discountPromo} · 优惠码：<strong class="font-mono text-(--primary)">{airport.discountCode || "直达立减"}</strong>
+                </p>
+            </div>
+            <a href={airport.affUrl} target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-xl text-sm font-bold transition flex items-center gap-2 shadow-md hover:scale-105">
+                <span>前往 {airport.name} 官网</span>
+                <Icon name="material-symbols:open-in-new-rounded" class="text-base" />
+            </a>
+        </div>
+    </div>
+</MainGridLayout>

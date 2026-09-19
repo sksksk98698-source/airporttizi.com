@@ -110,6 +110,11 @@ async function getResolvedPostsForLang(
 	}
 
 	return resolvedPosts.sort((a, b) => {
+		const pinA = a.data.pinned ? 1 : 0;
+		const pinB = b.data.pinned ? 1 : 0;
+		if (pinA !== pinB) {
+			return pinB - pinA;
+		}
 		const dateA = new Date(a.data.published);
 		const dateB = new Date(b.data.published);
 		return dateA > dateB ? -1 : 1;

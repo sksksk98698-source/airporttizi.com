@@ -1,0 +1,277 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"科学上网新手入门与进阶调优教程库｜分流规则/DNS防泄露/Tun模式 - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫教程中心。提供从零开始的科学上网客户端安装、订阅链接导入、Clash Verge 规则分流、Tun 虚拟网卡接管、DNS 防泄露配置及常见故障自检保姆级实战指南。";
+
+const guideCategories = [
+	{
+		title: "🔰 新手起步教程 (3分钟搞定)",
+		items: [
+			{
+				name: "全平台客户端快速上手：从下载、导入订阅到开启代理",
+				url: "/posts/all-platform-clients-setup-guide",
+				desc: "详细图文介绍 Windows / Mac / iOS / Android 客户端一键配置流程。",
+				tag: "必读",
+			},
+			{
+				name: "什么是机场订阅？如何安全更新并避免订阅链接泄露？",
+				url: "/posts/all-platform-clients-setup-guide",
+				desc: "详解通用订阅链接、Clash 格式、Base64 订阅的区别与安全防盗用常识。",
+				tag: "基础",
+			},
+		],
+	},
+	{
+		title: "⚙️ 进阶调优与规则分流",
+		items: [
+			{
+				name: "为什么一定要用规则模式 (Rule)？如何实现国内直连国外代理？",
+				url: "/posts/all-platform-clients-setup-guide",
+				desc: "配置 GEOIP, CN 直连与自定义白名单，让微信、百度与 Bilibili 享受本地极速。",
+				tag: "核心",
+			},
+			{
+				name: "Tun 虚拟网卡模式详解：如何让命令行、Git、Docker 与游戏走代理？",
+				url: "/posts/network-troubleshooting-and-diagnostics",
+				desc: "解决许多软件不支持系统 HTTP 代理的问题，实现系统级无感透明代理。",
+				tag: "高阶",
+			},
+		],
+	},
+	{
+		title: "🛡️ 隐私防护与 DNS 防污染",
+		items: [
+			{
+				name: "如何防范 DNS 泄露与域名劫持？DoH 与 Fake-IP 模式配置指南",
+				url: "/posts/network-troubleshooting-and-diagnostics",
+				desc: "防止本地 ISP 窥探你的访问记录，告别 Google 频繁跳人机验证与 DNS 投毒。",
+				tag: "安全",
+			},
+			{
+				name: "ChatGPT 与 Claude 纯净度检测：如何规避 1020 与账号封禁风控？",
+				url: "/posts/chatgpt-claude-netflix-streaming-unlock",
+				desc: "挑选住宅 IP 落地节点，设置浏览器环境与防关联策略。",
+				tag: "AI必备",
+			},
+		],
+	},
+	{
+		title: "🔧 故障自检与疑难杂症",
+		items: [
+			{
+				name: "科学上网常见报错速查：节点全红、Timeout、EOF 解决方案",
+				url: "/posts/network-troubleshooting-and-diagnostics",
+				desc: "通过 Ping、MTR 路由追踪四步法，3分钟定位本地网络与中转机故障。",
+				tag: "排错",
+			},
+			{
+				name: "为什么电脑连上梯子后无法打开国内网页？常见端口冲突与 DNS 回环排查",
+				url: "/posts/network-troubleshooting-and-diagnostics",
+				desc: "排查杀毒软件、系统代理残留与虚拟网卡冲突的实用技巧。",
+				tag: "实用",
+			},
+		],
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/guides/",
+			url: "https://airporttizi.com/guides/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "教程中心",
+						item: "https://airporttizi.com/guides/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "为什么千万不要开【全局代理 (Global)】模式？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "开启全局代理会导致你的所有流量（包括访问微信、淘宝、百度、Bilibili等国内网站）全部绕行海外专线节点，不仅白白消耗宝贵的机场套餐流量，还会导致国内网站加载极慢，甚至触发国内网银或 App 的异地登录安全风控。务必保持【规则模式 (Rule)】。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "如何配置 DoH 加密 DNS 以防止 DNS 污染？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "在 Clash Verge Rev 的 DNS 设置中，将 nameserver 与 fallback 替换为标准的 DoH（DNS over HTTPS）地址，如国内使用 https://dns.alidns.com/dns-query，海外使用 https://cloudflare-dns.com/dns-query，能够彻底解决域名解析投毒与防运营商 DNS 劫持。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">教程中心专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:menu-book-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">科学上网实用教程中心</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                从零基础新手入门到网络高手进阶调优，梯子猫整理最实用、接地气的图文实操教程。带你玩转分流规则、Tun 虚拟网卡、DNS 防污染与故障自检。
+            </p>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：新手 3 分钟极速上手科学上网核心流程
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">第 1 步：获取专属订阅</h3>
+                    <p class="text-black/70 dark:text-white/70">在机场官网（如光速云、飞猫云）后台仪表盘点击「复制 Clash 订阅链接」或「一键导入」。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">第 2 步：导入开源客户端</h3>
+                    <p class="text-black/70 dark:text-white/70">打开 Clash Verge Rev，在「订阅 (Profiles)」中粘贴链接并点击导入，等待节点列表加载完毕。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">第 3 步：选节点与启代理</h3>
+                    <p class="text-black/70 dark:text-white/70">确保模式为「规则 (Rule)」，选择延迟最低的专线节点，勾选「系统代理」即可畅游外网。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：教程分类网格 -->
+        <div class="space-y-6">
+            {guideCategories.map((cat) => (
+                <div class="card-base p-6 rounded-(--radius-large)">
+                    <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 pb-3 border-b border-black/5 dark:border-white/5">
+                        {cat.title}
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {cat.items.map((item) => (
+                            <a href={item.url} class="p-4 rounded-xl bg-black/3 dark:bg-white/3 border border-black/5 dark:border-white/5 hover:border-(--primary)/40 transition block group">
+                                <div class="flex items-center justify-between gap-2 mb-2">
+                                    <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 group-hover:text-(--primary) transition">
+                                        {item.name}
+                                    </h3>
+                                    <span class="text-[11px] px-2 py-0.5 rounded bg-(--primary)/10 text-(--primary) font-semibold shrink-0">
+                                        {item.tag}
+                                    </span>
+                                </div>
+                                <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <!-- 第三章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第三章：新手入门常见疑难解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：为什么导入订阅链接时提示“网络错误 (Network Error)”？</h4>
+                    <p class="text-black/70 dark:text-white/70">这通常是因为订阅链接的域名在国内被特定省份的运营商拦截。解决方法：先开启手机热点或备用网络，或者在机场官网找到「免翻墙备用订阅转换域名」再次尝试导入。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：Clash 软件中的 DIRECT、REJECT 和 PROXY 分别是什么意思？</h4>
+                    <p class="text-black/70 dark:text-white/70">DIRECT 代表直连（不走代理，用于国内网站如百度、淘宝）；REJECT 代表直接拦截（用于屏蔽广告和恶意追踪）；PROXY 代表走代理（通过海外节点访问外网）。规则分流会智能为你分发数据。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

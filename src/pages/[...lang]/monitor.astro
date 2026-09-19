@@ -1,0 +1,315 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import { airportsList } from "../../data/airports";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"全网机场状态监控与跑路预警中心｜敏感期抗封锁与安全态势 - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫全网机场运行状态与风险预警雷达。持续监控主流服务商节点存活率、敏感时期抗封锁表现、跑路高危预警信号与隐私合规态势，保障用户资产与连接安全。";
+
+const monitorStats = [
+	{
+		title: "全网监测机场数",
+		value: "50+",
+		status: "实时追踪中",
+		color: "text-(--primary)",
+	},
+	{
+		title: "全网平均节点存活率",
+		value: "98.4%",
+		status: "网络态势稳定",
+		color: "text-emerald-600 dark:text-emerald-400",
+	},
+	{
+		title: "近 30 天跑路/失联",
+		value: "2 家",
+		status: "已下架预警",
+		color: "text-rose-600 dark:text-rose-400",
+	},
+	{
+		title: "敏感期抗封锁等级",
+		value: "Level 1",
+		status: "平稳低风险期",
+		color: "text-blue-600 dark:text-blue-400",
+	},
+];
+
+const riskSignals = [
+	{
+		signal: "异常超级折扣促销",
+		level: "高危 🔴",
+		desc: "突然推出“年付 2 折”、“买两年送三年”或“终身 99 元 VIP”。此类活动通常为资金链断裂前最后的卷款收割套路。",
+	},
+	{
+		signal: "官方社群突然全员禁言",
+		level: "高危 🔴",
+		desc: "Telegram 交流群开启全员禁言，或管理员大量踢人删帖、解散用户交流群，说明管理团队正在逃避用户质询。",
+	},
+	{
+		signal: "主力节点大面积超时且长期无人修复",
+		level: "中危 🟡",
+		desc: "超过 48 小时以上大量节点不可用，工单系统已读不回或数天无应答，表明运维人员已流失或上游带宽被切断。",
+	},
+	{
+		signal: "频繁更换主域名且无备用解析",
+		level: "中危 🟡",
+		desc: "官网主站无法打开，订阅无法拉取，且无备用发布页，通常代表抗封锁容灾能力极弱或域名资产被没收。",
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/monitor/",
+			url: "https://airporttizi.com/monitor/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "风险监控",
+						item: "https://airporttizi.com/monitor/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "发现使用的机场疑似跑路，用户该如何自救？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "第一步：立即停止在原网站充值，若使用了信用卡且在拒付周期内可尝试联系发卡行申诉；第二步：调出备用机场订阅（建议平时备有按量计费不限时套餐）；第三步：在客户端中删除故障订阅，防止客户端后台频繁轮询导致电池发热与卡死。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "为什么机场会出现“集体断网”或“大面积不可用”？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "大面积不可用通常有两大成因：一是国家级防火墙进行高强度算法更新，公网中继入口被批量屏蔽；二是上游某大型 IDC 机房发生物理光缆故障或电力中断。正规专线机场通常在 1-2 小时内切换备用入口并恢复服务。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">风险监控专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:crisis-alert-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">全网机场状态监控与跑路预警中心</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                梯子猫风险监控雷达 24 小时不间断监测全网主流机场梯子的节点存活率、晚高峰丢包波动与社群动态。提前识别资金链风险与跑路征兆，守卫用户的每一分资金安全。
+            </p>
+
+            <!-- 统计数据格 -->
+            <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                {monitorStats.map((s) => (
+                    <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 text-center">
+                        <span class="text-xs text-black/40 dark:text-white/40 block mb-1">{s.title}</span>
+                        <span class={`text-xl md:text-2xl font-black block mb-0.5 ${s.color}`}>{s.value}</span>
+                        <span class="text-[11px] text-black/60 dark:text-white/60">{s.status}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：识别机场跑路的 4 个致命征兆
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>1. 疯狂“终身买断”促销：</strong>突然推出“99 元终身 VIP”或“买 1 年送 2 年”，这是资金链枯竭前收割最后一波资金的典型特征。</p>
+                    <p><strong>2. 官方社群全体禁言：</strong>Telegram 官方群开启全员禁言或大量封禁质询的用户账号，管理员集体失联。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>3. 节点大面积全红超 48 小时：</strong>超过两天未能恢复主要专线节点，且无任何官方公告或容灾迁移说明。</p>
+                    <p><strong>4. 避险黄金法则：</strong>坚持<strong>【月付】</strong>并配置<strong>【1主 + 1备】</strong>双服务商方案，即便主力遇到突发也能秒级无缝切换。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：跑路危险信号清单 -->
+        <div class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 pb-3 border-b border-black/5 dark:border-white/5 flex items-center gap-2">
+                <Icon name="material-symbols:warning-outline-rounded" class="text-rose-500 text-xl" />
+                机场跑路前四大危险信号深度剖析
+            </h2>
+            <div class="space-y-3">
+                {riskSignals.map((item) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/3 border border-black/5 dark:border-white/5">
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90">{item.signal}</h3>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-500/10 text-rose-600 dark:text-rose-400">
+                                {item.level}
+                            </span>
+                        </div>
+                        <p class="text-xs md:text-sm text-black/60 dark:text-white/60 leading-relaxed">
+                            {item.desc}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- 第三章：19 大品牌当前健康度与风险评级 -->
+        <section class="card-base p-5 rounded-(--radius-large) overflow-x-auto">
+            <h2 class="text-lg font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:health-and-safety-outline-rounded" class="text-(--primary)" />
+                主流 19 大品牌当前运行健康度与风险评级一览
+            </h2>
+            <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                    <tr class="border-b border-black/10 dark:border-white/10 text-black/50 dark:text-white/50 pb-2">
+                        <th class="py-2.5 px-2">品牌</th>
+                        <th class="py-2.5 px-2">开业年份</th>
+                        <th class="py-2.5 px-2">可用性 SLA</th>
+                        <th class="py-2.5 px-2">安全健康度</th>
+                        <th class="py-2.5 px-2">付款建议</th>
+                        <th class="py-2.5 px-2 text-right">评测报告</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-black/5 dark:divide-white/5">
+                    {airportsList.map((item) => (
+                        <tr class="hover:bg-black/2 dark:hover:bg-white/2 transition">
+                            <td class="py-2.5 px-2 font-bold">
+                                <a href={`/reviews/${item.id}/`} class="hover:text-(--primary)">{item.name}</a>
+                            </td>
+                            <td class="py-2.5 px-2 text-black/60 dark:text-white/60">{item.est}</td>
+                            <td class="py-2.5 px-2 font-mono text-emerald-600 dark:text-emerald-400 font-bold">{item.sla}</td>
+                            <td class="py-2.5 px-2">
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold text-[11px]">
+                                    🟢 健康低风险
+                                </span>
+                            </td>
+                            <td class="py-2.5 px-2 text-black/70 dark:text-white/70">
+                                {item.priceType === '年付折算价' ? '支持低折算年付/季付' : '建议首选单月付'}
+                            </td>
+                            <td class="py-2.5 px-2 text-right">
+                                <a href={`/reviews/${item.id}/`} class="btn-regular px-2.5 py-1 rounded text-[11px] font-bold">
+                                    评测
+                                </a>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 第四章：避险法则 -->
+        <div class="card-base p-6 rounded-(--radius-large) text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+            <h3 class="text-base font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:verified-user-outline-rounded" class="text-(--primary) text-lg" />
+                梯子猫终极避险建议
+            </h3>
+            <div class="p-3.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-medium space-y-1.5">
+                <div>1. 无论优惠力度有多诱人，<strong>只按月付费或按季付费</strong>，把资金风险控制在单月几十元以内；</div>
+                <div>2. 配置 <strong>1 主 + 1 备</strong> 双服务商冗余策略，备用机场选择不限时按量计费套餐；</div>
+                <div>3. 关注梯子猫官方实时动态，若某服务商出现跑路或大面积故障，我们将第一时间发布风险预警。</div>
+            </div>
+        </div>
+
+        <!-- 第五章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第五章：监控与风险预警常见问题解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：梯子猫是如何监控这些机场运行状态的？</h4>
+                    <p class="text-black/70 dark:text-white/70">梯子猫在广州、上海、北京部署了多节点自动化拨测机房，每隔 15 分钟模拟真实客户端对全量节点进行 TLS 握手握手与数据吞吐测试。一旦某个机场连续 3 次拨测失败，系统将自动触发预警并进行人工复核。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：如果不幸遭遇机场跑路，如何申请退款或维权？</h4>
+                    <p class="text-black/70 dark:text-white/70">由于翻墙机场属于特殊境外虚拟服务，通过支付宝或微信转账通常无法直接追回资金。如果您是通过外币信用卡或 PayPal 支付，可在 180 天内向银行或机构发起「未收到服务」的争议申诉（Dispute/Chargeback）。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

@@ -1,0 +1,274 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"科学上网线路与节点技术科普｜IPLC/IEPL内网专线与BGP中继解析 - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫科学上网线路与节点全景指南。深度解析物理内网专线（IPLC/IEPL）、BGP多线入口中转与公网直连原理，详析香港、日本、新加坡、美国等热门节点的网络时延、动态倍率与路由优劣。";
+
+const nodeRegions = [
+	{
+		region: "中国香港 (Hong Kong)",
+		latency: "15ms - 45ms (极低延迟)",
+		routing: "广深直连 / 华东沪港专线 / 三网全优",
+		streaming: "Netflix 港区、Disney+、Bilibili 港澳台、Viu、Now TV",
+		aiSupport: "⚠️ OpenAI 官方未对香港开放服务，需配合分流",
+		recommendation: "日常主力网页浏览、Steam 游戏联机、国内直连低延迟首选。",
+	},
+	{
+		region: "日本 (Japan)",
+		latency: "35ms - 65ms (优良延迟)",
+		routing: "上海/青岛海缆直出 / 沪日专线 / 联通电信优质",
+		streaming: "Netflix 日区、Abema TV、DMM、TVer、Amazon Prime Video",
+		aiSupport: "🟢 完美支持 ChatGPT / Claude，人机验证极少",
+		recommendation: "二次元动漫流媒体、海外游戏日服、AI 生产力绝佳节点。",
+	},
+	{
+		region: "新加坡 (Singapore)",
+		latency: "45ms - 75ms (低延迟)",
+		routing: "广新专线 / 东南亚核心网络中枢",
+		streaming: "Netflix 新区、Disney+、YouTube Premium 华人首选",
+		aiSupport: "🟢 完美支持 ChatGPT / Claude / Gemini 全套 AI 平台",
+		recommendation: "中文流媒体版权库全、对 AI 工具极为友好、综合体验平衡。",
+	},
+	{
+		region: "美国 (United States)",
+		latency: "120ms - 180ms (受物理距离限制)",
+		routing: "跨太平洋海缆 / 骨干网络带宽冗余极充沛",
+		streaming: "Netflix 美区、Hulu、HBO Max、Paramount+、Peacock",
+		aiSupport: "🟢 AI 首发功能第一时间开放，原生住宅商用 IP 资源丰富",
+		recommendation:
+			"海外企业商务、学术文献检索、AI 深度开发、海量带宽下载首选。",
+	},
+	{
+		region: "中国台湾 (Taiwan)",
+		latency: "25ms - 55ms (超低延迟)",
+		routing: "东南沿海直连 / 厦金/福州海缆通道",
+		streaming: "Bilibili 仅限台湾、动画疯 (Bahamut)、Netflix 台区",
+		aiSupport: "🟢 完美支持 ChatGPT / Claude",
+		recommendation: "巴哈姆特动画疯追番、繁体中文流媒体、低延迟游戏。",
+	},
+	{
+		region: "欧洲地区 (英/德/法)",
+		latency: "150ms - 220ms",
+		routing: "陆缆欧亚通道或海缆西行",
+		streaming: "BBC iPlayer、DAZN 欧区、各欧洲本地电视台",
+		aiSupport: "🟢 良好支持，遵循 GDPR 隐私标准",
+		recommendation: "欧洲跨国业务、小众流媒体与海外科研特定资源访问。",
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/nodes/",
+			url: "https://airporttizi.com/nodes/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "线路节点",
+						item: "https://airporttizi.com/nodes/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "为什么说香港节点通常不能直接访问 ChatGPT？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "因为 OpenAI 官方目前未向中国香港地区开放服务，直接使用香港 IP 会触发国家地区限制提示。建议在分流规则中将 OpenAI 域名指向日本、新加坡或美国节点，其他常规网页浏览继续走低延迟的香港节点。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "什么是节点倍率？为什么有的节点是 0.1x，有的是 3.0x？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "节点倍率是机场计费换算系数。1.0x 为标准计费；0.1x 节点消耗 1GB 流量仅扣除 0.1GB 套餐配额，适合下载大文件；3.0x 节点通常配备贵价物理专线或纯净住宅商用 IP，扣除 3 倍配额，适合重要会议、金融交互与严苛 AI 任务。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">线路节点专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:hub-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">科学上网线路与节点技术全景指南</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                节点的地区与底层线路直接决定了您的网络延迟、丢包率与业务解锁能力。梯子猫梳理各大主流节点的网络特征与适用场景，助您科学配置客户端分流。
+            </p>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：IPLC 与 IEPL 专线的本质区别与节点选型
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>IPLC (International Private Leased Circuit)：</strong>国际私有租用线路。端到端物理点对点租用，延迟恒定如局域网，但成本最为昂贵。</p>
+                    <p><strong>IEPL (International Ethernet Private Line)：</strong>国际以太网专线。基于二层以太网技术，同样完全不过公网 GFW，具备更高的带宽扩展弹性，是目前 90% 顶级机场的首选主力架构。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>节点选择黄金法则：</strong></p>
+                    <p>• 网页浏览 / 游戏联机：首选 <strong>香港（15-45ms）</strong> 或 <strong>台湾（25-55ms）</strong>；</p>
+                    <p>• ChatGPT / Claude AI：首选 <strong>日本（35-65ms）</strong> 或 <strong>美国（120-180ms 原生住宅 IP）</strong>；</p>
+                    <p>• 流媒体全区观影：首选 <strong>新加坡（45-75ms）</strong> 或 <strong>日本</strong>。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：企业级内网专线全景拓扑架构图 -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:schema-outline-rounded" class="text-(--primary)" />
+                企业级 IEPL 跨境内网专线数据流全景拓扑
+            </h2>
+            <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 font-mono text-xs my-3 leading-relaxed overflow-x-auto">
+                用户客户端 (Clash / 小火箭) ──[VLESS / Shadowsocks 强加密]──▶ 国内多线 BGP 入口 (上海/广深/北京)<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ (内网物理光缆传输，完全避开国际公网拥堵)<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【IEPL 企业级跨境内网专线】<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br/>
+                境外顶级落地机房 (香港 HKIX / 日本 Equinix / 洛杉矶 BGP) ──▶ 全球互联网 / 流媒体 / AI 服务商
+            </div>
+        </section>
+
+        <!-- 第三章：热门节点地区全景卡片 -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {nodeRegions.map((item) => (
+                <div class="card-base p-6 rounded-(--radius-large) flex flex-col justify-between border border-transparent hover:border-(--primary)/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-black/5 dark:border-white/5">
+                            <h3 class="text-lg font-bold text-black/90 dark:text-white/90">{item.region}</h3>
+                            <span class="text-xs px-2.5 py-1 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono font-bold">
+                                {item.latency}
+                            </span>
+                        </div>
+
+                        <div class="space-y-2 text-xs md:text-sm text-black/70 dark:text-white/70 mb-4">
+                            <div><strong class="text-black/90 dark:text-white/90">路由特征：</strong>{item.routing}</div>
+                            <div><strong class="text-black/90 dark:text-white/90">流媒体支持：</strong>{item.streaming}</div>
+                            <div><strong class="text-black/90 dark:text-white/90">AI 兼容性：</strong>{item.aiSupport}</div>
+                            <div><strong class="text-black/90 dark:text-white/90">推荐用途：</strong>{item.recommendation}</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs">
+                        <a href="/posts/iplc-iepl-bgp-nodes-guide" class="text-(--primary) font-bold hover:underline">
+                            查看专线深度科普 →
+                        </a>
+                        <a href="/recommend/" class="btn-regular px-3 py-1.5 rounded-lg font-bold">
+                            查看推荐专线
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </section>
+
+        <!-- 第四章：节点倍率常识说明 -->
+        <div class="card-base p-6 rounded-(--radius-large) text-xs md:text-sm text-black/70 dark:text-white/70 leading-relaxed">
+            <h3 class="text-base font-bold text-black/90 dark:text-white/90 mb-2 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary) text-lg" />
+                什么是节点倍率 (Multiplier)？
+            </h3>
+            <p class="mb-2">
+                很多机场节点名称后面会标有 <code>0.1x</code>、<code>1.0x</code>、<code>2.0x</code> 或 <code>3.0x</code>：
+            </p>
+            <ul class="list-disc pl-5 space-y-1">
+                <li><strong>1.0x 节点（标准倍率）</strong>：消耗 1GB 实际流量，扣除套餐内 1GB 流量，适合绝大多数日常使用。</li>
+                <li><strong>0.1x - 0.5x 节点（低倍率节点）</strong>：消耗 1GB 实际流量仅扣除 0.1G - 0.5G，适合下载大文件或 Steam 游戏更新。</li>
+                <li><strong>2.0x - 3.0x 节点（高倍率专线）</strong>：通常为贵价物理专线或纯净住宅商用 IP 节点，成本极高，因此扣除双倍或三倍流量，适合重要会议、金融交易与严苛 AI 任务。</li>
+            </ul>
+        </div>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/streaming/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🎬 AI与流媒体解锁</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

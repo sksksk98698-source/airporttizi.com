@@ -1,0 +1,173 @@
+{
+	"version": "1.0.0",
+	"lastUpdated": "2026-09-19T16:47:00+08:00",
+	"clusters": [
+		{
+			"id": "cluster-brands",
+			"name": "机场梯子评测与品牌导购",
+			"pillarUrl": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"hubUrl": "https://airporttizi.com/reviews/",
+			"primaryTargetKeywords": [
+				"机场推荐",
+				"翻墙机场",
+				"梯子推荐",
+				"便宜机场",
+				"科学上网"
+			],
+			"nodes": [
+				"https://airporttizi.com/best-vpn-airport/",
+				"https://airporttizi.com/cheap-vpn-airport/",
+				"https://airporttizi.com/free-vpn-airport/",
+				"https://airporttizi.com/posts/latest-airport-ladder-speed-stability-ranking-2026/",
+				"https://airporttizi.com/reviews/amytelecom/",
+				"https://airporttizi.com/reviews/blinkload/",
+				"https://airporttizi.com/reviews/cnix/",
+				"https://airporttizi.com/reviews/efcloud/",
+				"https://airporttizi.com/reviews/flowercloud/",
+				"https://airporttizi.com/reviews/flyingbird/",
+				"https://airporttizi.com/reviews/fss-speed/",
+				"https://airporttizi.com/reviews/glados/",
+				"https://airporttizi.com/reviews/kuromis/",
+				"https://airporttizi.com/reviews/nexitally/",
+				"https://airporttizi.com/reviews/ouonet/",
+				"https://airporttizi.com/reviews/paofu/",
+				"https://airporttizi.com/reviews/sola/",
+				"https://airporttizi.com/reviews/ssr-dog/",
+				"https://airporttizi.com/reviews/tag-vpn/",
+				"https://airporttizi.com/reviews/totoro-cloud/",
+				"https://airporttizi.com/reviews/v2club/",
+				"https://airporttizi.com/reviews/wallless/",
+				"https://airporttizi.com/reviews/xunlong/",
+				"https://airporttizi.com/posts/wgetcloud-review-2026/",
+				"https://airporttizi.com/posts/wgetcloud-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/nexitally-review-2026/",
+				"https://airporttizi.com/posts/nexitally-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/tag-vpn-review-2026/",
+				"https://airporttizi.com/posts/tag-vpn-worth-buying-analysis/",
+				"https://airporttizi.com/posts/flowercloud-review-2026/",
+				"https://airporttizi.com/posts/flowercloud-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/totoro-cloud-review-2026/",
+				"https://airporttizi.com/posts/totoro-cloud-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/flyingbird-review-2026/",
+				"https://airporttizi.com/posts/flyingbird-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/ssrdog-review-2026/",
+				"https://airporttizi.com/posts/ssrdog-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/speedcat-review-2026/",
+				"https://airporttizi.com/posts/speedcat-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/youtu-review-2026/",
+				"https://airporttizi.com/posts/youtu-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/boostnet-review-2026/",
+				"https://airporttizi.com/posts/boostnet-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/amytelecom-review-2026/",
+				"https://airporttizi.com/posts/amytelecom-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/mojie-review-2026/",
+				"https://airporttizi.com/posts/mojie-website-plans-unlock-guide/",
+				"https://airporttizi.com/posts/just-my-socks-review-2026/",
+				"https://airporttizi.com/posts/justmysocks-website-plans-guide/",
+				"https://airporttizi.com/posts/fastlink-review-2026/",
+				"https://airporttizi.com/posts/fastlink-website-status-plans-guide/",
+				"https://airporttizi.com/posts/bywave-review-2026/",
+				"https://airporttizi.com/posts/bywave-website-plans-guide/",
+				"https://airporttizi.com/posts/gatern-review-2026/",
+				"https://airporttizi.com/posts/gatern-website-plans-guide/",
+				"https://airporttizi.com/posts/qingyunti-review-2026/",
+				"https://airporttizi.com/posts/qingyunti-website-plans-guide/",
+				"https://airporttizi.com/posts/dageyun-review-2026/",
+				"https://airporttizi.com/posts/dageyun-website-plans-guide/",
+				"https://airporttizi.com/posts/kuromis-review-2026/",
+				"https://airporttizi.com/posts/kuromis-website-plans-guide/",
+				"https://airporttizi.com/posts/laomaoyun-review-2026/",
+				"https://airporttizi.com/posts/laomaoyun-website-plans-guide/"
+			],
+			"linkingStrategy": "所有单品牌评测页（Spoke）必须反向链接到 Pillar（综合推荐）与 Hub（评测列表），Pillar 与 Hub 依照属性分流给各个单品牌 Spoke 页面，且单品牌之间按同等定位/价格段进行互链。"
+		},
+		{
+			"id": "cluster-clients",
+			"name": "全平台客户端下载与配置进阶",
+			"pillarUrl": "https://airporttizi.com/posts/cross-platform-vpn-client-setup-guide/",
+			"hubUrl": "https://airporttizi.com/posts/",
+			"primaryTargetKeywords": [
+				"翻墙客户端下载",
+				"Clash教程",
+				"Shadowrocket配置",
+				"翻墙工具汇总",
+				"点击无法访问网站"
+			],
+			"nodes": [
+				"https://airporttizi.com/posts/clash-rules-advanced-guide-2026/",
+				"https://airporttizi.com/posts/best-vpn-proxy-tools-2026/",
+				"https://airporttizi.com/posts/shadowrocket-ios-tutorial/",
+				"https://airporttizi.com/posts/clash-verge-rev-tutorial/",
+				"https://airporttizi.com/posts/cannot-access-site-troubleshooting/"
+			],
+			"linkingStrategy": "跨平台配置总指南作为 Pillar 汇聚所有客户端，分流教程（Clash规则、小火箭教程、Clash Verge教程）作为 Spoke，遇连接故障排查直接内链至排查指南。"
+		},
+		{
+			"id": "cluster-streaming-ai",
+			"name": "流媒体与AI工具解锁与IP纯净度",
+			"pillarUrl": "https://airporttizi.com/posts/chatgpt-claude-netflix-disney-unlock-guide/",
+			"hubUrl": "https://airporttizi.com/posts/",
+			"primaryTargetKeywords": [
+				"ChatGPT解锁",
+				"Claude解锁",
+				"Netflix翻墙",
+				"IP纯净度检测",
+				"流媒体解锁"
+			],
+			"nodes": [
+				"https://airporttizi.com/posts/chatgpt-claude-netflix-disney-unlock-guide/"
+			],
+			"linkingStrategy": "针对流媒体/AI解锁需求，内链引导至具备原生IP/高质量解锁能力的专线机场（如 AmyTelecom, TAG VPN, Nexitally, FlowerCloud），并与专线原理解析互链。"
+		},
+		{
+			"id": "cluster-routing-hardware",
+			"name": "软路由与全屋网络翻墙",
+			"pillarUrl": "https://airporttizi.com/posts/openwrt-soft-router-vpn-setup-guide/",
+			"hubUrl": "https://airporttizi.com/posts/",
+			"primaryTargetKeywords": [
+				"软路由翻墙",
+				"OpenWrt配置",
+				"旁路由教程",
+				"全屋科学上网"
+			],
+			"nodes": [
+				"https://airporttizi.com/posts/openwrt-soft-router-vpn-setup-guide/"
+			],
+			"linkingStrategy": "软路由教程向客户端教程（sing-box/Clash核心）及专线机场集群传递权重，形成全屋智能分流权威内容闭环。"
+		},
+		{
+			"id": "cluster-protocols-network",
+			"name": "专线技术与底层协议解析",
+			"pillarUrl": "https://airporttizi.com/posts/iplc-iepl-dedicated-line-guide/",
+			"hubUrl": "https://airporttizi.com/posts/",
+			"primaryTargetKeywords": [
+				"IPLC专线",
+				"IEPL专线",
+				"专线机场区别",
+				"BGP中继",
+				"科学上网线路解析"
+			],
+			"nodes": [
+				"https://airporttizi.com/posts/iplc-iepl-dedicated-line-guide/"
+			],
+			"linkingStrategy": "作为技术权威基石，解答专线原理，向所有推荐 IPLC/IEPL 专线的品牌评测与综合排行榜反向输出高信任度技术背书内链。"
+		},
+		{
+			"id": "cluster-apple-id",
+			"name": "苹果生态与海外账号获取",
+			"pillarUrl": "https://airporttizi.com/posts/free-us-apple-id-shadowrocket-daily-update/",
+			"hubUrl": "https://airporttizi.com/posts/",
+			"primaryTargetKeywords": [
+				"美区Apple ID",
+				"Shadowrocket下载",
+				"美区账号共享",
+				"iOS小火箭获取"
+			],
+			"nodes": [
+				"https://airporttizi.com/posts/free-us-apple-id-shadowrocket-daily-update/",
+				"https://airporttizi.com/posts/shadowrocket-ios-tutorial/"
+			],
+			"linkingStrategy": "解决 iOS 用户安装 Shadowrocket/Quantumult X 的第一道门槛，顺畅衔接小火箭配置教程与 iOS 友好型机场评测。"
+		}
+	]
+}

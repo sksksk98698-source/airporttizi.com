@@ -1,0 +1,36 @@
+{
+	"title": "Future Canonical URL Migration Proposal (NON-ACTIVE / DRAFT ONLY)",
+	"status": "proposal_only",
+	"applied": false,
+	"description": "本文件仅作为未来架构演进与全站 URL 规范化的备选迁移提案。当前阶段所有 49 个既有有效 URL 均严格保持现状，不执行任何 301 重定向，以保证现有已收录索引与外部反向链接不受任何震荡。",
+	"rulesForFuturePages": {
+		"tutorials": "/tutorials/[slug]/ (未来新增纯技术教程使用)",
+		"clients": "/clients/[platform]/ (未来新增客户端专题使用)",
+		"troubleshooting": "/problems/[issue]/ (未来新增报错排查专题使用)",
+		"brands": "/brands/[brand-slug]/ (未来新品牌库使用)"
+	},
+	"potential301MappingsIfApprovedInFuture": [
+		{
+			"from": "/posts/cross-platform-vpn-client-setup-guide/",
+			"to": "/tutorials/cross-platform-vpn-client-setup-guide/",
+			"rationale": "归入纯教程目录",
+			"riskLevel": "high",
+			"impact": "可能导致当前搜索引擎已收录排名的短期波动"
+		},
+		{
+			"from": "/posts/clash-rules-advanced-guide-2026/",
+			"to": "/tutorials/clash-rules-advanced-guide-2026/",
+			"rationale": "归入纯教程目录",
+			"riskLevel": "high",
+			"impact": "可能导致当前搜索引擎已收录排名的短期波动"
+		},
+		{
+			"from": "/reviews/:id/",
+			"to": "/brands/:id/",
+			"rationale": "统一品牌库命名空间",
+			"riskLevel": "high",
+			"impact": "涉及 19 个品牌评测页面的全量 301 迁移，当前阶段坚决不实施"
+		}
+	],
+	"recommendation": "在当前站点成长期，坚决维持 existing-url-registry.json 中的既有 URL 结构不变。仅在未来整站重构或流量稳固且有明确重定向管理系统时，再行评估实施。"
+}

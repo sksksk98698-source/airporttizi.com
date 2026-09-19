@@ -1,0 +1,271 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"ChatGPT/Claude/Netflix/Disney+流媒体与AI工具解锁全指南 - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫2026 AI工具与全球流媒体解锁专属指南。深度解析 ChatGPT 1020 报错、Claude 封禁风控、Netflix 各区非自制剧、Disney+、YouTube Premium、TikTok 的解锁原理与高纯净度住宅 IP 节点推荐。";
+
+const platformGuides = [
+	{
+		name: "OpenAI / ChatGPT",
+		icon: "material-symbols:smart-toy-outline-rounded",
+		req: "要求纯净商业/住宅 IP，严禁使用香港节点",
+		recRegions: "美国、日本、新加坡、台湾",
+		commonError: "Access Denied (1020)、无限循环人机验证、无法生成回答",
+		tips: "请勿频繁切换不同国家的节点；若遇 1020 报错，切换节点后请务必开启浏览器无痕模式重新登录。",
+		status: "🟢 光速云 / 唯兔云 专项优化支持",
+	},
+	{
+		name: "Anthropic / Claude 3.5 Sonnet",
+		icon: "material-symbols:psychology-outline-rounded",
+		req: "风控极度严苛，要求高权重住宅 IP 与干净浏览器指纹",
+		recRegions: "美国原生、英国原生、日本",
+		commonError: "Account Suspended (刚注册几分钟即被封号)",
+		tips: "建议绑定国外真实手机号，使用住宅 IP 落地节点登录，且关闭浏览器的 WebRTC 泄露。",
+		status: "🟢 速界 / 飞猫云 住宅 IP 原生支持",
+	},
+	{
+		name: "Netflix (网飞)",
+		icon: "material-symbols:movie-outline-rounded",
+		req: "非自制剧解锁需要当地原生广播或住宅 IP",
+		recRegions: "港区 (中文字幕多)、美区 (片库全)、日区 (动漫多)",
+		commonError:
+			"只能看 Netflix 自制剧 (Originals)，搜不到绝命毒师、老友记等版权剧",
+		tips: "选择机场标有“NF/Netflix/流媒体”后缀的专线节点即可秒开 4K HDR。",
+		status: "🟢 灵猫网络 / 暮光加速 全节点原生解锁",
+	},
+	{
+		name: "Disney+ & HBO Max",
+		icon: "material-symbols:live-tv-outline-rounded",
+		req: "要求落地机房 DNS 与 IP 归属地严格一致",
+		recRegions: "新加坡、美国、中国香港",
+		commonError: "抱歉，您所在的地区暂时无法使用该服务 / 蓝屏圈圈",
+		tips: "确保客户端开启 Fake-IP 模式或由中转节点远程解析 DNS，防止本地 DNS 污染泄露。",
+		status: "🟢 星岛梦 / 微风网络 稳定支持",
+	},
+	{
+		name: "YouTube Premium",
+		icon: "material-symbols:video-library-outline-rounded",
+		req: "需要极高带宽吞吐与超低首帧缓冲时延",
+		recRegions: "香港、新加坡、台湾、日本",
+		commonError: "4K/8K 视频频繁转圈缓冲、跨区购买 Premium 锁区阻断",
+		tips: "配合 Hysteria2 或 IEPL 专线节点，轻松跑满千兆带宽，8K 60帧随心拖拽。",
+		status: "🟢 光速云 / 无忧链接 极速支持",
+	},
+	{
+		name: "TikTok (海外版抖音)",
+		icon: "material-symbols:music-note-rounded",
+		req: "拔卡测试或虚拟运营商检测、纯净原生 IP",
+		recRegions: "美区、英区、东南亚",
+		commonError: "黑屏、无法点赞关注、发视频 0 播放",
+		tips: "拔除国内 SIM 卡或使用分流规则伪装运营商与时区，搭配原生住宅节点运行。",
+		status: "🟢 极连云 / 宇宙云 原生专线支持",
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/streaming/",
+			url: "https://airporttizi.com/streaming/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "AI与流媒体",
+						item: "https://airporttizi.com/streaming/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "为什么打开 ChatGPT 会提示 Access Denied (Error 1020)？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "1020 报错是 Cloudflare 与 OpenAI 针对恶意爬虫或高风险机房 IP 设立的防火墙阻断策略。通常是因为当前使用的节点 IP 已经被大量其他用户共用且触发了风控，或者该 IP 属于典型的数据中心广播段。解决方法是切换到机场标注为【AI专用】或【住宅IP】的美日节点，并在浏览器无痕模式下访问。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "Netflix 提示“您似乎在使用未受支持的代理”该怎么办？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "这是 Netflix 识别出了机房代理特征并锁区。请确认客户端代理模式为【规则 (Rule)】而非【全局 (Global)】，然后在节点列表中挑选带有【NF】或【Netflix】标识的原生住宅专线节点。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">AI与流媒体专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:smart-display-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">AI 工具与全球流媒体解锁全指南</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                进入 2026 年，ChatGPT、Claude 与 Netflix、Disney+ 等服务商的风控技术已不仅限于检测 IP 所在地，还会综合评估 ASN 欺诈分、数据中心属性与浏览器指纹。梯子猫梳理全平台解锁机制与防封秘籍。
+            </p>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：2026 AI 大模型与流媒体风控底层逻辑
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>OpenAI / Anthropic 风控：</strong>检测重点在于 <strong>IP 类型 (Type: ISP 住宅 / DCH 机房)</strong> 与 <strong>欺诈分 (Fraud Score)</strong>。机房广播 IP 极易被降智或弹 1020，商用住宅 IP 才是长久之道。</p>
+                    <p><strong>Netflix / Disney+ 解锁：</strong>分为“自制剧”与“非自制版权剧”。只有落地机房拥有当地原生广播广播或 DNS 流媒体重定向支持，方可看全区热门非自制剧。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1.5">
+                    <p><strong>黄金落地节点推荐：</strong></p>
+                    <p>• ChatGPT 生产力：<strong>美国洛杉矶</strong>、<strong>日本东京</strong>；</p>
+                    <p>• Claude 3.5 极速防封：<strong>美国西海岸原生</strong>、<strong>英国原生</strong>；</p>
+                    <p>• Netflix 4K 中文字幕：<strong>香港 HKIX</strong>、<strong>新加坡</strong>。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：平台解锁指南网格 -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {platformGuides.map((item) => (
+                <div class="card-base p-6 rounded-(--radius-large) flex flex-col justify-between border border-transparent hover:border-(--primary)/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-black/5 dark:border-white/5">
+                            <div class="flex items-center gap-2">
+                                <Icon name={item.icon} class="text-xl text-(--primary)" />
+                                <h3 class="text-lg font-bold text-black/90 dark:text-white/90">{item.name}</h3>
+                            </div>
+                            <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold">
+                                {item.status}
+                            </span>
+                        </div>
+
+                        <div class="space-y-2 text-xs md:text-sm text-black/70 dark:text-white/70 mb-4">
+                            <div><strong class="text-black/90 dark:text-white/90">IP 核心要求：</strong>{item.req}</div>
+                            <div><strong class="text-black/90 dark:text-white/90">推荐黄金地区：</strong>{item.recRegions}</div>
+                            <div><strong class="text-rose-600 dark:text-rose-400">常见报错表现：</strong>{item.commonError}</div>
+                            <div class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 text-xs leading-relaxed">
+                                <strong class="text-(--primary) block mb-0.5">💡 解锁与防封秘籍：</strong>
+                                {item.tips}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs">
+                        <a href="/posts/chatgpt-claude-netflix-streaming-unlock" class="text-(--primary) font-bold hover:underline">
+                            阅读详细实测报告 →
+                        </a>
+                        <a href="/recommend/" class="btn-regular px-3 py-1 rounded-md text-xs font-bold">
+                            选购解锁专线
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </section>
+
+        <!-- 第三章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第三章：流媒体与 AI 解锁常见问题解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：为什么使用香港节点打开 ChatGPT 会提示 Unsupported Country？</h4>
+                    <p class="text-black/70 dark:text-white/70">OpenAI 从上线至今从未对中国香港地区开放 API 与网页端服务，因此香港 IP 会直接被其前端识别拦截。解决方案是在代理软件的分流规则中，单独将 OpenAI 相关域名定向到日本或美国节点。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：观看 Netflix 4K 视频需要多少带宽？</h4>
+                    <p class="text-black/70 dark:text-white/70">Netflix 官方推荐 4K HDR 视频的最低带宽为 25 Mbps。但为了保证拖拽进度条不卡顿、秒加载最高码率，单线程峰值带宽建议达到 100 Mbps 以上。梯子猫推荐的 IEPL 专线机场均可跑满 500-800 Mbps。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

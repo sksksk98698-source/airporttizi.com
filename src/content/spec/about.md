@@ -1,9 +1,43 @@
-# About
+# 关于梯子猫 (AirportTizi.com)
 
-This is the demo site for [Fumika](https://github.com/iyanarmanda/fumika). **Fumika** is heavily modified from [Fuwari](https://github.com/saicaca/fuwari).
+**梯子猫（AirportTizi.com）** 是专注 **2026 高端稳定机场梯子推荐、机场综合实力排行、套餐价格对比与科学上网数据库** 的独立第三方网络技术评测平台。
 
-::github{repo="iyanarmanda/fumika"}
+我们致力于通过真实环境的长周期实测、严苛的晚高峰压力监测与结构化参数档案，帮助科研人员、跨境外贸从业者、软件开发者与海外流媒体爱好者，挑选到低延迟、高可用、抗封锁且价格公道的网络加速服务。
 
-> ### Sources of images used in this site
-> - [Profile](https://www.pixiv.net/en/artworks/126216012) and others by [畑乃おいも](https://www.pixiv.net/en/users/69841549)
+---
 
+## 🎯 我们的评测与甄选标准
+
+市场上的机场梯子服务鱼龙混杂，超售、虚标专线、跑路风险屡见不鲜。梯子猫坚持以下四大核心测评原则：
+
+### 1. 晚高峰极限抗压与可用率（Weight: 35%）
+- **测试时段**：每日 20:00 - 23:00 网络高峰期；
+- **监控指标**：电信、联通、移动三网丢包率（严格要求 < 1.5%）、抖动（Jitter < 5ms）与 4K/8K 视频首帧缓冲时延。
+
+### 2. 真实线路拓扑与传输协议（Weight: 25%）
+- **真假专线甄别**：抓包分析入口与落地跳数，甄别是否为物理内网专线（IPLC / IEPL），拒绝公网单线冒充专线；
+- **新一代协议支持**：评估 Shadowsocks 2022、V2Ray/VMess、Trojan 及基于 UDP 的高抗丢包 Hysteria2 / TUIC v5 部署质量。
+
+### 3. AI 生产力与全域流媒体解锁（Weight: 20%）
+- **AI 纯净度检测**：全节点轮询测试 OpenAI / ChatGPT (无 1020 / Access Denied)、Claude、Midjourney、Google Gemini 的连通性与 IP 风险值（Fraud Score）；
+- **流媒体原生解锁**：实测 Netflix 各区非自制剧、Disney+、YouTube Premium、TikTok、Spotify 等平台原生支持。
+
+### 4. 运营合规与跑路风险雷达（Weight: 20%）
+- **运营年限与规模**：优先推荐运营 2 年以上、具备多入口容灾集群的成熟品牌；
+- **付款原则**：始终坚持“能月付绝不年付”的避坑建议，实时监控工单响应时效与节点存活率。
+
+---
+
+## 🛡️ 客观中立声明
+
+1. **坚持真机实测**：所有测评数据均基于真实购买的订阅节点进行持续拨测，不接受任何虚假数据干预；
+2. **数据持续更新**：机场网络环境瞬息万变，我们定期复测节点可用性，并动态调整排行榜与风险预警；
+3. **技术学习导向**：本站所有内容、客户端下载指引与配置教程，仅供计算机网络学术研究、跨境企业商务办公及合法海外资讯查阅使用，请严格遵守您所在国家和地区的相关法律法规。
+
+---
+
+## 📬 联系与反馈
+
+- **官方 Telegram 频道**：[@airporttizi](https://t.me/airporttizi)
+- **站长邮箱**：`contact@airporttizi.com`
+- **RSS 订阅源**：[/rss.xml](/rss.xml)

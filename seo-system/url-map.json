@@ -1,0 +1,1250 @@
+{
+	"version": "1.0.0",
+	"lastUpdated": "2026-09-19T16:45:00+08:00",
+	"baseCanonicalDomain": "https://airporttizi.com",
+	"existingUrlsCount": 89,
+	"urls": [
+		{
+			"url": "https://airporttizi.com/",
+			"path": "/",
+			"title": "机场梯子 - 2026最新优质翻墙机场评测与科学上网指南",
+			"type": "hub",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "科学上网",
+			"secondaryKeywords": ["翻墙机场", "机场梯子", "机场推荐"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/best-vpn-airport/",
+			"path": "/best-vpn-airport/",
+			"title": "最好用的翻墙机场推荐",
+			"type": "category",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "好用的翻墙机场",
+			"secondaryKeywords": ["稳定机场", "高端机场"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/cheap-vpn-airport/",
+			"path": "/cheap-vpn-airport/",
+			"title": "便宜好用的翻墙机场推荐",
+			"type": "category",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "便宜机场",
+			"secondaryKeywords": ["性价比机场", "平价梯子"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/free-vpn-airport/",
+			"path": "/free-vpn-airport/",
+			"title": "免费翻墙机场与试用节点",
+			"type": "category",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "免费机场",
+			"secondaryKeywords": ["免费梯子", "白嫖机场"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/",
+			"path": "/reviews/",
+			"title": "全部翻墙机场评测导航",
+			"type": "hub",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "机场评测",
+			"secondaryKeywords": ["翻墙机场对比", "梯子测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/",
+			"path": "/posts/",
+			"title": "科学上网指南与教程文章",
+			"type": "hub",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "科学上网教程",
+			"secondaryKeywords": ["翻墙教程", "客户端设置"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/best-vpn-airport-recommendation-2026/",
+			"path": "/posts/best-vpn-airport-recommendation-2026/",
+			"title": "2026年翻墙机场推荐：便宜好用的VPN机场评测与科学上网指南(长期更新)",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "机场推荐",
+			"secondaryKeywords": ["翻墙机场", "2026机场推荐", "便宜好用的VPN机场"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/latest-airport-ladder-speed-stability-ranking-2026/",
+			"path": "/posts/latest-airport-ladder-speed-stability-ranking-2026/",
+			"title": "2026最新机场梯子综合实力排行榜｜晚高峰延迟/吞吐速率/抗封锁稳定性天梯榜",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "梯子推荐",
+			"secondaryKeywords": ["机场天梯榜", "晚高峰测速", "抗封锁稳定性"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cross-platform-vpn-client-setup-guide/",
+			"path": "/posts/cross-platform-vpn-client-setup-guide/",
+			"title": "全平台科学上网客户端下载与配置指南：Windows/Mac/iOS/Android/Linux 新手到精通",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "翻墙客户端下载",
+			"secondaryKeywords": [
+				"全平台科学上网客户端",
+				"客户端配置教程",
+				"Shadowrocket配置"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/clash-rules-advanced-guide-2026/",
+			"path": "/posts/clash-rules-advanced-guide-2026/",
+			"title": "Clash 规则配置进阶教程：2026 最新分流规则一键导入，防封号+去广告+国内直连",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "Clash教程",
+			"secondaryKeywords": ["Clash分流规则", "Clash进阶教程", "Clash防封号"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/best-vpn-proxy-tools-2026/",
+			"path": "/posts/best-vpn-proxy-tools-2026/",
+			"title": "2026年翻墙工具汇总推荐：Clash、Shadowrocket、V2RayNG、sing-box科学上网教程",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "翻墙工具汇总",
+			"secondaryKeywords": ["sing-box教程", "V2RayNG设置", "代理工具推荐"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/chatgpt-claude-netflix-disney-unlock-guide/",
+			"path": "/posts/chatgpt-claude-netflix-disney-unlock-guide/",
+			"title": "ChatGPT/Claude/Netflix/Disney+流媒体与AI工具解锁全指南：IP纯净度与防封策略",
+			"type": "article",
+			"clusterId": "cluster-streaming-ai",
+			"primaryKeyword": "ChatGPT解锁",
+			"secondaryKeywords": [
+				"Claude解锁",
+				"Netflix翻墙",
+				"IP纯净度检测",
+				"流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/iplc-iepl-dedicated-line-guide/",
+			"path": "/posts/iplc-iepl-dedicated-line-guide/",
+			"title": "什么是IPLC与IEPL专线？科学上网线路类型全景解析与节点选择避坑指南",
+			"type": "article",
+			"clusterId": "cluster-protocols-network",
+			"primaryKeyword": "IPLC专线",
+			"secondaryKeywords": [
+				"IEPL专线",
+				"专线机场区别",
+				"BGP中继",
+				"科学上网线路解析"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/openwrt-soft-router-vpn-setup-guide/",
+			"path": "/posts/openwrt-soft-router-vpn-setup-guide/",
+			"title": "2026年软路由全屋翻墙指南：OpenWrt安装配置与旁路由教程",
+			"type": "article",
+			"clusterId": "cluster-routing-hardware",
+			"primaryKeyword": "软路由翻墙",
+			"secondaryKeywords": ["OpenWrt配置", "旁路由设置", "全屋科学上网"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/free-us-apple-id-shadowrocket-daily-update/",
+			"path": "/posts/free-us-apple-id-shadowrocket-daily-update/",
+			"title": "2026最新免费美区Apple ID共享账号 | Shadowrocket/小火箭下载 | iOS美区账号每日更新",
+			"type": "article",
+			"clusterId": "cluster-apple-id",
+			"primaryKeyword": "美区Apple ID",
+			"secondaryKeywords": [
+				"小火箭下载",
+				"Shadowrocket共享账号",
+				"美区App Store"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/shadowrocket-ios-tutorial/",
+			"path": "/posts/shadowrocket-ios-tutorial/",
+			"title": "Shadowrocket (小火箭) iOS 新手使用教程：添加节点、配置分流与常见问题",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "小火箭使用教程",
+			"secondaryKeywords": ["Shadowrocket添加节点", "小火箭分流规则"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/clash-verge-rev-tutorial/",
+			"path": "/posts/clash-verge-rev-tutorial/",
+			"title": "Clash Verge Rev 完整上手指南：从安装到订阅配置与进阶技巧",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "Clash Verge Rev教程",
+			"secondaryKeywords": ["Clash Verge下载", "Clash Verge订阅导入"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/cannot-access-site-troubleshooting/",
+			"path": "/posts/cannot-access-site-troubleshooting/",
+			"title": "点击无法访问网站？翻墙连不上、能上Google打不开网页的常见排查指南",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "点击无法访问网站",
+			"secondaryKeywords": [
+				"翻墙连不上",
+				"能上Google打不开网页",
+				"科学上网无法访问"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/wgetcloud-review-2026/",
+			"path": "/posts/wgetcloud-review-2026/",
+			"title": "WgetCloud 机场怎么样？2026 套餐价格、线路节点与稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "WgetCloud怎么样",
+			"secondaryKeywords": [
+				"WgetCloud评测",
+				"WgetCloud套餐价格",
+				"WgetCloud稳定性",
+				"WgetCloud节点"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/wgetcloud-website-plans-unlock-guide/",
+			"path": "/posts/wgetcloud-website-plans-unlock-guide/",
+			"title": "WgetCloud 官网与套餐指南：节点速度、流媒体和 ChatGPT 解锁实测",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "WgetCloud官网",
+			"secondaryKeywords": [
+				"WgetCloud套餐",
+				"WgetCloud解锁实测",
+				"WgetCloud ChatGPT",
+				"WgetCloud客户端配置"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/nexitally-review-2026/",
+			"path": "/posts/nexitally-review-2026/",
+			"title": "Nexitally 奶昔机场怎么样？2026 节点线路、价格与使用体验评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Nexitally怎么样",
+			"secondaryKeywords": [
+				"奶昔机场评测",
+				"Nexitally测速",
+				"Nexitally套餐价格",
+				"唯云专线"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/nexitally-website-plans-unlock-guide/",
+			"path": "/posts/nexitally-website-plans-unlock-guide/",
+			"title": "Nexitally 奶昔机场官网指南：套餐价格、节点地区与 AI 解锁能力",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "Nexitally官网",
+			"secondaryKeywords": [
+				"奶昔机场官网",
+				"Nexitally套餐",
+				"Nexitally ChatGPT",
+				"Nexitally Claude"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/amytelecom/",
+			"path": "/reviews/amytelecom/",
+			"title": "AmyTelecom 评测：老牌高端 IPLC 专线机场，稳定性与流媒体解锁实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "AmyTelecom评测",
+			"secondaryKeywords": ["AmyTelecom怎么样", "AmyTelecom优缺点"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/blinkload/",
+			"path": "/reviews/blinkload/",
+			"title": "Blinkload 评测：老牌 BGP / IPLC 专线机场体验与节点测速",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Blinkload评测",
+			"secondaryKeywords": ["Blinkload怎么样", "Blinkload测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/cnix/",
+			"path": "/reviews/cnix/",
+			"title": "CNIX 评测：高性价比翻墙机场，节点覆盖与流媒体解锁实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "CNIX评测",
+			"secondaryKeywords": ["CNIX怎么样", "CNIX机场"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/efcloud/",
+			"path": "/reviews/efcloud/",
+			"title": "EFCloud 评测：平价稳定的流媒体解锁翻墙机场体验",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "EFCloud评测",
+			"secondaryKeywords": ["EFCloud怎么样", "EFCloud测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/flowercloud/",
+			"path": "/reviews/flowercloud/",
+			"title": "FlowerCloud (花云) 评测：高端 BGP 唯云专线，晚高峰体验实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "FlowerCloud评测",
+			"secondaryKeywords": ["花云怎么样", "FlowerCloud测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/flyingbird/",
+			"path": "/reviews/flyingbird/",
+			"title": "FlyingBird (飞鸟机场) 评测：全专线iplc入门之选，稳定流媒体解锁",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "FlyingBird评测",
+			"secondaryKeywords": ["飞鸟机场怎么样", "FlyingBird测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/fss-speed/",
+			"path": "/reviews/fss-speed/",
+			"title": "FSCloud (法拉速) 评测：大带宽低延迟海外节点实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "FSCloud评测",
+			"secondaryKeywords": ["法拉速怎么样", "FSS Speed测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/glados/",
+			"path": "/reviews/glados/",
+			"title": "GLaDOS 评测：技术底蕴深厚的老牌机场，支持多平台与学术加速",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "GLaDOS评测",
+			"secondaryKeywords": ["GLaDOS怎么样", "GLaDOS教育优惠"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/kuromis/",
+			"path": "/reviews/kuromis/",
+			"title": "Kuromis 评测：精品专线机场，晚高峰 4K 流媒体流畅播放体验",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Kuromis评测",
+			"secondaryKeywords": ["Kuromis怎么样", "Kuromis专线"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/nexitally/",
+			"path": "/reviews/nexitally/",
+			"title": "Nexitally (奶昔) 评测：顶级旗舰机场，全专线极致速度与稳定性实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Nexitally评测",
+			"secondaryKeywords": ["奶昔机场怎么样", "Nexitally测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/ouonet/",
+			"path": "/reviews/ouonet/",
+			"title": "OUONET 评测：性价比优质专线机场，节点丰富与流媒体支持实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "OUONET评测",
+			"secondaryKeywords": ["OUONET怎么样", "OUONET测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/paofu/",
+			"path": "/reviews/paofu/",
+			"title": "泡芙云 评测：老牌性价比机场，节点分布与稳定性长期体验",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "泡芙云评测",
+			"secondaryKeywords": ["泡芙云怎么样", "泡芙云测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/sola/",
+			"path": "/reviews/sola/",
+			"title": "Sola (极客云子站) 评测：稳定高速的平价 IPLC 专线选择",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Sola评测",
+			"secondaryKeywords": ["Sola怎么样", "Sola机场"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/ssr-dog/",
+			"path": "/reviews/ssr-dog/",
+			"title": "SSRDOG 评测：高端 IPLC 专线机场，晚高峰 4K 秒开体验实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "SSRDOG评测",
+			"secondaryKeywords": ["SSRDOG怎么样", "SSRDOG测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/tag-vpn/",
+			"path": "/reviews/tag-vpn/",
+			"title": "TAG VPN 评测：全球近百个国家节点覆盖，流媒体与冷门地区利器",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "TAG VPN评测",
+			"secondaryKeywords": ["TAG VPN怎么样", "TAG冷门节点"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/totoro-cloud/",
+			"path": "/reviews/totoro-cloud/",
+			"title": "TotoroCloud (龙猫云) 评测：平价专线机场，日常办公与影音体验实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "TotoroCloud评测",
+			"secondaryKeywords": ["龙猫云怎么样", "TotoroCloud测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/v2club/",
+			"path": "/reviews/v2club/",
+			"title": "V2Club 评测：老牌中转机场，节点丰富与性价比分析",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "V2Club评测",
+			"secondaryKeywords": ["V2Club怎么样", "V2Club测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/wallless/",
+			"path": "/reviews/wallless/",
+			"title": "Wallless 评测：新晋轻量专线机场，简洁易用与流媒体测试",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Wallless评测",
+			"secondaryKeywords": ["Wallless怎么样", "Wallless测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/reviews/xunlong/",
+			"path": "/reviews/xunlong/",
+			"title": "迅龙加速 评测：多协议支持与高性价比套餐深度实测",
+			"type": "review",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "迅龙加速评测",
+			"secondaryKeywords": ["迅龙加速怎么样", "迅龙加速测速"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/about/",
+			"path": "/about/",
+			"title": "关于我们 - 机场梯子评测网",
+			"type": "page",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "关于机场梯子",
+			"secondaryKeywords": ["站点介绍", "联系方式"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/disclaimer/",
+			"path": "/disclaimer/",
+			"title": "免责声明 - 机场梯子评测网",
+			"type": "page",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "免责声明",
+			"secondaryKeywords": ["服务条款", "使用规范"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/privacy/",
+			"path": "/privacy/",
+			"title": "隐私政策 - 机场梯子评测网",
+			"type": "page",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "隐私政策",
+			"secondaryKeywords": ["数据合规", "隐私保护"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/terms/",
+			"path": "/terms/",
+			"title": "服务条款 - 机场梯子评测网",
+			"type": "page",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "服务条款",
+			"secondaryKeywords": ["用户协议", "法律声明"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/categories/",
+			"path": "/categories/",
+			"title": "文章分类目录",
+			"type": "hub",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "文章分类",
+			"secondaryKeywords": ["教程分类", "资讯目录"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/tags/",
+			"path": "/tags/",
+			"title": "热门标签索引",
+			"type": "hub",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "标签索引",
+			"secondaryKeywords": ["关键词标签", "主题汇聚"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/search/",
+			"path": "/search/",
+			"title": "全站搜索",
+			"type": "utility",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "搜索机场",
+			"secondaryKeywords": ["站内搜索"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/tags/vpn-airport/",
+			"path": "/tags/vpn-airport/",
+			"title": "VPN机场标签文章",
+			"type": "tag",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "VPN机场",
+			"secondaryKeywords": ["翻墙节点", "VPN推荐"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/tags/clash/",
+			"path": "/tags/clash/",
+			"title": "Clash相关教程与配置",
+			"type": "tag",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "Clash标签",
+			"secondaryKeywords": ["Clash节点", "Clash订阅"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/tags/shadowrocket/",
+			"path": "/tags/shadowrocket/",
+			"title": "Shadowrocket相关教程与配置",
+			"type": "tag",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "Shadowrocket标签",
+			"secondaryKeywords": ["小火箭规则", "小火箭配置"],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/2/",
+			"path": "/2/",
+			"title": "文章列表 第2页",
+			"type": "pagination",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "翻墙文章第2页",
+			"secondaryKeywords": [],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/404.html",
+			"path": "/404.html",
+			"title": "页面未找到 - 404",
+			"type": "error",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "404",
+			"secondaryKeywords": [],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/tag-vpn-review-2026/",
+			"path": "/posts/tag-vpn-review-2026/",
+			"title": "TAG 机场怎么样？2026 套餐价格、全球节点与专线线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "TAG机场怎么样",
+			"secondaryKeywords": [
+				"TAG评测",
+				"TAG机场套餐价格",
+				"TAG专线节点",
+				"冷门节点机场"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/tag-vpn-worth-buying-analysis/",
+			"path": "/posts/tag-vpn-worth-buying-analysis/",
+			"title": "TAG 机场值得买吗？节点速度、流媒体解锁与稳定性全面分析",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "TAG机场值得买吗",
+			"secondaryKeywords": [
+				"TAG购买建议",
+				"TAG测速",
+				"TAG流媒体解锁",
+				"TAG ChatGPT解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/flowercloud-review-2026/",
+			"path": "/posts/flowercloud-review-2026/",
+			"title": "FlowerCloud 花云机场怎么样？2026 套餐价格、节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "花云机场怎么样",
+			"secondaryKeywords": [
+				"FlowerCloud评测",
+				"花云套餐价格",
+				"花云IEPL专线",
+				"花云测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/flowercloud-website-plans-unlock-guide/",
+			"path": "/posts/flowercloud-website-plans-unlock-guide/",
+			"title": "花云 FlowerCloud 官网指南：线路、流媒体、ChatGPT 与使用体验",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "花云官网",
+			"secondaryKeywords": [
+				"FlowerCloud官网",
+				"花云套餐",
+				"花云流媒体解锁",
+				"花云ChatGPT解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/totoro-cloud-review-2026/",
+			"path": "/posts/totoro-cloud-review-2026/",
+			"title": "龙猫云机场怎么样？2026 Totoro Cloud 套餐价格与节点评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "龙猫云怎么样",
+			"secondaryKeywords": [
+				"龙猫云评测",
+				"Totoro Cloud",
+				"龙猫云套餐价格",
+				"性价比专线机场"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/totoro-cloud-website-plans-unlock-guide/",
+			"path": "/posts/totoro-cloud-website-plans-unlock-guide/",
+			"title": "龙猫云官网与使用指南：速度、稳定性、AI 解锁及最新套餐分析",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "龙猫云官网",
+			"secondaryKeywords": [
+				"Totoro Cloud官网",
+				"龙猫云套餐",
+				"龙猫云测速",
+				"龙猫云流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/flyingbird-review-2026/",
+			"path": "/posts/flyingbird-review-2026/",
+			"title": "FlyingBird 飞鸟机场怎么样？2026 套餐、节点与线路深度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "飞鸟机场怎么样",
+			"secondaryKeywords": [
+				"FlyingBird评测",
+				"飞鸟机场套餐",
+				"飞鸟机场专线",
+				"飞鸟机场测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/flyingbird-website-plans-unlock-guide/",
+			"path": "/posts/flyingbird-website-plans-unlock-guide/",
+			"title": "飞鸟机场官网指南：价格、速度、Netflix 与 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-clients",
+			"primaryKeyword": "飞鸟机场官网",
+			"secondaryKeywords": [
+				"FlyingBird官网",
+				"飞鸟机场套餐",
+				"飞鸟机场测速",
+				"飞鸟机场流媒体解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ssrdog-review-2026/",
+			"path": "/posts/ssrdog-review-2026/",
+			"title": "SSRDOG 机场怎么样？2026 套餐价格、专线节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "SSRDOG怎么样",
+			"secondaryKeywords": [
+				"SSRDOG评测",
+				"SSRDOG套餐价格",
+				"SSRDOG专线",
+				"SSRDOG测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/ssrdog-website-plans-unlock-guide/",
+			"path": "/posts/ssrdog-website-plans-unlock-guide/",
+			"title": "SSRDOG 官网与使用体验：线路稳定性、流媒体及 AI 解锁分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "SSRDOG官网",
+			"secondaryKeywords": [
+				"SSRDOG套餐",
+				"SSRDOG使用体验",
+				"SSRDOG流媒体解锁",
+				"SSRDOG ChatGPT解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/speedcat-review-2026/",
+			"path": "/posts/speedcat-review-2026/",
+			"title": "SpeedCAT 闪电猫机场怎么样？2026 套餐价格与节点速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "SpeedCAT怎么样",
+			"secondaryKeywords": [
+				"闪电猫机场评测",
+				"SpeedCAT套餐价格",
+				"闪电猫专线",
+				"SpeedCAT测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/speedcat-website-plans-unlock-guide/",
+			"path": "/posts/speedcat-website-plans-unlock-guide/",
+			"title": "闪电猫机场官网指南：线路、延迟、流媒体和 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "闪电猫机场官网",
+			"secondaryKeywords": [
+				"闪电猫官网",
+				"闪电猫延迟",
+				"闪电猫流媒体解锁",
+				"闪电猫ChatGPT解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/youtu-review-2026/",
+			"path": "/posts/youtu-review-2026/",
+			"title": "悠兔机场怎么样？2026 套餐价格、节点线路与稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "悠兔机场怎么样",
+			"secondaryKeywords": [
+				"悠兔机场评测",
+				"悠兔套餐价格",
+				"悠兔专线",
+				"悠兔测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/youtu-website-plans-unlock-guide/",
+			"path": "/posts/youtu-website-plans-unlock-guide/",
+			"title": "悠兔机场官网与使用指南：速度、流媒体、AI 解锁及套餐怎么选",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "悠兔机场官网",
+			"secondaryKeywords": [
+				"悠兔官网",
+				"悠兔套餐怎么选",
+				"悠兔流媒体解锁",
+				"悠兔AI解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/boostnet-review-2026/",
+			"path": "/posts/boostnet-review-2026/",
+			"title": "BoostNet 机场怎么样？2026 套餐价格、节点和线路全面评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "BoostNet怎么样",
+			"secondaryKeywords": [
+				"BoostNet评测",
+				"BoostNet套餐价格",
+				"BoostNet专线",
+				"BoostNet测速"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/boostnet-website-plans-unlock-guide/",
+			"path": "/posts/boostnet-website-plans-unlock-guide/",
+			"title": "BoostNet 官网指南：速度表现、AI 解锁、流媒体与稳定性实测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "BoostNet官网",
+			"secondaryKeywords": [
+				"BoostNet套餐",
+				"BoostNet流媒体解锁",
+				"BoostNet Claude",
+				"BoostNet配置指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/amytelecom-review-2026/",
+			"path": "/posts/amytelecom-review-2026/",
+			"title": "AmyTelecom 机场怎么样？2026 套餐、节点、线路和速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "AmyTelecom怎么样",
+			"secondaryKeywords": [
+				"AmyTelecom评测",
+				"AmyTelecom套餐",
+				"AmyTelecom专线",
+				"AmyTelecom速度"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/amytelecom-website-plans-unlock-guide/",
+			"path": "/posts/amytelecom-website-plans-unlock-guide/",
+			"title": "AmyTelecom 官网与套餐指南：稳定性、流媒体及 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "AmyTelecom官网",
+			"secondaryKeywords": [
+				"AmyTelecom套餐价格",
+				"AmyTelecom流媒体解锁",
+				"AmyTelecom ChatGPT",
+				"AmyTelecom客户端配置"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/mojie-review-2026/",
+			"path": "/posts/mojie-review-2026/",
+			"title": "魔戒机场怎么样？2026 套餐价格、按量流量与节点速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "魔戒机场怎么样",
+			"secondaryKeywords": [
+				"魔戒机场评测",
+				"魔戒按量付费",
+				"魔戒不限时套餐",
+				"魔戒速度评测"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/mojie-website-plans-unlock-guide/",
+			"path": "/posts/mojie-website-plans-unlock-guide/",
+			"title": "魔戒机场官网指南：不限时套餐、线路稳定性和使用体验分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "魔戒机场官网",
+			"secondaryKeywords": [
+				"魔戒机场套餐",
+				"魔戒不限时流量",
+				"魔戒流媒体解锁",
+				"魔戒备用机场"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/just-my-socks-review-2026/",
+			"path": "/posts/just-my-socks-review-2026/",
+			"title": "Just My Socks 怎么样？2026 套餐价格、线路和节点速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Just My Socks 怎么样",
+			"secondaryKeywords": [
+				"Just My Socks 评测",
+				"JMS 机场",
+				"搬瓦工机场",
+				"CN2 GIA 机场",
+				"Just My Socks 速度"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/justmysocks-website-plans-guide/",
+			"path": "/posts/justmysocks-website-plans-guide/",
+			"title": "JustMySocks 官网套餐怎么选？CN2 线路、稳定性与使用指南",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "JustMySocks 官网",
+			"secondaryKeywords": [
+				"JustMySocks 套餐选择",
+				"Just My Socks 优惠码",
+				"JMS CN2 GIA",
+				"搬瓦工官方机场指南"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/fastlink-review-2026/",
+			"path": "/posts/fastlink-review-2026/",
+			"title": "Fastlink 机场怎么样？2026 套餐、节点、线路与稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Fastlink 机场怎么样",
+			"secondaryKeywords": [
+				"Fastlink 评测",
+				"Fastlink 怎么样",
+				"Anycast 机场",
+				"Fastlink 专线",
+				"Fastlink 节点"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/fastlink-website-status-plans-guide/",
+			"path": "/posts/fastlink-website-status-plans-guide/",
+			"title": "Fastlink 机场还能用吗？官网状态、套餐变化与使用情况分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Fastlink 机场还能用吗",
+			"secondaryKeywords": [
+				"Fastlink 官网",
+				"Fastlink 套餐",
+				"Fastlink 最新地址",
+				"Fastlink 跑路了吗",
+				"Fastlink 不限时流量"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/bywave-review-2026/",
+			"path": "/posts/bywave-review-2026/",
+			"title": "ByWave 机场怎么样？2026 套餐价格、专线节点与速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "ByWave 机场怎么样",
+			"secondaryKeywords": [
+				"ByWave 评测",
+				"ByWave 怎么样",
+				"ByWave 专线",
+				"IPLC 机场",
+				"ByWave 速度"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/bywave-website-plans-guide/",
+			"path": "/posts/bywave-website-plans-guide/",
+			"title": "ByWave 官网指南：线路质量、流媒体解锁和稳定性全面分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "ByWave 官网",
+			"secondaryKeywords": [
+				"ByWave 官网指南",
+				"ByWave 套餐价格",
+				"ByWave 线路质量",
+				"ByWave 流媒体解锁",
+				"ByWave 稳定性"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/gatern-review-2026/",
+			"path": "/posts/gatern-review-2026/",
+			"title": "Gatern 机场怎么样？2026 套餐、节点地区与线路质量评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Gatern 机场怎么样",
+			"secondaryKeywords": [
+				"Gatern 评测",
+				"Gatern 怎么样",
+				"Gatern 节点",
+				"全球节点机场",
+				"Gatern 专线"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/gatern-website-plans-guide/",
+			"path": "/posts/gatern-website-plans-guide/",
+			"title": "Gatern 官网与套餐指南：速度、稳定性及流媒体解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "Gatern 官网",
+			"secondaryKeywords": [
+				"Gatern 官网指南",
+				"Gatern 套餐价格",
+				"Gatern 速度",
+				"Gatern 流媒体解锁",
+				"Gatern 稳定性"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/qingyunti-review-2026/",
+			"path": "/posts/qingyunti-review-2026/",
+			"title": "青云梯机场怎么样？2026 套餐价格、节点线路和速度评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "青云梯机场怎么样",
+			"secondaryKeywords": [
+				"青云梯评测",
+				"青云梯怎么样",
+				"性价比机场",
+				"BGP 专线",
+				"青云梯速度"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/qingyunti-website-plans-guide/",
+			"path": "/posts/qingyunti-website-plans-guide/",
+			"title": "青云梯机场官网指南：稳定性、Netflix 与 ChatGPT 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "青云梯官网",
+			"secondaryKeywords": [
+				"青云梯官网指南",
+				"青云梯套餐",
+				"青云梯流媒体解锁",
+				"青云梯稳定性",
+				"青云梯 ChatGPT 解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/dageyun-review-2026/",
+			"path": "/posts/dageyun-review-2026/",
+			"title": "大哥云机场怎么样？2026 套餐价格、节点数量与线路评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "大哥云机场怎么样",
+			"secondaryKeywords": [
+				"大哥云评测",
+				"大哥云怎么样",
+				"老牌机场",
+				"大哥云节点",
+				"大哥云专线"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/dageyun-website-plans-guide/",
+			"path": "/posts/dageyun-website-plans-guide/",
+			"title": "大哥云机场官网及使用指南：速度、稳定性和 AI 解锁表现",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "大哥云官网",
+			"secondaryKeywords": [
+				"大哥云官网指南",
+				"大哥云套餐",
+				"大哥云流媒体解锁",
+				"大哥云稳定性",
+				"大哥云 AI 解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/kuromis-review-2026/",
+			"path": "/posts/kuromis-review-2026/",
+			"title": "库洛米机场怎么样？2026 节点测速、稳定性与晚高峰评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "库洛米机场怎么样",
+			"secondaryKeywords": [
+				"库洛米评测",
+				"Kuromis怎么样",
+				"库洛米机场",
+				"库洛米节点",
+				"库洛米专线"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/kuromis-website-plans-guide/",
+			"path": "/posts/kuromis-website-plans-guide/",
+			"title": "库洛米机场官网指南：线路稳定性、流媒体与 AI 解锁测试",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "库洛米官网",
+			"secondaryKeywords": [
+				"库洛米官网指南",
+				"Kuromis套餐",
+				"库洛米流媒体解锁",
+				"库洛米稳定性",
+				"库洛米 AI 解锁"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/laomaoyun-review-2026/",
+			"path": "/posts/laomaoyun-review-2026/",
+			"title": "老猫云机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "老猫云机场怎么样",
+			"secondaryKeywords": [
+				"老猫云评测",
+				"老猫云怎么样",
+				"老猫云机场",
+				"老猫云节点",
+				"老猫云专线"
+			],
+			"status": "active",
+			"protected": true
+		},
+		{
+			"url": "https://airporttizi.com/posts/laomaoyun-website-plans-guide/",
+			"path": "/posts/laomaoyun-website-plans-guide/",
+			"title": "老猫云官网指南：节点速度、流媒体解锁与使用体验分析",
+			"type": "article",
+			"clusterId": "cluster-brands",
+			"primaryKeyword": "老猫云官网",
+			"secondaryKeywords": [
+				"老猫云官网指南",
+				"老猫云套餐",
+				"老猫云流媒体解锁",
+				"老猫云稳定性",
+				"老猫云 AI 解锁"
+			],
+			"status": "active",
+			"protected": true
+		}
+	],
+	"plannedTaxonomy": [
+		{
+			"pattern": "/tutorials/[slug]/",
+			"description": "未来的纯技术与配置教程标准路径（保留旧/posts/[slug]/不重定向）",
+			"status": "planned",
+			"protected": false
+		},
+		{
+			"pattern": "/clients/[os]/",
+			"description": "未来的平台客户端聚合页面",
+			"status": "planned",
+			"protected": false
+		},
+		{
+			"pattern": "/problems/[issue]/",
+			"description": "未来的故障排查与报错专项页面",
+			"status": "planned",
+			"protected": false
+		},
+		{
+			"pattern": "/brands/[brand-slug]/",
+			"description": "未来的品牌库标准路径（旧/reviews/[id]/保持锁定）",
+			"status": "planned",
+			"protected": false
+		}
+	]
+}

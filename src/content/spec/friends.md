@@ -1,5 +1,13 @@
-# Friends
-		
-Edit `src/content/data/friends.json` to add sites.
+# 友情链接与生态导航
 
-You can also edit `src/content/spec/friends.md` to Change text here.
+欢迎网络技术、开源客户端、网络加速与安全评测类优质站点与梯子猫交换友链。
+
+### 申请要求
+1. 网站保持稳定更新，内容聚焦于网络工程、技术开发、流媒体解锁或开源工具领域；
+2. 具有独立顶级域名，已获得主流搜索引擎正常收录；
+3. 申请前请先添加本站链接：
+   - **名称**：梯子猫 (AirportTizi)
+   - **链接**：`https://airporttizi.com`
+   - **描述**：2026高端稳定机场推荐、机场梯子排行与机场数据库
+
+如需申请交换友链，请发送邮件至 `contact@airporttizi.com` 或在 Telegram 联系 [@airporttizi](https://t.me/airporttizi)。

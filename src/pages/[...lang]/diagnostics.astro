@@ -1,0 +1,280 @@
+---
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+const pageTitle =
+	"科学上网网络故障自检与诊断工具箱｜Ping/MTR/DNS污染排查 - 梯子猫 AirportTizi";
+const pageDescription =
+	"梯子猫网络自检与诊断工具箱。提供快速自检四步法、Ping/MTR 链路丢包分析、DNS 污染与 WebRTC 泄露排查、常见报错代码解决方案，助你 3 分钟秒查秒解网络故障。";
+
+const troubleshootingSteps = [
+	{
+		step: "第一步",
+		title: "验证本地基础网络连通性",
+		desc: "断开梯子，尝试直接在浏览器打开百度或微信。如果国内网页无法访问，说明是本地 WiFi/宽带物理断网或光猫故障，请先重启光猫和路由器。",
+		status: "本地网络层",
+	},
+	{
+		step: "第二步",
+		title: "校准本地系统时间 (关键细节)",
+		desc: "VMess、VLESS 和 TLS 证书对时间戳极其敏感。请进入 Windows/Mac 日期与时间设置，点击“立即同步”，确保本地与北京时间误差不超过 60 秒。",
+		status: "时间协议层",
+	},
+	{
+		step: "第三步",
+		title: "测试节点延迟与心跳响应",
+		desc: "在客户端点击“延迟测试 (Ping/URL Test)”。如果所有节点均显示 Timeout，请更新订阅；若只有个别节点超时，切换至正常延迟的香港或日本节点即可。",
+		status: "节点握手层",
+	},
+	{
+		step: "第四步",
+		title: "排查代理模式与 DNS 污染",
+		desc: "确认客户端处于“规则模式 (Rule)”而非“直连模式 (Direct)”。尝试开启 Tun 虚拟网卡模式，并检查是否安装了冲突的杀毒软件或第三方网络加速器。",
+		status: "规则分流层",
+	},
+];
+
+const errorDictionary = [
+	{
+		code: "i/o timeout / connect: connection timed out",
+		reason:
+			"客户端无法与国内入口服务器建立连接，通常为入口维护或本地运营商临时阻断",
+		solution: "更新订阅获取最新解析，或开启手机热点测试排除本地运营商问题",
+	},
+	{
+		code: "EOF / websocket: close 1006",
+		reason: "底层协议握手断开，通常是中转机到落地机链路中断或协议版本不匹配",
+		solution: "更新客户端内核至最新版，并在客户端配置中点击“更新订阅”",
+	},
+	{
+		code: "x509: certificate has expired or is not yet valid",
+		reason: "系统时间不准确导致 SSL/TLS 证书校验失败",
+		solution: "开启操作系统“自动设置时间”并点击立即同步",
+	},
+	{
+		code: "bind: address already in use (端口占用)",
+		reason: "7890 等本地混合端口被其他软件（如其他 Clash、抓包工具）提前占用",
+		solution: "在客户端设置中更改 Mixed Port 为其他未占用端口（如 7895）",
+	},
+	{
+		code: "DNS_PROBE_FINISHED_NO_INTERNET",
+		reason: "系统代理关闭后残留了无效的本地 DNS 劫持配置",
+		solution:
+			"在网络适配器设置中将 DNS 还原为自动获取，或指定 223.5.5.5 / 119.29.29.29",
+	},
+];
+
+// 结构化数据
+const schemaData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": "https://airporttizi.com/diagnostics/",
+			url: "https://airporttizi.com/diagnostics/",
+			name: pageTitle,
+			description: pageDescription,
+			breadcrumb: {
+				"@type": "BreadcrumbList",
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: "首页",
+						item: "https://airporttizi.com/",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "网络诊断",
+						item: "https://airporttizi.com/diagnostics/",
+					},
+				],
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "为什么开启代理后能看国外网站，但微信和百度打不开了？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "这是因为误开启了【全局代理 (Global)】模式，导致国内流量也被强行转发至海外，或者本地系统代理在退出时发生配置残留。请在客户端中将模式切换为【规则 (Rule)】，并确保分流策略中的 GEOIP, CN 规则为 DIRECT 直连。",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "如何通过命令行使用 Ping 和 MTR 诊断网络链路丢包？",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "在 Windows 终端中输入 ping -n 50 节点IP 可检测连续丢包率；使用 WinMTR 或 BestTrace 工具输入节点 IP，可清晰看到从本地家庭光猫、市级骨干网、省级出口到落地机房的每一跳延迟与丢包位置，精准区分是本地家庭宽带问题还是机房线路故障。",
+					},
+				},
+			],
+		},
+	],
+};
+---
+
+<MainGridLayout title={pageTitle} description={pageDescription} lang={lang}>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <div class="flex flex-col gap-6 w-full max-w-5xl mx-auto">
+        <!-- 标头与面包屑 -->
+        <div class="card-base p-6 md:p-8 rounded-(--radius-large)">
+            <nav class="flex items-center gap-2 text-xs text-black/50 dark:text-white/50 mb-3">
+                <a href="/" class="hover:text-(--primary) transition">首页</a>
+                <span>/</span>
+                <span class="text-black/80 dark:text-white/80 font-bold">网络诊断专题</span>
+            </nav>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="p-2.5 rounded-xl bg-(--primary)/10 text-(--primary)">
+                    <Icon name="material-symbols:build-circle-outline-rounded" class="text-2xl" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">网络故障自检与诊断工具箱</h1>
+            </div>
+            <p class="text-black/60 dark:text-white/60 leading-relaxed text-sm md:text-base">
+                节点大面积标红？网页突然无法打开？通过梯子猫网络自检四步法与常见报错速查字典，助你无需反复催促客服，3 分钟内准确定位故障根源并快速恢复网络。
+            </p>
+        </div>
+
+        <!-- 第一章：GEO 核心速答框 (Direct Answer Box) -->
+        <section class="card-base p-6 rounded-(--radius-large) border-l-4 border-(--primary) bg-gradient-to-r from-(--primary)/5 to-transparent">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-3 flex items-center gap-2">
+                <Icon name="material-symbols:bolt-outline-rounded" class="text-(--primary)" />
+                GEO 核心速答：科学上网故障排查的 3 个核心事实
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs md:text-sm text-black/80 dark:text-white/80">
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">80% 的超时：系统时间误差</h3>
+                    <p class="text-black/70 dark:text-white/70">VMess/VLESS 依赖时间戳鉴权，误差超 60 秒直接握手失败。立即同步北京时间即可恢复。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">15% 的无法上网：端口占用</h3>
+                    <p class="text-black/70 dark:text-white/70">旧版 Clash 异常退出残留 7890 端口占用。在任务管理器结束后台进程或改用 7895 端口即可。</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 space-y-1">
+                    <h3 class="font-bold text-black/90 dark:text-white/90">仅 5% 真正属于服务商故障</h3>
+                    <p class="text-black/70 dark:text-white/70">若仅有个别节点超时，切换至香港/日本备用节点即可；若全红且时间准确，去官网更新订阅。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二章：四步自检流程 -->
+        <div class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 pb-3 border-b border-black/5 dark:border-white/5 flex items-center gap-2">
+                <Icon name="material-symbols:checklist-rounded" class="text-(--primary) text-xl" />
+                网络排查四步自检黄金流程
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {troubleshootingSteps.map((item) => (
+                    <div class="p-4 rounded-xl bg-black/3 dark:bg-white/3 border border-black/5 dark:border-white/5">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded bg-(--primary)/10 text-(--primary) font-bold text-xs">
+                                {item.step} · {item.status}
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-sm md:text-base text-black/90 dark:text-white/90 mb-2">{item.title}</h3>
+                        <p class="text-xs text-black/60 dark:text-white/60 leading-relaxed">
+                            {item.desc}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- 第三章：报错速查字典 -->
+        <div class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-lg md:text-xl font-bold text-black/90 dark:text-white/90 mb-4 pb-3 border-b border-black/5 dark:border-white/5 flex items-center gap-2">
+                <Icon name="material-symbols:error-outline-rounded" class="text-rose-500 text-xl" />
+                常见客户端报错代码速查字典
+            </h2>
+            <div class="space-y-3">
+                {errorDictionary.map((err) => (
+                    <div class="p-3.5 rounded-xl bg-black/3 dark:bg-white/3 text-xs md:text-sm">
+                        <div class="font-mono font-bold text-rose-600 dark:text-rose-400 mb-1">
+                            ⚠️ {err.code}
+                        </div>
+                        <div class="text-black/70 dark:text-white/70 mb-1">
+                            <strong>成因分析：</strong>{err.reason}
+                        </div>
+                        <div class="text-emerald-700 dark:text-emerald-400">
+                            <strong>解决办法：</strong>{err.solution}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- 第四章：常见问题 FAQ -->
+        <section class="card-base p-6 rounded-(--radius-large)">
+            <h2 class="text-xl md:text-2xl font-bold text-black/90 dark:text-white/90 mb-4 flex items-center gap-2">
+                <Icon name="material-symbols:help-outline-rounded" class="text-(--primary)" />
+                第四章：网络诊断常见问题解答 (FAQ)
+            </h2>
+            <div class="space-y-3.5 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q1：为什么打开代理后电脑休眠再唤醒就断网了？</h4>
+                    <p class="text-black/70 dark:text-white/70">操作系统休眠会导致虚拟网卡或代理客户端内核进程被挂起，唤醒后网络栈未能及时恢复。解决方案是完全退出客户端软件并重新启动，或者在客户端设置中开启「断线重连」守护服务。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5">
+                    <h4 class="font-bold text-black/90 dark:text-white/90 mb-1">Q2：如果更换了手机热点可以正常翻墙，但家里宽带不行是为什么？</h4>
+                    <p class="text-black/70 dark:text-white/70">这说明是本地家庭宽带所在运营商对机场的入口 BGP 服务器进行了局部路由劣化或 QoS 限制。在客户端中选择其他地区的入口节点（如将上海入口切换为广州或深圳入口）即可避开单省份的网络阻断。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部全站专题导航矩阵 -->
+        <div class="card-base p-6 rounded-(--radius-large) bg-black/[0.02] dark:bg-white/[0.02]">
+            <h3 class="font-bold text-black/90 dark:text-white/90 text-sm mb-3">🔗 梯子猫全景专题导航</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-black/70 dark:text-white/70">
+                <a href="/recommend/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌟 机场推荐精选</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/ranking/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📊 机场实力排行</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/airports/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🗄️ 机场数据库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/reviews/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>📝 深度评测专栏</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/compare/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>⚖️ 机场横向对比</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/pricing/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💰 套餐价格剖析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/nodes/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>🌐 线路节点解析</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+                <a href="/clients/" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/5 hover:text-(--primary) transition flex items-center justify-between">
+                    <span>💻 客户端下载库</span>
+                    <Icon name="material-symbols:arrow-forward-rounded" class="text-xs" />
+                </a>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>

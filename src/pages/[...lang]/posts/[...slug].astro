@@ -12,6 +12,7 @@ import { getSortedPosts } from "@utils/content-utils";
 import { getPostUrlBySlug } from "@utils/url-utils";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
+import FeaturedAirportsTable from "../../../components/FeaturedAirportsTable.astro";
 import ImageWrapper from "../../../components/misc/ImageWrapper.astro";
 import PostMetadata from "../../../components/PostMeta.astro";
 import { licenseConfig, profileConfig, siteConfig } from "../../../config";
@@ -129,6 +130,7 @@ const ogImage = entry.data.ogImage ?? entry.data.image;
                 <ImageWrapper id="post-cover" src={entry.data.image} basePath={path.join("content/posts/", entry.id)} class="mb-8 rounded-xl banner-container onload-animation"/>
             }
 
+            <FeaturedAirportsTable class="mb-8 onload-animation" />
 
             <Markdown class="mb-6 markdown-content onload-animation">
                 <Content />
