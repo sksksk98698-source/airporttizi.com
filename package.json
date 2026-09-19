@@ -23,7 +23,6 @@
 		"test": "vitest",
 		"test-coverage": "vitest run --coverage",
 		"preinstall": "npx only-allow pnpm",
-		"postinstall": "playwright install chromium",
 		"prepare": "husky"
 	},
 	"dependencies": {
