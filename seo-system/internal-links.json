@@ -1163,5 +1163,79 @@
 			"relationship": "plans-guide-to-brand-review",
 			"context": "在 冲上云霄 官网指南中提供底层专线架构与晚高峰测速评测入口"
 		}
+	],
+	"links": [
+		{
+			"source": "/posts/uuone-review-2026/",
+			"target": "/posts/uuone-website-plans-guide/",
+			"anchorText": "UUOne 官网指南：稳定性、ChatGPT、Netflix 与套餐怎么选",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/uuone-website-plans-guide/",
+			"target": "/posts/uuone-review-2026/",
+			"anchorText": "UUOne 机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/danke-review-2026/",
+			"target": "/posts/danke-website-plans-guide/",
+			"anchorText": "Danke 官网使用指南：节点速度、AI 与流媒体解锁测试",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/danke-website-plans-guide/",
+			"target": "/posts/danke-review-2026/",
+			"anchorText": "Danke 机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/yingziyun-review-2026/",
+			"target": "/posts/yingziyun-website-plans-guide/",
+			"anchorText": "影子云官网指南：稳定性、ChatGPT 和流媒体解锁表现",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/yingziyun-website-plans-guide/",
+			"target": "/posts/yingziyun-review-2026/",
+			"anchorText": "影子云机场怎么样？2026 套餐价格、节点线路与速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/shanshuiyun-review-2026/",
+			"target": "/posts/shanshuiyun-website-plans-guide/",
+			"anchorText": "山水云官网及套餐指南：速度、AI 与流媒体解锁测试",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/shanshuiyun-website-plans-guide/",
+			"target": "/posts/shanshuiyun-review-2026/",
+			"anchorText": "山水云机场怎么样？2026 套餐价格、线路节点与稳定性评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/edge-x-review-2026/",
+			"target": "/posts/edge-x-website-plans-guide/",
+			"anchorText": "Edge-X 官网指南：稳定性、ChatGPT 与流媒体解锁能力",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/edge-x-website-plans-guide/",
+			"target": "/posts/edge-x-review-2026/",
+			"anchorText": "Edge-X 机场怎么样？2026 套餐价格、节点与线路速度评测",
+			"relationship": "Part A Speedtest Review"
+		},
+		{
+			"source": "/posts/xunda-review-2026/",
+			"target": "/posts/xunda-website-plans-guide/",
+			"anchorText": "迅达机场官网指南：节点速度、稳定性和 AI 解锁测试",
+			"relationship": "Part B Official Site Guide"
+		},
+		{
+			"source": "/posts/xunda-website-plans-guide/",
+			"target": "/posts/xunda-review-2026/",
+			"anchorText": "迅达机场怎么样？2026 套餐价格、节点数量与线路评测",
+			"relationship": "Part A Speedtest Review"
+		}
 	]
 }

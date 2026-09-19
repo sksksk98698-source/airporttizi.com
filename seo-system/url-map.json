@@ -2701,5 +2701,77 @@
 			"status": "planned",
 			"protected": false
 		}
-	]
+	],
+	"/posts/uuone-review-2026/": {
+		"canonicalUrl": "/posts/uuone-review-2026/",
+		"title": "UUOne 机场怎么样？2026 套餐价格、节点线路与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/uuone-website-plans-guide/": {
+		"canonicalUrl": "/posts/uuone-website-plans-guide/",
+		"title": "UUOne 官网指南：稳定性、ChatGPT、Netflix 与套餐怎么选",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/danke-review-2026/": {
+		"canonicalUrl": "/posts/danke-review-2026/",
+		"title": "Danke 机场怎么样？2026 套餐价格、节点与线路稳定性评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/danke-website-plans-guide/": {
+		"canonicalUrl": "/posts/danke-website-plans-guide/",
+		"title": "Danke 官网使用指南：节点速度、AI 与流媒体解锁测试",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/yingziyun-review-2026/": {
+		"canonicalUrl": "/posts/yingziyun-review-2026/",
+		"title": "影子云机场怎么样？2026 套餐价格、节点线路与速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/yingziyun-website-plans-guide/": {
+		"canonicalUrl": "/posts/yingziyun-website-plans-guide/",
+		"title": "影子云官网指南：稳定性、ChatGPT 和流媒体解锁表现",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/shanshuiyun-review-2026/": {
+		"canonicalUrl": "/posts/shanshuiyun-review-2026/",
+		"title": "山水云机场怎么样？2026 套餐价格、线路节点与稳定性评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/shanshuiyun-website-plans-guide/": {
+		"canonicalUrl": "/posts/shanshuiyun-website-plans-guide/",
+		"title": "山水云官网及套餐指南：速度、AI 与流媒体解锁测试",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/edge-x-review-2026/": {
+		"canonicalUrl": "/posts/edge-x-review-2026/",
+		"title": "Edge-X 机场怎么样？2026 套餐价格、节点与线路速度评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/edge-x-website-plans-guide/": {
+		"canonicalUrl": "/posts/edge-x-website-plans-guide/",
+		"title": "Edge-X 官网指南：稳定性、ChatGPT 与流媒体解锁能力",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/xunda-review-2026/": {
+		"canonicalUrl": "/posts/xunda-review-2026/",
+		"title": "迅达机场怎么样？2026 套餐价格、节点数量与线路评测",
+		"type": "Post",
+		"protected": true
+	},
+	"/posts/xunda-website-plans-guide/": {
+		"canonicalUrl": "/posts/xunda-website-plans-guide/",
+		"title": "迅达机场官网指南：节点速度、稳定性和 AI 解锁测试",
+		"type": "Post",
+		"protected": true
+	}
 }
